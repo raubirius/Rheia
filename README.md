@@ -1,6 +1,6 @@
 # Rheia
 
-[//]: <> (Makdown-like CMS not requiring relational database.)
+[//]: # (Makdown-like CMS not requiring relational database.)
 
 *Slovenský text je nižšie (for Slovak scroll/look down).*
 
