@@ -1,0 +1,152 @@
+
+#style:#openCapture
+
+.imgSwitcherBox
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.imgSwitcherPage
+{
+	border: 2px solid silver;
+	padding: 2px;
+}
+
+.imgSwitcherPrev, .imgSwitcherNext
+{
+	cursor: pointer;
+	color: silver;
+	background: rgba(0, 0, 0, 0.05);
+
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+.imgSwitcherPrev:hover, .imgSwitcherNext:hover
+{
+	color: gray;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.fade
+{
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 0.5s;
+	animation-name: fade;
+	animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fade
+{
+	from {opacity: .2}
+	to   {opacity: 1}
+}
+
+@keyframes fade
+{
+	from {opacity: .2}
+	to   {opacity: 1}
+}
+
+/* ‼fail‼ @media (max-height: 600px)
+{
+	.imgSwitcherBox,
+	.imgSwitcherCont
+	{
+		padding: 50px;
+		max-height: 100px!important;
+		overflow: auto;
+	}
+
+	.imgSwitcherCont
+	{
+		padding: 50px;
+		overflow: auto;
+	}
+}*/
+#closeCapture
+
+#javaScript:#openCapture
+
+myGlobals['imgSwitcherPrefix'] = '';
+myGlobals['imgSwitcherPostfix'] = '';
+myGlobals['imgSwitcherItems'] = [];
+myGlobals['imgSwitcherIndex'] = 0;
+myGlobals['imgSwitcherStyle'] = '';
+
+imgSwitcherPrev = function ()
+{
+	--myGlobals['imgSwitcherIndex'];
+	if (myGlobals['imgSwitcherIndex'] < 0)
+		myGlobals['imgSwitcherIndex'] =
+		myGlobals['imgSwitcherItems'].length - 1;
+	getElement('imgSwitcherIMG').src = myGlobals['imgSwitcherPrefix'] +
+		myGlobals['imgSwitcherItems'][myGlobals['imgSwitcherIndex']] +
+		myGlobals['imgSwitcherPostfix'];
+
+	addClass('imgSwitcherIMG', 'fade');
+	setTimeout(function () {
+		// errorMessage('fade 1');
+		removeClass('imgSwitcherIMG', 'fade');
+	}, 500);
+}
+
+imgSwitcherRefresh = function ()
+{
+	getElement('imgSwitcherIMG').src = myGlobals['imgSwitcherPrefix'] +
+		myGlobals['imgSwitcherItems'][myGlobals['imgSwitcherIndex']] +
+		myGlobals['imgSwitcherPostfix'];
+
+	addClass('imgSwitcherIMG', 'fade');
+	setTimeout(function () {
+		// errorMessage('fade 2');
+		removeClass('imgSwitcherIMG', 'fade');
+	}, 500);
+}
+
+imgSwitcherNext = function ()
+{
+	++myGlobals['imgSwitcherIndex'];
+	if (myGlobals['imgSwitcherIndex'] >= myGlobals['imgSwitcherItems'].length)
+		myGlobals['imgSwitcherIndex'] = 0;
+	getElement('imgSwitcherIMG').src = myGlobals['imgSwitcherPrefix'] +
+		myGlobals['imgSwitcherItems'][myGlobals['imgSwitcherIndex']] +
+		myGlobals['imgSwitcherPostfix'];
+
+	addClass('imgSwitcherIMG', 'fade');
+	setTimeout(function () {
+		// errorMessage('fade 3');
+		removeClass('imgSwitcherIMG', 'fade');
+	}, 500);
+}
+
+imgSwitcherSwapSize = function (smallSize, bigSize)
+{
+	var theStyle = getElement('imgSwitcherIMG').style;
+
+	errorMessage(theStyle.width);
+
+	if (theStyle.width == smallSize + 'px')
+		theStyle.width = bigSize + 'px';
+	else if (theStyle.width == bigSize + 'px')
+		theStyle.width = smallSize + 'px';
+}
+
+#closeCapture
+
+
+#onShow:#openCapture
+
+getElement('imgSwitcherIMG').style = myGlobals['imgSwitcherStyle'];
+// errorMessage(myGlobals['imgSwitcherStyle']);
+
+#closeCapture
+
+
+#imgSwitcherBEG:<table id="imgSwitcherBox" class="imgSwitcherBox"><tr><td class="imgSwitcherPrev" onclick="imgSwitcherPrev()">  ⟨  </td><td id="imgSwitcherCont" class="imgSwitcherCont"><img src="
+#imgSwitcherEND:" alt="Obsah článku" id="imgSwitcherIMG" onclick="imgSwitcherRefresh()" class="imgSwitcherPage" style="" /></td><td class="imgSwitcherNext" onclick="imgSwitcherNext()">  ⟩  </td></tr></table>
+
+#makro:imgSwitcherIMG,code(imgSwitcherBEG)$1code(imgSwitcherEND)

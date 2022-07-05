@@ -1,0 +1,94 @@
+
+; $rss: /katedry/kmi/rss.xml
+
+@central-menu-before
+
+$index: Aktuality
+	#alias: aktuality
+	#en:
+
+$katedra: Pracovisko
+	#type: articles
+	#en: department
+	;#highlight: index
+	; Galérie sú samostatná kategória:
+	;@submenu
+	;	$galerie
+	;		#type: html
+	;@end-submenu
+
+$aktuality
+	#type: articles
+	#en: news
+
+$pracovnici: Pracovníci katedry
+	#en: workers
+	@submenu
+		;$user
+		;	#en: user
+
+		;$newname
+		;	#en: newname
+
+	@end-submenu
+
+---
+
+$studium: Študijné informácie
+	#en: study
+
+;$oddelenia
+	;#highlight: pracovnici
+
+$bakalarske
+	#highlight: studium
+	#nosearch
+	#hidden
+
+$magisterske
+	#highlight: studium
+	#nosearch
+	#hidden
+
+$rigorozne
+	#highlight: studium
+	#nosearch
+	#hidden
+
+$statnice
+	#highlight: studium
+	#nosearch
+	#hidden
+
+$konzultacie
+	#highlight: studium
+	#nosearch
+	#hidden
+
+$programy
+	#highlight: studium
+	#nosearch
+	#hidden
+
+$uchadzac
+	#type: articles
+	#en: applicant
+	#highlight: studium
+
+$student
+	#type: articles
+	#en: student
+	#highlight: studium
+
+---
+
+$veda-vyskum: Veda a výskum
+	#type: articles
+	#en: science-research
+
+---
+
+$kontakt: Kontakt
+	#en: contact
+
+@end

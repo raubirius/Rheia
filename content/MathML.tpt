@@ -1,0 +1,26 @@
+
+#javascript:#openCapture
+
+/* Configuration (disabled; just example)
+
+window.MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']]
+	},
+	svg: {
+		fontCache: 'global'
+	}
+}; */
+
+(function () {
+	// 'https://polyfill.io/v3/polyfill.min.js?features=es6' // works without it
+
+	var script = document.createElement('script');
+	script.src = '/design/mathjax-es5/mml-chtml.js';
+	script.async = true;
+	document.head.appendChild(script);
+})();
+
+#closeCapture
+
+; Pozri aj: MathML-example.tpt

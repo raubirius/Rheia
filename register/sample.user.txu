@@ -1,0 +1,34 @@
+; userData
+userName=Sample User
+userPassword=52a48fc7da0bb8c01c4d09b7a1bfa3d2
+passwordEncoded=yes
+;loginGoHomeText=
+
+;homePageContent=kmi/user
+;homePageArticle=snake
+;homeSectionPath=katedry/kmi
+;
+;homePageContent–en=../kmi/user
+;homeReplaceParsedPath–en=../../parsed/english/home/kmi/
+;homeSectionPath–en=../katedry/kmi
+
+grantAccess[]=all
+grantPrivilege[]=read
+
+;grantAccess[]=generator
+;grantPrivilege[]=write
+
+;grantAccess[]=manual, tests
+;grantPrivilege[]=deny
+
+;grantAccess[]=english/change-password, zmena-hesla
+;grantPrivilege[]=deny
+
+;homePageItem[]=Generátor HTML obsahu
+;homePageLink[]=/generator
+
+;homePageItem[]=Nezrovnalosti
+;homePageLink[]=/inconsistency
+
+homePageItem[]=Skriptá: Tvorba webových stránok – Manuál k RS…
+homePageLink[]=/manual

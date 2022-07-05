@@ -1,0 +1,49 @@
+
+pre.PHPCode
+{
+	width: 655px;
+
+	border: 1px dotted #a0a0a0;
+	background-color: #fffaf8;
+	overflow: auto;
+}
+
+span.PHPBlock span.phptag    { color:	#A000A0;	font-weight: bold; }
+span.PHPBlock span.number    { color:	#008080;	}
+span.PHPBlock span.string1   { color:	#D00004;	}
+span.PHPBlock span.string2   { color:	#A00000;	}
+span.PHPBlock span.error     { color:	#FF0000;	}
+span.PHPBlock span.symbol    { color:	#800080;	font-weight: bold; }
+span.PHPBlock span.keyword1  { color:	#0040F0;	font-weight: bold; }
+span.PHPBlock span.keyword2  { color:	#0000A0;	font-weight: bold; }
+span.PHPBlock span.keyword3  { color:	#0080E0;	}
+span.PHPBlock span.primitive { color:	#000080;	}
+span.PHPBlock span.directive { color:	#00A080;	}
+span.PHPBlock span.constant  { color:	#0000F0;	}
+span.PHPBlock span.comment1  { color:	#30A060;	}
+span.PHPBlock span.comment2  { color:	#00A000;	}
+span.PHPBlock span.comment3  { color:	#8000E0;	}
+span.PHPBlock span.variable  { font-weight: bold; }
+span.PHPBlock span.function  { font-style: italic; }
+
+.codeTitle
+{
+	width: fit-content;
+
+	border: 1px solid #c0c0c0;
+	border-top-left-radius: 8px;
+	border-bottom: none;
+	background-color: #fffcfa;
+	overflow: auto;
+
+	margin-bottom: 0px;
+	font-size: 14px;
+	padding: 5px 11px;
+}
+
+.codeTitle + pre.PHPCode
+{
+	margin-top: 0px;
+	border-style: solid;
+	border-color: #c0c0c0;
+}

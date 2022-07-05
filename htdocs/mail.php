@@ -1,0 +1,1 @@
+<?php $mailColor = array(51, 122, 183); include 'mail.php'; ?>

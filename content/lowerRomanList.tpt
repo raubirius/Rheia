@@ -1,0 +1,27 @@
+
+; #style: ol.lowerRomanList { list-style-type: lower-alpha; }
+
+#style:#openCapture
+
+ol.lowerRomanList
+{
+	counter-reset: orderedList;
+}
+
+ol.lowerRomanList > li
+{
+	list-style: none;
+	position: relative;
+}
+
+ol.lowerRomanList > li:before
+{
+	content: counter(orderedList, lower-roman) ") ";
+	counter-increment: orderedList;
+
+	position: absolute;
+	display: inline-block;
+	left: -22px;
+}
+
+#closeCapture

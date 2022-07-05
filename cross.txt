@@ -1,0 +1,17 @@
+52
+
+HTML
+
+✕ &#x2715; ✓ &#x2713;
+✖ &#x2716; ✔ &#x2714;
+
+✗ &#x2717;
+✘ &#x2718;
+
+× &#x00d7; &times;
+
+✖ works really well. The HTML code is &#10006;.
+
+╳
+
+&#x2573; or decimal: &#9587;

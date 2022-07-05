@@ -1,0 +1,17 @@
+# RedirectMatch permanent ^/fak/katedry/katbiol/First.htm http://katbio.truni.sk/
+# RedirectMatch permanent ^/fak/katedry/katbiol/(.*) http://katbio.truni.sk/$1
+RedirectMatch permanent ^/fak/katedry/katbiol/First.htm /katedry/kb/
+RedirectMatch permanent ^/fak/katedry/katbiol/(.*) /katedry/kb/$1
+
+RedirectMatch permanent ^/fak/katedry/(.*) /katedry/$1
+RedirectMatch permanent ^/elskripta/(.*) /e-skripta/$1
+RedirectMatch permanent ^/kmi/(.*) /katedry/kmi/$1
+RedirectMatch permanent ^/katsj/(.*) /katedry/ksj/$1
+
+# RedirectMatch permanent ^/katedry/katbiol/(.*) http://katbio.truni.sk/$1
+# RedirectMatch permanent ^/katchem/(.*) http://katchem.truni.sk/$1
+RedirectMatch permanent ^/katedry/katbiol/(.*) /katedry/kb/$1
+RedirectMatch permanent ^/katchem/(.*) /katedry/kch/$1
+
+RedirectMatch permanent ^/down/(.*)$ /download?$1
+RedirectMatch permanent ^/(cec|kaj|kb|kf|kch|kmi|knj|kps|kpvu|ksj|ksp)/(.*) /katedry/$1/$2

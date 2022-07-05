@@ -1,0 +1,7 @@
+<FilesMatch "\.(pdf|zip|doc|docx|swf|mp3|xml)$">
+	Allow from all
+</FilesMatch>
+
+RedirectMatch 301 "^/e-skripta/vczv1/[Aa]ditiva(?: |%20)v(?: |%20)potravinach/(.*)$" "/e-skripta/vczv1/aditiva-v-potravinach/$1"
+
+ErrorDocument 404 /e-skripta/error.php?404

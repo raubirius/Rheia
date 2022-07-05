@@ -1,0 +1,133 @@
+
+; Varovanie: Súbory objektov môžu byť čítané globálnym skriptom
+; na vyhľadávanie zamestnancov. Je príliš komplikované vyriešiť
+; generovanie lokálnych (katedrových) odkazov pri tomto spôsobe
+; čítania. Preto musia byť všetky odkazy v tomto súbore absolútne.
+; (Príklad: {«text».|/katedry/kmi/«odkaz»})
+; Pomocný regulárny výraz na hľadanie relatívnych odkazov:
+;		\|(?!/|https?:|externdown:|link:|down:)
+
+$pracovisko
+	#id[]: kmi
+	#názov[]: Katedra matematiky a informatiky
+	#názov–en[]: Department of Mathematics and Computer Science
+	#zoznamPovoľOdkazProfilu[]: áno
+	#prefixProfilu[]: //katedry//kmi//pracovnici?
+	#postfixProfilu[]:
+	#platnosťKonzultácií[]: 14. 5. 2022
+
+	#vedúciKatedry: user
+	#sekretariát: user
+
+	#študijnýPoradcaA: user
+	;#študijnýPoradcaB: user
+
+	;#správcaMais: ???
+	;#správcaKnižnice: user
+	#správcaKnižnice: user
+
+	#profesori[]: user
+	;#profesori[]: user
+	#docenti[]: user
+
+	;#odborníAsistenti[]: user
+	#odborníAsistenti[]: user
+
+	#externíZamestnanci[]: user
+	#externíZamestnanci[]: user
+
+	#oddelenia[]: oddelenieMatematiky
+	#oddelenieMatematikyHlavička: Oddelenie matematiky
+	#oddelenieMatematikyHlavička–en: Department of Mathematics
+	#oddelenieMatematikyVedúci[]: user
+	;#oddelenieMatematiky[]: user
+	#oddelenieMatematiky[]: user
+
+	#oddelenia[]: oddelenieInformatiky
+	#oddelenieInformatikyHlavička: Oddelenie informatiky
+	#oddelenieInformatikyHlavička–en: Department of Computer Science
+	#oddelenieInformatikyVedúci[]: user
+	#oddelenieInformatiky[]: user
+	#oddelenieInformatiky[]: user
+
+
+$user: Sample User
+	#titulyPred: Mgr. Ing.
+	#titulyZa: PhD.
+	#gender: male
+
+	#funkčnéMiesto[]: odborný asistent
+
+	#miestnosť[]: —
+	#klapka[]: —
+	#email[]: sample.user@truni.sk
+
+	#profilovka: 19. 1. 2038
+
+	#pozíciaNaKatedre[]: správca knižnice
+	; #pozíciaNaKatedre[]: správca webu
+
+	; #správcaKnižniceIndex: 0
+
+	#akademickýTitul[]: Ing., informatika, 2001
+	#akademickýTitul[]: Mgr., učiteľstvo informatiky, 2005
+	#akademickýTitul[]: PhD., teória vyučovania informatiky, 2011
+
+	#pracovnýPomer[]: Pracovná pozícia, 2011 – doteraz
+
+	#konštantaPraxe[]: 2001
+	;#počtyBcPrác[]: 1//10
+	;#počtyMgrIngPrác[]: 0//1
+
+	#oblasťPedagogickejČinnosti[]: #break-list#Zameriavam sa predovšetkým na oblasť xyz učiteľov informatiky.
+
+	#oblasťPedagogickejČinnosti–en[]: #break-list#I am focused… xyz…
+
+
+;$newname: The NewName
+	;#titulyPred: Ing.
+	;#titulyZa: PhD.
+	;#gender: female
+	;#rodnéPriezvisko[]: oldname
+	;
+	;#funkčnéMiesto[]: odborná asistentka
+	;
+	;;#pozícia[]: ≈materská dovolenka≈
+	;
+	;;#pozíciaNaKatedre[]: tajomník katedry
+	;;#tajomníkIndex: 0
+	;;#pozíciaNaKatedre[]: vedúca oddelenia informatiky
+	;;#vedúciOddeleniaBIndex: 1
+	;;#pozíciaNaKatedre[]: študijná poradkyňa pre informatiku\(momentálne je zastupovaná {Sample User|/katedry/kmi/pracovnici?user})
+	;;#študijnýPoradcaBIndex: 2
+	;;#pozíciaNaKatedre[]: správkyňa knižnice
+	;;#správcaKnižniceIndex: 3
+	;
+	;#miestnosť[]: —
+	;#klapka[]: —
+	;#email[]: sample.user@truni.sk
+	;
+	;#akademickýTitul[]: Ing., informatika, 2002
+	;#akademickýTitul[]: PhD., teória vyučovania informatiky, 2008
+	;
+	;#konštantaPraxe[]: 2002+8
+	;
+	;#publikácia[]: Author: Title…
+	;
+	;#projekt[]: Project Data.
+
+
+£user
+	#vupch[]: {VUPCH|plaindown:kmi/vupch/vupch-user.xlsx}
+	#vupch–en[]: {RATP|plaindown:kmi/vupch/vupch-user.xlsx}
+
+
+; Leto 2022
+
+£user
+	#konzultácie[]: streda 8:40 – 10:10
+
+;Replace
+;(\t#[^\n]+\n)([^\t])
+;$1\t#konzultácieVProfile[]: Konzultácie prebiehajú v letnom semestri akademického roka 2020//2021 *on‑line formou!* Konzultácie si dohodnite vopred (e‑mailom).\n$2
+

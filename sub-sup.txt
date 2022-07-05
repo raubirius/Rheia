@@ -1,0 +1,63 @@
+
+V rámci systému:
+
+  - ^horný index^
+  - ˇdolný indexˇ
+
+
+ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ
+
+RegEx (obsolete):
+1st|2nd|3rd|[0-9]th
+Pre prípad chyby alebo iného formátu:
+[0-9]\^?(th|nd|rd|st)
+
+1ˢᵗ
+2ⁿᵈ
+3ʳᵈ
+nᵗʰ
+…
+
+
+Consolidated for cut-and-pasting purposes, the Unicode standard defines complete sub- and super-scripts for numbers and common mathematical symbols
+
+	⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹ ⁺ ⁻ ⁼ ⁽ ⁾ ₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉ ₊ ₋ ₌ ₍ ₎
+
+a full superscript Latin lowercase alphabet except q
+
+	ᵃ ᵇ ᶜ ᵈ ᵉ ᶠ ᵍ ʰ ⁱ ʲ ᵏ ˡ ᵐ ⁿ ᵒ ᵖ ʳ ˢ ᵗ ᵘ ᵛ ʷ ˣ ʸ ᶻ
+
+a limited uppercase Latin alphabet
+
+	ᴬ ᴮ ᴰ ᴱ ᴳ ᴴ ᴵ ᴶ ᴷ ᴸ ᴹ ᴺ ᴼ ᴾ ᴿ ᵀ ᵁ ⱽ ᵂ
+
+a few subscripted lowercase letters
+
+	ₐ ₑ ₕ ᵢ ₖ ₗ ₘ ₙ ₒ ₚ ᵣ ₛ ₜ ᵤ ᵥ ₓ
+
+and some Greek letters
+
+	ᵅ ᵝ ᵞ ᵟ ᵋ ᶿ ᶥ ᶲ ᵠ ᵡ ᵦ ᵧ ᵨ ᵩ ᵪ
+
+Note that since these glyphs come from different ranges, they may not be of the same size and position, depending on the typeface.
+
+
+Source: http://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts
+
+
+Another source: https://lingojam.com/SmallTextGenerator and some results:
+
+Small Caps:
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ
+ 0123456789 + - =
+
+Superscript:
+ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾᵠᴿˢᵀᵁⱽᵂˣʸᶻ
+ᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖᵠʳˢᵗᵘᵛʷˣʸᶻ
+ ⁰¹²³⁴⁵⁶⁷⁸⁹ ⁺ ⁻ ⁼
+
+Subscript:
+ₐBCDₑFGₕᵢⱼₖₗₘₙₒₚQᵣₛₜᵤᵥWₓYZ
+ₐᵦ𝒸𝒹ₑ𝒻𝓰ₕᵢⱼₖₗₘₙₒₚᵩᵣₛₜᵤᵥ𝓌ₓᵧ𝓏
+ ₀₁₂₃₄₅₆₇₈₉ ₊ ₋ ₌

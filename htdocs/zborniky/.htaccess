@@ -1,0 +1,5 @@
+<FilesMatch "\.(pdf|doc)$">
+	Allow from all
+</FilesMatch>
+
+ErrorDocument 404 /zborniky/error.php?404

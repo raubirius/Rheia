@@ -1,0 +1,101 @@
+
+Kontakt
+===
+
+#style:div.page-content p { margin-left: 20px; }
+
+Poštová adresa
+___
+
+Pedagogická fakulta\
+Trnavská univerzita
+
+Priemyselná 4\
+P. O. BOX 9
+
+918 43  Trnava
+
+Telefóne kontakty
+___
+
+#tables:blocks
+{tel:+421 33 5939 500}	–	operátor
+{fax:+421 33 5516 047}	–	fax
+
+#code:#openCapture
+
+<div class="google-map"><p><iframe id="google-map" allowfullscreen></iframe>code(br)
+<a href="https://www.google.sk/maps/place/Pedagogick%C3%A1+fakulta+Trnavskej+univerzity/@48.3620813,17.5968097,807m/data=!3m1!1e3!4m2!3m1!1s0x476b5f8fe34d84c7:0x244da4f229e70dff!6m1!1e1?hl=sk" target="_blank" class="external-link"><span>Zobraziť väčšiu mapu</span> <img src="design/null.gif" alt="otvárané v novom okne
+(obvykle ide o externý odkaz)" title="otvárané v novom okne
+(obvykle ide o externý odkaz)" class="external-icon"></a></p></div>
+
+#closeCapture
+
+#style:#openCapture
+
+div.google-map
+{
+	margin: 20px 0px;
+	display: table;
+}
+
+div.google-map iframe
+{
+	width: 600px;
+	height: 500px;
+}
+
+div.google-map p
+{
+	font-size: 13px;
+	text-align: center;
+}
+
+@media print
+{
+	div.google-map a
+	{
+		display: none;
+	}
+}
+
+#closeCapture
+
+#onShow:#openCapture
+
+	document.getElementById('google-map').src =
+		'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3514.2056395108225!2d17.5968097!3d48.3620813!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b5f8fe34d84c7%3A0x244da4f229e70dff!2sPedagogick%C3%A1+fakulta+Trnavskej+univerzity!5e1!3m2!1ssk!2ssk!4v1438000463546';
+
+#closeCapture
+
+
+Uchádzači a študenti
+___
+
+Otázky smerujte na svojich {študijných poradcov|student?studijni-poradcovia}
+alebo vedúcu {študijného oddelenia.|student?studijne-oddelenie}
+
+Katedry
+___
+
+Kontakty na sekretariáty a pracovníkov jednotlivých katedier nájdete na {katedrových webových stránkach|katedry} alebo v {telefónnom zozname fakulty.|telefonny-zoznam}
+
+\
+
+---
+
+Veda, výskum a zahraničné vzťahy
+___
+
+{Oddelenie pre vedu, výskum a zahraničné vzťahy|veda-vyskum}
+
+\
+
+===
+
+\
+
+-|*{Pripomienky k webovému obsahu smerujte na správcov webového obsahu.|site-info?kontakt-spravcovia}*|
+-|*{Telefónny zoznam nájdete tu.|telefonny-zoznam}*|
+
+\

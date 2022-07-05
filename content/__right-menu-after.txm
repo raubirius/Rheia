@@ -1,0 +1,40 @@
+
+@right-menu-after
+
+---
+* 
+
+$u-multirank: U-multirank
+	#card: design/u-multirank.png
+	#link: /verejnost?u-multirank
+
+; $ects-label: European Credit Transfer System (ECTS)
+; 	#http: ects.truni.sk
+; 	#card: design/ECTS-Label.png
+
+$ds-label: Dodatok k diplomu
+	#https: www.truni.sk/dodatok-k-diplomu
+	#card: design/DS-Label.png
+
+$vnutorny-system-kvality: Vnútorný systém kvality
+	#link: /vnutorny-system-kvality
+	#card: design/qa-vnutorna-kvalita.jpeg
+
+$cis: Univerzitné informačné systémy
+	#https: www.truni.sk/univerzitne-informacne-systemy
+	#card: design/CIS.jpeg
+
+$tuid-search: Vyhľadanie TUID
+	#https: www.truni.sk/zistenie-tuid
+	#card: design/tuid-search.png
+
+*Preukazy ISIC, ITIC
+
+$isic: Preukazy ISIC
+	#https: www.truni.sk/preukaz-studenta
+	#card: design/isic-tvu.jpeg
+$itic: Preukazy ITIC
+	#https: www.truni.sk/preukaz-ucitela-zamestnanca
+	#card: design/itic-tvu.jpeg
+
+@end

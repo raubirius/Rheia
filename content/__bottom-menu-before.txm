@@ -1,0 +1,85 @@
+
+@bottom-menu-before
+
+	$uis: Univerzitné informačné systémy
+		#https: www.truni.sk/univerzitne-informacne-systemy
+		#title: Užitočné rady a návody na prácu s UIS
+	$sip: Správa identít používateľov
+		#https: idmportal.truni.sk/
+		#title: Správa identít používateľov (Identity Management Portal)
+	$tuid: Identifikácia TUID
+		#https: www.truni.sk/zistenie-tuid
+		#title: Zistenie identifikátora TUID
+	$elektronicka-prihlaska: Elektronická prihláška
+		#link: /uchadzac?elektronicka-prihlaska
+		#title: Informácie o podaní elektronickej prihlášky
+	$mais: MAIS
+		#https: mais.truni.sk/
+		#title: Modulárny akademický informačný systém
+	;$wms: WebMail študent
+	;	#https: webmail.tvu.sk/
+	;	#title: On‑line klient elektronickej pošty pre študentov
+	;$wmz: WebMail zamestnanec
+	;	#https: webmail.truni.sk/
+	;	#title: On‑line klient elektronickej pošty pre zamestnancov
+	$wml: Webmail Office 365
+		#https: outlook.office.com/
+		#title: On‑line klient elektronickej pošty
+	$isic: Preukaz študenta
+		#https: www.truni.sk/informacie-o-zhotoveni-preukazu-studenta
+		#title: Informácie o zohotovení preukazu študenta
+	$itic: Preukaz zamestnanca
+		#https: www.truni.sk/preukaz-ucitela-zamestnanca
+		#title: Informácie o zohotovení preukazu zamestnanca
+
+	*
+
+	$ezp: Evidencia záverečných prác
+		#link: /student?evidencia-zaverecnych-prac
+		#title: Informácie o evidencii záverečných prác
+	$evidencia-publikacnej-cinnosti: Evidencia publikačnej činnosti
+		#https: www.truni.sk/evidencia-publikacnej-cinnosti
+		#title: Informácie o evidencii publikačnej činnosti zamestnancov
+	$ukni: Univerzitná knižnica
+		#https: www.truni.sk/kniznica
+		#title: Informácie o Univerzitnej knižnici
+	$okuk: On‑line katalóg knižnice
+		#https: ezp.truni.sk/opac?fn=main
+		#title: On‑line katalóg Univerzitnej knižnice
+	;$elearn: Vzdelávací portál
+	;	#http: elearning.truni.sk/
+	;	#title: Vzdelávací portál univerzity
+	$zasadne-dokumenty: Zásadné dokumenty
+		#link: /zasadne-dokumenty
+		#title: Zásadné dokumenty a vnútorné predpisy Pedagogickej fakulty
+	$strava: Stravovací systém
+		#https: strava.truni.sk/
+		#title: Stravovací systém univerzity
+	$telefonny-zoznam: Telefónny zoznam
+		#link: /telefonny-zoznam
+		#title: Telefónny zoznam Pedagogickej fakulty
+	$issm: Informačný systém pre správu a manažment (ISSM)
+		#https: brisk.truni.sk/cdsso/controller?dst-url=https://brisk.truni.sk:443/start/
+
+	*
+
+	$interne-dokumenty: Interné dokumenty
+		#link: /interne-dokumenty
+		#title: Rôzne fakultné interné dokumenty
+	$kniznicaY: Elektronická knižnica
+		#link: /veda-vyskum?e-kniznica
+		#title: Publikácie vzdelávacieho charakteru publikované elektronickou formou
+	$cps: Centrum podpory študentov
+		#https: www.truni.sk/centrum-podpory-studentov
+		#title: Centrum podpory študentov
+	; ---
+	$harmonogramY: Časové harmonogramy štúdia
+		#link: /student?harmonogram-studia
+	$rozvrhyY: Rozvrhy hodín
+		#link: /student?rozvrhy
+	$programyY: Študijné programy
+		#link: /student?studijne-programy
+	$prijimacieY: Informácie o prijímacom konaní
+		#link: /uchadzac?prijimacie-konanie&informacie
+
+@end

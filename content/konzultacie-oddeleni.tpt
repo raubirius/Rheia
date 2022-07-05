@@ -1,0 +1,4 @@
+*#	#	#	$pracovisko#$1Hlavička$(Neprázdne:pracovisko#$1[])*
+#RozviňPole(konzultacie-zoznam-kontakty-veduci,pracovisko,$1Vedúci)
+#RozviňPole(konzultacie-zoznam-kontakty,pracovisko,$1)
+#Šablóna: konzultacie-pata

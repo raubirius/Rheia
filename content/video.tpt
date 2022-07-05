@@ -1,0 +1,21 @@
+
+#code:#openCapture
+
+<div style="background: #f0f0f0; border-radius: 20px; padding: 15px 5px 5px; margin: 10px 0px">
+
+<p style="text-align: center"><b>$2</b></p>
+
+<iframe src="/video?$1" allowfullscreen style="width:$3px; height:$4px; border:none"></iframe>
+
+</div>
+
+#closeCapture
+
+; <video width="$3" height="$4" controls>
+; 	<source
+; 		src="/download?$1"
+; 		type="video/mp4" />
+; 	<p>Váš prehliadač nepodporuje element video.code(br)<a
+; 		href="/download?$1"
+; 		class="download">Kliknutím na tento odkaz prevezmete videozáznam.</a></p>
+; </video>

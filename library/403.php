@@ -1,0 +1,4 @@
+<?php header('HTTP/1.1 403 Forbidden'); ?><h1 class="error"><?php if (isSet($GLOBALS['designTexts']) && !empty($GLOBALS['designTexts']['error-403-head'])) echo $GLOBALS['designTexts']['error-403-head']; else echo 'Zamietnutý prístup'; ?></h1>
+<p class="error"><?php if (isSet($GLOBALS['designTexts']) && !empty($GLOBALS['designTexts']['error-403-text'])) echo $GLOBALS['designTexts']['error-403-text']; else echo 'Prístup k tomuto obsahu bol zamietnutý.'; ?></p>
+<p><?php if (isSet($GLOBALS['designTexts']) && !empty($GLOBALS['designTexts']['error-403-desc'])) echo $GLOBALS['designTexts']['error-403-desc']; else echo 'Váš odkaz môže byť zastaraný. Skúste získať aktuálny odkaz alebo vyberte možnosť z hlavnej, prípadne vedľajšej ponuky.'; ?></p>
+<!-- Forbidden – Your request was denied as you have no permission to access the data. Or the server was unable to serve the data that was requested. -->

@@ -1,0 +1,305 @@
+
+@left-menu-before
+
+$fakulta: Fakulta
+	@submenu
+		$historia-poslanie: História a poslanie
+			#en: history-mission
+		---
+		$vedenie: Vedenie fakulty
+		$organy: Orgány fakulty
+			#en: bodies
+		$senat: Akademický senát
+			#type: articles
+			#en: senate
+		; TODO: odkaz na vedeckú radu, keď budú prerobené ponuky
+		---
+		$galeria: Galéria
+			#parent: null
+			#type: gallery
+			#en: /english/gallery
+		$galerie: Ďalšie galérie
+			#link: /galerie
+			#type: gallery
+			#en: /english/galleries
+			#nosearch
+		$videozaznamy: Videozáznamy
+			#parent: null
+			#highlight: fakulta
+			#type: articles
+			#en: /english/videos
+	@end-submenu
+
+$katedry: Katedry
+	@submenu
+		$kaj: Katedra anglického jazyka a literatúry
+			#link: /katedry/kaj
+			#nosearch
+		$kb: Katedra biológie
+			#link: /katedry/kb
+			#nosearch
+		$kch: Katedra chémie
+			#link: /katedry/kch
+			#nosearch: true
+		$kmi: Katedra matematiky a informatiky
+			#link: /katedry/kmi
+			#nosearch: true
+		$knj: Katedra nemeckého jazyka a literatúry
+			#link: /katedry/knj
+			#nosearch: true
+		$kps: Katedra pedagogických štúdií
+			#link: /katedry/kps
+			#nosearch: true
+		$kpvu: Katedra pedagogiky výtvarného umenia
+			#link: /katedry/kpvu
+			#nosearch: true
+		$ksj: Katedra slovenského jazyka a literatúry
+			#link: /katedry/ksj
+			#nosearch: true
+		$ksp: Katedra školskej pedagogiky
+			#link: /katedry/ksp
+			#nosearch: true
+	@end-submenu
+
+$dekanat: Dekanát
+	@submenu
+		$vedenie: Vedenie fakulty
+			#type: articles
+			#en: management
+		$sekretariat-dekana: Sekretariát dekana fakulty
+			#en: deans-secretary
+		$studijne-oddelenie: Študijné oddelenie
+		$oddelenie-veda-vyskum: Oddelenie pre vedu, výskum a zahraničné vzťahy
+		$personalne-oddelenie: Personálne oddelenie
+			#sublabel: a Mzdová učtáreň
+			#en: personal-department
+		$ekonomicke-oddelenie: Ekonomické oddelenie
+			#en: economic-department
+	@end-submenu
+
+$uradna-vyveska: Úradná výveska
+	@submenu
+		$legislativa-normy: Legislatíva a základné normy
+			#en: legislation-standards
+		$volne-miesta: Voľné pracovné miesta
+	@end-submenu
+
+$covid: <b>Opatrenia súvisiace s pandémiou koronavírusu</b>
+	#type: articles
+
+$vnutorny-system-kvality: Vnútorný systém kvality
+	#type: articles
+	@submenu
+		$dokumenty-smernice: Dokumety, smernice
+		$studenti: Študenti a absolventi – kvalita výučby
+		$absolventi: Absolventi – uplatniteľnosť
+		$zamestnanci: Zamestnanci – spokojnosť
+	@end-submenu
+
+---
+
+$uchadzac: Informácie pre uchádzačov
+	@submenu
+		$dokumenty: Dokumenty
+		$prijimacie-konanie: Prijímacie konanie
+		$poziadavky
+		$vseobecne-podmienky
+		$podmienky-prijatia
+		$doktorandske-temy
+		;$otvarane-programy: Otvárané študijné programy
+		$studijne-programy: Akreditované študijné programy
+		$kompetencie-absolventa
+		$elektronicka-prihlaska: Elektronická prihláška
+		;$vysledky: Výsledky prijímacích skúšok
+			;#link: /uchadzac?prijimacie-konanie&vysledky
+			;#nosearch
+		$zapisy: Podklady k zápisom
+		---
+		$dps: Doplňujúce pedagogické štúdium
+		$kontinualne-vzdelavanie: Kontinuálne vzdelávanie
+		$rozsirujuce-studium: Rozširujúce štúdium
+		$rigorozne-konanie: Rigorózne konanie
+		---
+		$uplatnenie-absolventa: Uplatnenie absolventa
+	@end-submenu
+
+$student: Informácie pre študentov
+	@submenu
+		$dokumenty: Dokumenty
+		$harmonogram-studia: Časové harmonogramy štúdia
+		$rozvrhy: Rozvrhy hodín
+		$studijne-programy: Študijné programy
+		$studijne-oddelenie: Študijné oddelenie
+		$studijni-poradcovia: Študijní poradcovia
+		$evidencia-zaverecnych-prac: Evidencia záverečných prác
+		---
+		$zapisy: Podklady k zápisom
+		$dps: Doplňujúce pedagogické štúdium
+		$rigorozne-konanie: Rigorózne konanie
+		$skolne: Školné
+		$stipendia: Štipendiá
+		$ubytovanie: Ubytovanie
+			#link: /ubytovanie
+		---
+		$e-kniznica: Elektronická knižnica
+			#sublabel: učebné texty a on‑line kurzy
+			#link: /veda-vyskum?e-kniznica#online
+		$erasmus: Erasmus+
+			#sublabel: mobilita študentov
+			;#link: /medzinarodne-vztahy?erasmus&studenti
+			#https: www.truni.sk/mobilita-studentov
+		$rukovat-prace: Rukoväť na písanie záverečných prác
+	@end-submenu
+
+$zamestnanec: Informácie pre zamestnancov
+	@submenu
+		$koncepcne-materialy: Koncepčné materiály
+		---
+		$erasmus: Erasmus+
+			#sublabel: mobilita pracovníkov
+			;#link: /medzinarodne-vztahy?erasmus&pracovnici
+			#https: www.truni.sk/mobilita-pracovnikov-vs
+		$e-kniznica: Elektronická knižnica
+			#sublabel: zborníky z konferencií
+			#link: /veda-vyskum?e-kniznica#zborniky
+		;TODO – časom odstrániť všetky položky Acta Facultatis z ponúk,
+		;ale zachovať funkčnosť odkazu veda-vyskum?acta-facultatis
+		$acta-facultatis: Acta Facultatis
+			#link: /veda-vyskum?acta-facultatis
+		$see: Scientia et Eruditio
+			#link: /veda-vyskum?see
+	@end-submenu
+
+$verejnost: Informácie pre verejnosť
+	@submenu
+		$poskytovanie-informacii: Poskytovanie informácií
+		$volne-miesta: Voľné pracovné miesta
+		$hodnotenie-kvality: Výsledky fakulty
+	@end-submenu
+
+$absolvent: Absolventi fakulty
+	@submenu
+		$kps: Katedra pedagogických štúdií
+			#link: /katedry/kps/absolvent
+			#nosearch: true
+		$kpvu: Katedra pedagogiky výtvarného umenia
+			#link: /katedry/kpvu/absolvent
+			#nosearch: true
+		$ksj: Katedra slovenského jazyka a literatúry
+			#link: /katedry/ksj/absolvent
+			#nosearch: true
+	@end-submenu
+
+---
+
+$veda-vyskum: Veda a výskum
+	@submenu
+		$vedecka-rada: Vedecká rada
+			#type: articles
+			#en: scientific-board
+		$koncepcne-materialy: Koncepčné materiály
+			#type: articles
+			#en: fundamental-documents
+		---
+		$e-kniznica: Elektronická knižnica
+			#en: e‑books
+		$konferencie-seminare: Konferencie a semináre
+			#type: articles
+			#en: conferences-workshops
+		---
+		$acta-facultatis: Acta Facultatis
+			#type: articles
+			#en: acta-facultatis
+			;todo – #hidden
+		$jolace: Journal of Language and Cultural Education
+			#link: /katedry/kaj/english/science-research?jolace
+			#nosearch: true
+		$jop: Journal of Pedagogy
+			#link: /veda-vyskum?projekty-casopisy&jop
+			#nosearch: true
+		$juvpae: Juvenilia Paedagogica
+			#link: /katedry/kps/veda-vyskum?juvenilia-paedagogica
+			#nosearch: true
+		$see: Scientia et Eruditio
+			#type: articles
+			#en: see
+			;#hidden
+		$projekty-casopisy: Projekty a časopisy
+			#type: articles
+			#en: projects-journals
+		---
+		$oddelenie-veda-vyskum: Kontakt
+			#en: department-science-research
+
+		$fancovicova-navody-cvicenia-biologia
+			#hidden
+	@end-submenu
+
+$rozvoj-vztahy: Rozvoj a vzťahy
+	@submenu
+		$partneri-spolupraca: Partneri a spolupráca
+			#type: articles
+			#en: partners-cooperation
+		$aktivity-projekty: Rozvojové aktivity a projekty
+			#type: articles
+			#en: activities-projects
+	@end-submenu
+
+$medzinarodne-vztahy: Medzinárodné vzťahy
+	@submenu
+		$erasmus: Erasmus+
+		;$erasmus-dokumenty: Základné dokumenty
+			;;#link: medzinarodne-vztahy?erasmus&dokumenty
+			;#https: www.truni.sk/zakladne-dokumenty
+			;#nosearch: true
+		;$erasmus-studenti: Mobilita študentov
+			;;#link: medzinarodne-vztahy?erasmus&studenti
+			;#https: www.truni.sk/mobilita-studentov
+			;#nosearch: true
+		;$erasmus-pracovnici: Mobilita pracovníkov
+			;;#link: medzinarodne-vztahy?erasmus&pracovnici
+			;#https: www.truni.sk/mobilita-pracovnikov-vs
+			;#nosearch: true
+		$medzivz-kontakt: Kontakt
+			#link: veda-vyskum?oddelenie-veda-vyskum
+			#nosearch: true
+	@end-submenu
+
+---
+
+$kontakt: Kontakt
+
+@end
+
+
+@left-menu-after
+
+* 
+
+$harmonogram: Časové harmonogramy štúdia
+	#link: /student?harmonogram-studia
+	#card: design/harmonogram-studia.png
+	#class: center-card
+	#nosearch
+
+$rozvrhy-card: Rozvrhy hodín
+	#link: /student?rozvrhy
+	#card: design/rozvrhy-hodin.png
+	#class: center-card
+	#nosearch
+
+* 
+
+$programy-card: Študijné programy
+	#link: /student?studijne-programy
+	#card: design/study-programmes.png
+	#class: center-card
+	#nosearch
+
+$prijimacie-card: Informácie o prijímacom konaní
+	#link: /uchadzac?prijimacie-konanie&informacie
+	#card: design/info-applicant.png
+	#class: center-card
+	#nosearch
+
+@end

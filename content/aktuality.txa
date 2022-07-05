@@ -1,0 +1,127 @@
+
+#Titulok: Aktuality
+Aktuality
+===
+
+
+#tables:notes
+	>|{RSS kanál fakulty|link:/rss.xml}
+
+
+;#Modul(TopmostAnnounce, expires:1. 4. 2021, text:Predĺžili sme termín na podanie, text:prihlášok do 31. marca 2021., text:{Viac informácií nájdete tu.|uchadzac?prijimacie-konanie&informacie})
+
+;#Modul(TopmostAnnounce, expires:1. 7. 2021,
+;text:Práve prebieha 2. kolo prijímacieho konania.,
+;text: Termín podania prihlášok je do 30. júna 2021.,
+;text:{Viac informácií nájdete tu.|uchadzac?prijimacie-konanie&informacie-2})
+
+;#Modul(TopmostAnnounce, expires:10. 2. 2021, head:Informácia, text:Dňa 10. 2. 2021 sa koná, text:{Virtuálny deň otvorených dverí.|aktuality?dod-2021})
+;uchadzac?dod-2020
+
+
+; =================================================================================
+
+
+#Karta: Univerzita
+#Presmerovanie karty: aktuality-univerzita
+
+#Karta: Fakulta
+#Alias karty: fakulta
+
+#Karta: Katedra
+#Presmerovanie karty: aktuality-katedra
+
+#Pod kartami
+
+Predvolené možnosti: zoznam:zobrazVopred, zoznam:nahraďZlomyNadpisu
+Predvolená päta: #Modul(SocialNetworks, noFBComments, fbAppID:1393658634223854)
+
+
+; ---- Pripnuté články ---- ;
+
+
+;Nadpis: Opatrenia súvisiace s pandémiou koronavírusu
+;Identifikátor: covid
+;Dátum: 3. 9. 2020
+;Aktualizované: 20. 4. 2021
+;Abstrakt: Na tejto stránke zverejňujeme aktuálne informácie o opatreniach súvisiacich s pandémiou koronavírusu.
+;Možnosti: zoznam:pripnuté
+;; zoznam:dôležité
+;Odkaz: /covid
+;Obsah: Tento článok je odkazom na iný obsah. Kliknutím na názov článku prejdete na skutočný obsah.
+
+
+;Nadpis: Nestihli ste náš Deň otvorených dverí?
+;Identifikátor: dod-2021
+;Dátum: 8. 3. 2021
+;Možnosti: zoznam:skryUkážku
+;Odkaz: videozaznamy?dod-2021
+;Možnosti: zoznam:pripnuté
+;Obsah: Tento článok je odkazom na iný obsah. Kliknutím na názov článku prejdete na skutočný obsah.
+
+
+...
+
+; ---- Články ---- ;
+
+
+Presmerovanie:student?studijne-oddelenie-zatvorene
+
+
+Nadpis: Oznam o promóciách
+Identifikátor: promocie
+Dátum: 23. 6. 2022
+;Platnosť: 
+Obsah: začiatok-->
+
+*Absolventi ~magisterského~ štúdia za akademický rok 2021//2022, ktorí ukončili štúdium*
+
+*~od 13. júna do 30. júna 2022 vrátane~*
+
+*Absolventi ~bakalárskeho~ štúdia za akademický rok 2021//2022, ktorí ukončili štúdium*
+
+*~od 16. mája do 30. júna vrátane~*
+
+\
+
+na základe rozhodnutia vedenia fakulty sa budú konať promócie
+
+*~dňa 11. júla 2022~*
+
+*v amfiteátri Trnava,*
+
+Počet hostí je neobmedzený.
+
+*Pre absolventov budú promócie záväzné.*
+
+*Neúčasť* na promócii je treba potvrdiť *~do 30. 6. 2022~*
+
+na mail
+
+magisterské štúdia – {viera.krajcovicova@truni|mailto:viera.krajcovicova@truni}.sk
+
+*•Bakalárske štúdium denné AjL, externé SPV, PEP,AJL• – {pavlina.santava@truni.sk|mailto:pavlina.santava@truni.sk}*
+
+*Bakalárske štúdium denné PEP, AVU, SPV – {andrea.dokova@truni.sk|mailto:andrea.dokova@truni.sk}*
+
+*≈Bakalárske štúdium denné kombinácie učiteľstva – {lubica.cepkova@truni.sk|maito:lubica.cepkova@truni.sk}≈*
+
+*~Presný rozpis a čas bude stanovený podľa počtu absolventov, dňa 4. 7. 2022.~*
+
+*Pre absolventov budú promócie záväzné. Absolventi, ktorí sa nezúčastnia promócii si môžu diplom vybrať od 13. 7. 2022 v čase od 9:00 do 11:00 hod. Vopred sa ohláste na vyššie uvedený* mail u študijnej referentky.
+
+\
+
+<--koniec
+
+
+
+; =================================================================================
+
+
+#akJeZoznamPrázdny
+\
+
+Nie sú k dispozícii žiadne aktuality.
+#akJeZoznamPrázdny
+

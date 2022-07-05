@@ -1,0 +1,538 @@
+
+$schemas: zoznam schém
+	#pozíciaNaKatedre: start-->
+
+		label: sekretariát
+
+			values: $$this##this
+			match: /^sekretariát$/
+			set–en: Secretariat
+			stop
+
+			default
+			go: vedúci
+
+
+		; Vedúci katedry
+		label: vedúci
+
+			values: $$this#gender $$this##this
+
+			match: /^male vedúci katedry$/
+			go: vedúciEN
+
+			match: /^female vedúca katedry$/
+			go: vedúciEN
+
+			match: /^male vedúca katedry$/
+			set: vedúci katedry
+			go: vedúciEN
+
+			match: /^female vedúci katedry$/
+			set: vedúca katedry
+			go: vedúciEN
+
+			default
+			go: poverenýVedením
+
+		label: vedúciEN
+			default
+			set–en: Head of Department
+			stop
+
+
+		; Poverený vedením katedry
+		label: poverenýVedením
+
+			values: $$this#gender $$this##this
+
+			match: /^male poverený vedením katedry$/
+			go: poverenýVedenímEN
+
+			match: /^female poverená vedením katedry$/
+			go: poverenýVedenímEN
+
+			match: /^male poverená vedením katedry$/
+			set: poverený vedením katedry
+			go: poverenýVedenímEN
+
+			match: /^female poverený vedením katedry$/
+			set: poverená vedením katedry
+			go: poverenýVedenímEN
+
+			default
+			go: tajomník
+
+		label: poverenýVedenímEN
+			default
+			set–en: Charge of the Department
+			stop
+
+
+		; Tajomník katedry
+		label: tajomník
+
+			values: $$this#gender $$this##this
+
+			match: /^male tajomník katedry$/
+			go: tajomníkEN
+
+			match: /^female tajomníčka katedry$/
+			go: tajomníkEN
+
+			match: /^male tajomníčka katedry$/
+			set: tajomník katedry
+			go: tajomníkEN
+
+			match: /^female tajomník katedry$/
+			set: tajomníčka katedry
+			go: tajomníkEN
+
+			default
+			go: študijnýPoradcaČoho
+
+		label: tajomníkEN
+			default
+			set–en: Clerk of Department
+			stop
+
+
+		; Študijný poradca (…)
+		label: študijnýPoradcaČoho
+
+			match: /^male (študijný|študijná) +(po(?:&shy;)?rad(?:&shy;)?ca|po(?:&shy;)?rad(?:&shy;)?ky(?:&shy;)?ňa) +(.+)$/
+			set: študijný po&shy;rad&shy;ca $3
+			go: študijnýPoradcaČohoEN
+
+			match: /^female (študijný|študijná) +(po(?:&shy;)?rad(?:&shy;)?ca|po(?:&shy;)?rad(?:&shy;)?ky(?:&shy;)?ňa) +(.+)$/
+			set: študijná po&shy;rad&shy;ky&shy;ňa $3
+			go: študijnýPoradcaČohoEN
+
+			default
+			go: študijnýPoradca
+
+		label: študijnýPoradcaČohoEN
+			match: /^(male|female) (študijný|študijná) +(po(?:&shy;)?rad(?:&shy;)?ca|po(?:&shy;)?rad(?:&shy;)?ky(?:&shy;)?ňa) +(.+)$/
+			set–en: Study Advisor (details in Slovak: $4)
+			stop
+
+
+		; Študijný poradca
+		label: študijnýPoradca
+
+			match: /^male (študijný|študijná) +(po(?:&shy;)?rad(?:&shy;)?ca|po(?:&shy;)?rad(?:&shy;)?ky(?:&shy;)?ňa)$/
+			set: študijný po&shy;rad&shy;ca
+			go: študijnýPoradcaEN
+
+			match: /^female (študijný|študijná) +(po(?:&shy;)?rad(?:&shy;)?ca|po(?:&shy;)?rad(?:&shy;)?ky(?:&shy;)?ňa)$/
+			set: študijná po&shy;rad&shy;ky&shy;ňa
+			go: študijnýPoradcaEN
+
+			default
+			go: správcaMais
+
+		label: študijnýPoradcaEN
+			default
+			set–en: Study Advisor
+			stop
+
+
+		; Katedrový správca systému MAIS
+		label: správcaMais
+
+			match: /^male.*(správca|správkyňa).*MAISu?.*$/
+			set: katedrový správ­ca systému MAIS
+			go: správcaMaisEN
+
+			match: /^female.*(správca|správkyňa).*MAISu?.*$/
+			set: katedrová správky­ňa systému MAIS
+			go: správcaMaisEN
+
+			default
+			go: koordinátorElearning
+
+		label: správcaMaisEN
+			default
+			set–en: MAIS Administrator
+			stop
+
+
+		; Katedrový koordinátor pre e-learning
+		label: koordinátorElearning
+
+			match: /^male.*(koordinátor|koordinátorka).*e(?:‑|--?)learning.*$/
+			set: katedrový koordi­nátor pre e‑learning
+			go: koordinátorElearningEN
+
+			match: /^female.*(koordinátor|koordinátorka).*e(?:‑|--?)learning.*$/
+			set: katedrová koordi­nátorka pre e‑learning
+			go: koordinátorElearningEN
+
+			default
+			go: správcaEzp
+
+		label: koordinátorElearningEN
+			default
+			set–en: E‑learning Coordinator
+			stop
+
+
+		; Katedrový správca systému EZP
+		label: správcaEzp
+
+			match: /^male.*(správca|správkyňa).*EZP?.*$/
+			set: katedrový správ­ca systému EZP
+			go: správcaEzpEN
+
+			match: /^female.*(správca|správkyňa).*EZP?.*$/
+			set: katedrová správky­ňa systému EZP
+			go: správcaEzpEN
+
+			default
+			go: správcaWebu
+
+		label: správcaEzpEN
+			default
+			set–en: EZP Administrator
+			stop
+
+
+		; Katedrový správca webových stránok
+		label: správcaWebu
+
+			match: /^male.*(správca|správkyňa).*webu?.*$/
+			set: katedrový správ­ca webových stránok
+			go: správcaWebEN
+
+			match: /^female.*(správca|správkyňa).*webu?.*$/
+			set: katedrová správky­ňa webových stránok
+			go: správcaWebEN
+
+			default
+			go: správcaKnižnice
+
+		label: správcaWebEN
+			default
+			set–en: Webmaster
+			stop
+
+		; Katedrový správca knižnice
+		label: správcaKnižnice
+
+			match: /^male.*(správca|správkyňa).*knižnic.*$/
+			set: katedrový správ­ca knižnice
+			go: správcaKnižniceEN
+
+			match: /^female.*(správca|správkyňa).*knižnic.*$/
+			set: katedrová správky­ňa knižnice
+			go: správcaKnižniceEN
+
+			default
+			go: správcaMoodle
+
+		label: správcaKnižniceEN
+			default
+			set–en: Librarian
+			stop
+
+
+		; Katedrový správca systému Moodle
+		label: správcaMoodle
+
+			match: /^male.*(správca|správkyňa).*Moodl[aeiou]?m?.*$/
+			set: katedrový správ­ca systému Moodle
+			go: správcaMoodleEN
+
+			match: /^female.*(správca|správkyňa).*Moodl[aeiou]?m??.*$/
+			set: katedrová správky­ňa systému Moodle
+			go: správcaMoodleEN
+
+			default
+			go: vedúciOddelenia
+
+		label: správcaMoodleEN
+			default
+			set–en: Moodle Administrator
+			stop
+
+
+		; Vedúci oddelenia (…)
+		label: vedúciOddelenia
+
+			values: $$this#gender $$this##this
+
+			match: /^male vedúci oddelenia(.*)$/
+			go: vedúciOddeleniaEN
+
+			match: /^female vedúca oddelenia(.*)$/
+			go: vedúciOddeleniaEN
+
+			match: /^male vedúca oddelenia(.*)$/
+			set: vedúci oddelenia$1
+			go: vedúciOddeleniaEN
+
+			match: /^female vedúci oddelenia(.*)$/
+			set: vedúca oddelenia$1
+			go: vedúciOddeleniaEN
+
+			default
+			go: zástupca
+
+		label: vedúciOddeleniaEN
+			default
+			stop
+
+
+		; Zástupca vedúceho katedry
+		label: zástupca
+
+			values: $$this#gender $$this##this
+
+			match: /^male zástupca (vedúceho|vedúcej) katedry$/
+			go: zástupca2
+
+			match: /^female zástupkyňa (vedúceho|vedúcej) katedry$/
+			go: zástupca2
+
+			match: /^male zástupkyňa (vedúceho|vedúcej) katedry$/
+			set: zástupca $1 katedry
+			go: zástupca2
+
+			match: /^female zástupca (vedúceho|vedúcej) katedry$/
+			set: zástupkyňa $1 katedry
+			go: zástupca2
+
+			default
+			go: neznáme
+
+		label: zástupca2
+
+			values: «$pracovisko#vedúciKatedry»«$pracovisko#poverenýVedením»
+			match: /«»«.+»/
+			go: zástupca3
+
+			values: $$this##this $$pracovisko#vedúciKatedry#gender
+
+			match: /^(zástupca|zástupkyňa) vedúceho katedry male$/
+			go: zástupcaEN
+
+			match: /^(zástupca|zástupkyňa) vedúcej katedry female$/
+			go: zástupcaEN
+
+			match: /^(zástupca|zástupkyňa) vedúcej katedry male$/
+			set: $1 vedúceho katedry
+			go: zástupcaEN
+
+			match: /^(zástupca|zástupkyňa) vedúceho katedry female$/
+			set: $1 vedúcej katedry
+			go: zástupcaEN
+
+			match: /^(zástupca|zástupkyňa) (vedúceho|vedúcej) katedry $/
+			go: zástupcaEN
+
+			default
+			go: neznáme
+
+		label: zástupca3
+
+			values: $$this##this $$pracovisko#poverenýVedením#gender
+
+			match: /^(zástupca|zástupkyňa) vedúceho katedry male$/
+			set: $1 povere­né­ho vedením ka­ted­ry
+			go: zástupcaEN
+
+			match: /^(zástupca|zástupkyňa) vedúcej katedry female$/
+			set: $1 povere­nej vedením ka­ted­ry
+			go: zástupcaEN
+
+			match: /^(zástupca|zástupkyňa) vedúcej katedry male$/
+			set: $1 povere­né­ho vedením ka­ted­ry
+			go: zástupcaEN
+
+			match: /^(zástupca|zástupkyňa) vedúceho katedry female$/
+			set: $1 povere­nej vedením ka­ted­ry
+			go: zástupcaEN
+
+			default
+			go: neznáme
+
+		label: zástupcaEN
+			default
+			set–en: Deputy Head of Department
+			stop
+
+
+		label: neznáme
+		default
+			set: <strong>«neznáme»</strong>
+			set–en: <strong>«unknown»</strong>
+			log: neznáme: $0 ($this, ##this)
+	<--end
+
+	#konzultácie: start-->
+		values: $$this##this
+		match: /^(.*)pondelok(.*)$/
+		set–en: $1Monday$2
+
+		values: $$this##this
+		match: /^(.*)utorok(.*)$/
+		set–en: $1Tuesday$2
+
+		values: $$this##this
+		match: /^(.*)streda(.*)$/
+		set–en: $1Wenesday$2
+
+		values: $$this##this
+		match: /^(.*)štvrtok(.*)$/
+		set–en: $1Thursday$2
+
+		values: $$this##this
+		match: /^(.*)piatok(.*)$/
+		set–en: $1Friday$2
+
+		values: $$this##this
+		match: /^(.*)sobota(.*)$/
+		set–en: $1Saturday$2
+
+		values: $$this##this
+		match: /^(.*)nedeľa(.*)$/
+		set–en: $1Sunday$2
+	<--end
+
+	#klapka: start-->
+		values: $$this##this
+		match: /^[0-9]{3}$/
+		; set: {$0|tel:+421-33-5939-$0}
+		set: <a href="tel:+421-33-5939-$0" rel="nofollow">$0</a>
+	<--end
+
+
+$fakulta: Pedagogická fakulta
+	;$fakulta–en: Faculty of Education
+
+
+	#prijímacieKonanieKolo: Prvé
+	;#prijímacieKonanieKolo: Druhé
+
+	;;#koniecSemestra: 19. 12. 2016
+	#akademickýRok: 2021//2022
+	#semester: zimný
+	#semester–en: winter
+	;#semester: letný
+	;#semester–en: summer
+
+	#rozvrhyLetoZima: 10. 12. 2021
+	#rozvrhyAkademickýRok: 2021//2022
+
+	#konzultácieSkončili: ~/Platnosť konzultačných hodín sa skončila./~
+	#konzultácieSkončili–en: ~/Tutorial teaching has expired./~
+
+	#študijnýmPoradcomM: študijným poradcom
+	#študijnýmPoradcomF: študijnou poradkyňou
+
+	#gestoromM: gestorom
+	#gestoromF: gestorkou
+
+	#vedúciOddeleniaM: Vedúci oddelenia
+	#vedúciOddeleniaF: Vedúca oddelenia
+
+
+	#dekanVypisuje: Dekanka Pedagogickej fakulty Trnavskej univerzity v Trnave, v zmysle ustanovení § 77, zákona č. 131//2002 Z. z. o vysokých školách a o zmene a doplnení niektorých zákonov, vypisuje výberové konanie na obsadenie funkčného miesta vysokoškolského učiteľa:
+	;Vybrať z:
+	;funkčných miest vysokoškolských učiteľov:
+	;funkčného miesta lektora:
+	;funkčných miest vysokoškolských učiteľov a funkcií vedúcich katedier:
+
+	;#dekanVypisuje–en: *~Sorry, this text is not currently translated.~*\Dekanka Pedagogickej fakulty Trnavskej univerzity v Trnave, v zmysle ustanovení § 77, zákona č. 131//2002 Z. z. o vysokých školách a o zmene a doplnení niektorých zákonov v znení neskorších predpisov v súlade s § 15 ods. 1 písm. c) tohto zákona, vypisuje výberové konanie na obsadenie nasledujúcich miest:
+
+	#dekanVypisuje–en: *~Sorry, this text is not currently translated.~*\Dekanka Pedagogickej fakulty Trnavskej univerzity v Trnave, v zmysle ustanovení § 77, zákona č. 131//2002 Z. z. o vysokých školách a o zmene a doplnení niektorých zákonov, vypisuje výberové konanie na obsadenie funkčných miest vysokoškolských učiteľov a funkcií vedúcich katedier:
+
+	; Pre „výberové konania“
+	#kvalifikačnéPožiadavky: Kvalifikačné a odborné požiadavky:
+	#kvalifikačnéPožiadavky–en: Eligibility and Professional Requirements:
+
+	; Pre „voľné miesta“
+	#kvalifikačnéKritériá: Požadované kvalifikačné predpoklady a kritériá:
+	#kvalifikačnéKritériá–en: Requirements:
+
+
+; Vedenie:
+; ========
+
+
+$prodekani
+	#idFunkcieVoVedeni: prodekani
+	#názovFunkcieVoVedení: Prodekani
+	#názovFunkcieVoVedení–en: Vice--deans
+	#pozíciaVoVedení:
+	;prodekani – prázdne (nie je článok)
+	#pozíciaVoVedení–en:
+	;Vice--deans – empty (no article)
+
+
+	$user
+		#celéMenoATituly: Sample User
+		#adresaProfilu: katedry//kmi//pracovnici?user
+		; #adresaProfilu–en: ..//katedry//ksp//pracovnici?user
+		#idFunkcieVoVedeni: prodekan
+		#názovFunkcieVoVedení: Prodekan pre vedu&#44; výskum a umeleckú činnosť
+		#názovFunkcieVoVedení–en: Vice--dean for Science, Research and Art Activities
+		#pozíciaVoVedení: {prodekan pre vedu&#44;\výskum a umeleckú činnosť|/fakulta?vedenie&prodekan-veda-vyskum-umelecka-cinnost}
+		#pozíciaVoVedení–en: {Vice--dean for Science,\Research and Art Activities|/english/faculty?management&vice-dean-science-research-art-activities}
+		#miestnosť[]: —
+		#klapka[]: —
+		#email[]: sample.user@truni.sk
+		#stránkovéHodiny[]: —
+		#stránkovéHodiny–en[]: —
+		;#typFotoVedenia:png
+
+
+; Rôzne oddelenia:
+; ================
+
+	; $user: Sample user
+		; #titulyPred: Ing.
+		; #gender: female
+		; 
+		; #pozícia[]: {vedúca študijného oddelenia|/student?studijne-oddelenie}
+		; #pozícia–en[]: {Head of Study Department|/english/student?study-office}
+		; #miestnosť[]: —
+		; #klapka[]: —
+		; #email[]: sample.user@truni.sk
+
+
+; Sekretariáty katedier:
+; ======================
+
+
+	; $user: Sample User
+		; #titulyPred: Mgr.
+		; #gender: female
+		; #rodnéPriezvisko[]: UsedToBe
+		; 
+		; #pozíciaNaKatedre[]: sekretariát
+		; #miestnosť[]: —
+		; #klapka[]: —
+		; #email[]: sample.user@truni.sk
+
+
+; Ďalšie:
+; =======
+
+	; $user: Sample User
+		; #titulyPred: Ing.
+		; #gender: male
+		; 
+		; #pozícia[]: fakultný informatik
+		; #pozícia–en[]: computer engineer
+		; 	; of the faculty
+		; #pozícia[]: správca webového obsahu
+		; #pozícia–en[]: webmaster
+		; #miestnosť[]: —
+		; #klapka[]: —
+		; #email[]: sample.user@truni.sk
+
+
+; ---===---
+
+	; Others…

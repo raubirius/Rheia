@@ -1,0 +1,34 @@
+\
+
+;#paragraph:big
+;||code()|*Poznámka:* V letnom semestri akademického roka 2020//2021 prebiehali konzultácie *on‑line formou!*\Je pravdepodobné, že podobná situácia vznikne aj počas tohto semestra.|
+
+||code()|*Poznámka:* Konzultácie prebiehajú prednostne on‑line formou…|
+
+\
+
+#paragraph:big
+||Konzultácie si s vyučujúcim dohodnite vopred (e‑mailom).
+
+\
+
+#style: div.page-content table.shaded tr th:first-child { width: 120px; }
+#Šablóna: pracovnik-makra
+#Šablóna: konzultacie-oddelovac,
+*	Meno, priezvisko, tituly	#	Konzultačné hodiny ($fakulta#semester semester $fakulta#akademickýRok)*
+makro(pozíciaNaKatedreKonzultácie,vedúciKatedry)
+makro(pozíciaNaKatedreKonzultácie,poverenýVedením)
+makro(pozíciaNaKatedreKonzultácie,zástupcaVedúceho)
+makro(pozíciaNaKatedreKonzultácie,tajomník)
+#Šablóna: konzultacie-oddelovac,
+makro(pozíciaNaKatedreKonzultácie,študijnýPoradca)
+makro(konzultáciePoradcu,$pracovisko#študijnýPoradca)
+makro(pozíciaNaKatedreKonzultácie,študijnýPoradcaA)
+makro(konzultáciePoradcu,$pracovisko#študijnýPoradcaA)
+makro(pozíciaNaKatedreKonzultácie,študijnýPoradcaB)
+makro(konzultáciePoradcu,$pracovisko#študijnýPoradcaB)
+makro(pozíciaNaKatedreKonzultácie,študijnýPoradcaC)
+makro(konzultáciePoradcu,$pracovisko#študijnýPoradcaC)
+makro(pozíciaNaKatedreKonzultácie,študijnýPoradcaD)
+makro(konzultáciePoradcu,$pracovisko#študijnýPoradcaD)
+makro(pozíciaNaKatedreKonzultácie,správcaMais)

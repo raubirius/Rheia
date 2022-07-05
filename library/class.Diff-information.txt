@@ -1,0 +1,122 @@
+
+Source: http://code.stephenmorley.org/php/diff-implementation/
+
+Comparing strings and files
+---------------------------
+
+The compare function is used to compare two strings and determine the differences
+between them on a line-by-line basis. Setting the optional third parameter to
+true will change the comparison to be character-by-character. For example:
+
+	// include the Diff class
+	require_once './class.Diff.php';
+	
+	// compare two strings line by line
+	$diff = Diff::compare("line1\nline2", "lineA\nlineB");
+	
+	// compare two strings character by character
+	$diff = Diff::compare('abcmnz', 'amnxyz', true);
+
+The compareFiles function behaves identically, except that its first two
+parameters are paths to files:
+
+	// include the Diff class
+	require_once './class.Diff.php';
+	
+	// compare two files line by line
+	$diff = Diff::compareFiles('old.txt', 'new.txt');
+	
+	// compare two files character by character
+	$diff = Diff::compareFiles('old.bin', 'new.bin', true);
+
+
+The differences array
+---------------------
+
+The result of calling the compare and compareFiles functions is an array. Each
+value in the array is itself an array containing two values. The first value is
+a line (or character, if the third parameter was set to true) from one of the
+strings or files being compared. The second value is one of the following three
+constants:
+
+	Constant	Meaning
+	Diff::UNMODIFIED	The line or character is present in both strings or files
+	Diff::DELETED	The line or character is present only in the first string or file
+	Diff::INSERTED	The line or character is present only in the second string or file
+	Output functions
+
+The Diff class includes three output functions, which cover many use cases and
+often mean you will not need to process the differences array directly.
+
+The toString function returns a string representation of the differences. The
+first parameter is the differences array, and the optional second parameter is
+the separator to use between lines of the output (by default, the newline
+character). For example:
+
+	// include the Diff class
+	require_once './class.Diff.php';
+	
+	// output the result of comparing two files as plain text
+	echo Diff::toString(Diff::compareFiles('old.txt', 'new.txt'));
+
+Each line in the resulting string is a line (or character) from one of the
+strings or files being compared, prefixed by two spaces, a minus sign and
+a space, or a plus sign and a space, indicating which string or file contained
+the lines. For example:
+
+	  An unmodified line
+	- A deleted line
+	+ An inserted line
+
+The toHTML function behaves similarly to the toString function, except that
+unmodified, deleted, and inserted lines are wrapped in span, del, and ins
+elements respectively, and the default separator is <br>. For example:
+
+	// include the Diff class
+	require_once './class.Diff.php';
+	
+	// output the result of comparing two files as HTML
+	echo Diff::toHTML(Diff::compareFiles('old.txt', 'new.txt'));
+
+The toTable function produces a more advanced output, as shown in the example
+at the top of this page. It returns the code for an HTML table whose columns
+contain the text of the two strings or files. Each row corresponds either to
+a set of lines that have not been modified, or to a set of lines that have been
+deleted from the first string or file and a set of lines that have been added
+to the second string or file. The function takes three parameters: the
+differences array, an amount of extra indentation to use in each line of the
+resulting HTML (which defaults to no extra indentation), and a separator (which
+defaults to <br>). For example:
+
+	// include the Diff class
+	require_once './class.Diff.php';
+
+	// output the result of comparing two files as a table
+	echo Diff::toTable(Diff::compareFiles('old.txt', 'new.txt'));
+	Styling the differences table
+
+The toTable function applies various classes to the code it returns, including
+the class ‘diff’ on the table element itself. At a minimum the table cells
+should be styled so that text appears at the top, as neighbouring cells may
+contain differing amounts of text. If the strings or files being compared are
+source code, white space should be preserved and the text should be shown in
+a monospace typeface. For example:
+
+	.diff td{
+	  vertical-align : top;
+	  white-space    : pre;
+	  white-space    : pre-wrap;
+	  font-family    : monospace;
+	}
+
+The two white-space rules are required for correct display in Internet Explorer
+prior to version 8 (see White space handling: from HTML 2.0 to CSS3 for more
+details). See Fixing browsers’ broken monospace font handling for some important
+considerations when using monospace typefaces.
+
+Each cell in the table has one of four classes: diffUnmodified, diffDeleted,
+diffInserted, and diffBlank. The class diffBlank is used for the empty tables
+cells that occur when a deletion does not have a corresponding insertion, or
+the other way round. In the example at the top of this page these classes are
+used to show deletions in red and insertions in green.
+

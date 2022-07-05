@@ -1,0 +1,93 @@
+
+; $rss: /rss.xml
+
+; $ical: /calendar.ics
+
+$site-info
+	#type: articles
+	#uri: /site-info
+	#en: site-info
+
+$site-map
+	#type: module
+	#en: site-map
+
+$site-counters
+	#type: module
+	#en: site-counters
+
+$site-downloads-counters
+	#type: module
+	#en: site-downloads-counters
+
+$interne-dokumenty
+	#type: articles
+	#en: internal-documents
+
+$telefonny-zoznam
+	#type: module
+	#en: phone-list
+
+$login
+	#en: login
+	#nosearch
+	#hidden
+
+$logout
+	#en: logout
+	#nosearch
+	#hidden
+
+$domov
+	#en: home
+	#nosearch
+	#hidden
+
+$zmena-hesla
+	#en: change-password
+	#nosearch
+	#hidden
+
+
+$index
+	#poster: poster
+	#en:
+
+$aktuality
+	#type: articles
+	#en: news
+
+; $aktuality-katedra
+; 	#en: news-department
+; 	#hidden
+; 
+; $uchadzac-univerzita
+; 	#highlight: uchadzac
+
+; $student-univerzita
+; 	#highlight: student
+
+
+; $fakulta: Fakulta
+; 	#alias: historia-poslanie
+; 	#en: faculty
+
+
+; $katedry
+; 	#en: departments
+
+; $dekanat
+; 	#alias: vedenie
+; 	#en: deans-office
+
+; $uradna-vyveska
+; 	#alias: legislativa-normy
+; 	#en: official-noticeboard
+
+
+; $kontakt
+; 	#en: contact
+
+; $zasadne-dokumenty
+; 	#en: vital-documents
+

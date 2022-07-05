@@ -1,0 +1,8 @@
+
+#style: div.page-content table.blocks tr td { font-size: 12px; }
+#style: div.page-content table.blocks tr td li { font-size: 12px; }
+#tables:blocks
+	\/V súčasnosti sú údaje o konzultačných hodinách pracovníkov tejto katedry nedostupné.\Príčinou môže byť jeden z nasledujúcich dôvodov:/
+	-/platnosť konzultačných hodín výučbovej časti semestra sa skončila,/
+	-/zhromažďujeme údaje o konzultačných hodinách od všetkých pracovníkov./
+	>|\/správcovia/

@@ -1,0 +1,205 @@
+
+; # Modul(TopmostAnnounce, expires:1. 4. 2021, text:Predĺžili sme termín na podanie, text:prihlášok do 31. marca 2021., text:{Viac informácií nájdete tu.|uchadzac?prijimacie-konanie&informacie})
+
+
+#vccvotu:<a href="https://www.youtube.com/watch?v=Q7_GJfhtgHM" target="_blank">Všetko&#44; čo chcete vedieť o Trnavskej univerzite.</a>
+
+; # Modul(TopmostAnnounce, expires:1. 4. 2021, text:Predĺžili sme termín na podanie prihlášok do 31. marca 2021., text:{Viac informácií o prijímacom konaní nájdete tu.|uchadzac?prijimacie-konanie&informacie}, text:code(vccvotu))
+
+
+#Modul(TopmostAnnounce, expires:1. 4. 2022,
+text:Predĺžili sme {termín na podanie prihlášok|uchadzac?prijimacie-konanie&informacie} do 31. marca 2022.,
+text:Tešíme sa&#44; že sa stretneme na {Dni otvorených dverí|aktuality?dod-2022} 17. marca 2022.,
+text:{Viac informácií o prijímacom konaní nájdete tu.|uchadzac?prijimacie-konanie&informacie})
+
+
+; #Modul(TopmostAnnounce, expires:1. 7. 2021,
+; text:Práve prebieha 2. kolo prijímacieho konania.,
+; text: Termín podania prihlášok je do 30. júna 2021.,
+; text:{Viac informácií nájdete tu.|uchadzac?prijimacie-konanie&informacie-2})
+
+;#Modul(TopmostAnnounce, expires:10. 2. 2021, head:Informácia, text:Dňa 10. 2. 2021 sa koná, text:{Virtuálny deň otvorených dverí.|aktuality?dod-2021})
+;uchadzac?dod-2020
+
+
+#style:#openCapture
+
+div.article-preview
+{
+	width: 204px;
+	min-height: 320px;
+	background-color: rgba(136, 204, 68, 0.2);
+	float: left;
+	margin: 20px 0 0 20px;
+	padding: 5px 12px;
+}
+
+div.article-preview div h2
+{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+div.article-important
+{
+	background-color: rgba(136, 204, 68, 0.4);
+}
+
+div.article-preview a
+{
+	color: #462;
+}
+
+@media (max-width: 767px)
+{
+	div.article-preview
+	{
+		width: 100%;
+		min-height: initial;
+		margin: 5px 0px;
+	}
+}
+
+
+/*.panel-2col-bricks .panel-col-first
+{
+	/* border: 1px solid red; * /
+}
+
+.panel-2col-bricks .panel-col-last
+{
+	/* border: 1px solid green; * /
+}*/
+
+
+.pane-aggregator li
+{
+	list-style: none;
+	font-size: 14px!important;
+	margin: 0!important;
+	text-indent: -9px;
+}
+
+.pane-aggregator li:before
+{
+	content: "›";
+	padding-right: 4px;
+	font-weight: bold;
+}
+
+#closeCapture
+
+
+#code:#openCapture
+
+<div id="id-panel-2col-bricks">
+
+<div class="panel-2col-bricks clearfix" style=""><div class="panel-col-first" style="">
+
+#closeCapture
+
+
+
+#style:#openCapture
+
+p.dodframe
+{
+	background-color: rgba(128, 128, 128, 0.1);
+	margin-top: 20px;
+	margin-bottom: 0px;
+	padding: 18px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#closeCapture
+
+#paragraph:dodframe
+||» {Nestihli ste náš Deň otvorených dverí?|videozaznamy?dod-2021} «
+
+
+; ||{Dnes prerušujeme výučbu|aktuality?2022-02-16-prerusenie-vyucovania}
+; ===
+; 
+; ||{na znak protestu proti návrhu novely vysokoškolského zákona, ktorá obmedzuje akademické slobody|aktuality?2022-02-16-prerusenie-vyucovania}
+; 
+; ||{{img:parte-protest-proti-novele-vs-zakona.png}|aktuality?2022-02-16-prerusenie-vyucovania}
+; 
+; \
+
+
+#Modul(ArticlesSublist,end:12)
+
+
+#code:#openCapture
+
+<p style="text-align: right; margin: 30px;"><a href="aktuality">Archív…</a></p>
+
+<p class="big" style="text-align: center; font-weight: bold; margin-bottom: 50px;">code(vccvotu)code(br)<a href="https://www.youtube.com/watch?v=Q7_GJfhtgHM" target="_blank"><img src="image?informacie/YT-logo-2021.svgz" alt="YouTube logo" height="100px" style="padding-top: 30px" /></a></p>
+
+</div>
+
+<div class="panel-col-last" style="">
+
+#closeCapture
+
+
+; Facebook iframe was created using:
+; https://developers.facebook.com/docs/plugins/page-plugin
+
+; # javaScript:#openCapture
+; 
+; (function (d, s, id) {
+; 	var js, fjs = d.getElementsByTagName(s)[0];
+; 	if (d.getElementById(id)) return;
+; 	js = d.createElement(s); js.id = id;
+; 	js.src = "//connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v2.10";
+; 	fjs.parentNode.insertBefore(js, fjs);
+; }(document, 'script', 'facebook-jssdk'));
+; 
+; # closeCapture
+; 
+; # code:#openCapture
+; 
+; <div id="fb-root"></div>
+; 
+; <div class="fb-page" data-href="https://www.facebook.com/PedagogickaFakulta.TrnavskaUniverzita.Trnava" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/PedagogickaFakulta.TrnavskaUniverzita.Trnava" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/PedagogickaFakulta.TrnavskaUniverzita.Trnava">Pedagogická fakulta Trnavskej univerzity v Trnave</a></blockquote></div>
+
+
+#code:#openCapture
+
+	<div style="text-align:center;width:100%;margin-top:30px;"><iframe
+		src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPedagogickaFakulta.TrnavskaUniverzita.Trnava&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+		width="340" height="500" style="border:none;overflow:hidden;"
+		scrolling="no" frameborder="0" allowTransparency="true"></iframe></div>
+
+#closeCapture
+
+
+*Univerzitné oznamy*
+...
+
+#code:<div class="panel-pane pane-block pane-aggregator-feed-1 pane-aggregator"><div class="pane-content"><ul>
+
+#Modul(RSSSublist)
+
+#code:<p style="text-align: right; margin: 0px 30px 30px;"><a href="aktuality-univerzita">Viac…</a></p>
+#code:</ul></div></div>
+
+
+#code:#openCapture
+
+</div></div>
+
+</div>
+
+#closeCapture
+
+
+#onShow:#openCapture
+
+var twoColCopy = getElement('id-panel-2col-bricks').innerHTML;
+getElement('id-row-content').innerHTML = twoColCopy;
+// setClass('block-menu-block-2', 'hidden');
+
+#closeCapture

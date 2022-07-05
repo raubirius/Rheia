@@ -1,0 +1,45 @@
+
+pre.ccppCode
+{
+	width: 655px;
+
+	border: 1px dotted #a0a0a0;
+	background-color: #fffaf8;
+	overflow: auto;
+}
+
+span.ccppBlock span.number    { color:	#008080;	}
+span.ccppBlock span.string    { color:	#A00000;	}
+span.ccppBlock span.character { color:	#B00000;	}
+span.ccppBlock span.error     { color:	#FF0000;	}
+span.ccppBlock span.symbol    { color:	#A000A0;	}
+span.ccppBlock span.keyword1  { color:	#0000C0;	font-weight: bold; }
+span.ccppBlock span.keyword2  { color:	#0080E0;	}
+span.ccppBlock span.keyword3  { color:	#4080FF;	}
+span.ccppBlock span.primitive { color:	#0000F0;	}
+span.ccppBlock span.comment1  { color:	#30A060;	}
+span.ccppBlock span.comment2  { color:	#00A000;	font-weight: bold; }
+span.ccppBlock span.comment3  { color:	#8000E0;	}
+span.ccppBlock span.directive { color:	#000080;	}
+
+.codeTitle
+{
+	width: fit-content;
+
+	border: 1px solid #c0c0c0;
+	border-top-left-radius: 8px;
+	border-bottom: none;
+	background-color: #fffcfa;
+	overflow: auto;
+
+	margin-bottom: 0px;
+	font-size: 14px;
+	padding: 5px 11px;
+}
+
+.codeTitle + pre.ccppCode
+{
+	margin-top: 0px;
+	border-style: solid;
+	border-color: #c0c0c0;
+}

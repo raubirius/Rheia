@@ -1,0 +1,58 @@
+
+pre.javaCode
+{
+	width: 655px;
+
+	border: 1px dotted #a0a0a0;
+	background-color: #fffaf8;
+	overflow: auto;
+}
+
+span.javaScriptBlock span.number,
+span.javaBlock span.number    { color:	#008080;	}
+span.javaScriptBlock span.comment1,
+span.javaBlock span.string    { color:	#00A000;	}
+span.javaBlock span.character { color:	#008000;	}
+span.javaScriptBlock span.error,
+span.javaBlock span.error     { color:	#FF0000;	font-weight: bold; }
+span.javaScriptBlock span.symbol,
+span.javaBlock span.symbol    { color:	#A000A0;	font-weight: bold; }
+span.javaScriptBlock span.character,
+span.javaScriptBlock span.string,
+span.javaBlock span.keyword1  { color:	#B00000;	}
+span.javaScriptBlock span.primitive,
+span.javaBlock span.keyword2  { color:	#E08000;	}
+span.javaScriptBlock span.keyword3,
+span.javaBlock span.keyword3  { color:	#0080FF;	}
+span.javaScriptBlock span.keyword2,
+span.javaBlock span.primitive { color:	#F00000;	}
+span.javaScriptBlock span.reserved,
+span.javaBlock span.comment1  { color:	#3060A0;	}
+span.javaScriptBlock span.comment2,
+span.javaBlock span.comment2  { color:	#0000C0;	font-weight: bold; }
+span.javaScriptBlock span.comment3,
+span.javaBlock span.comment3  { color:	#E000E0;	}
+span.javaScriptBlock span.keyword1,
+span.javaBlock span.reserved  { color:	#0000E0;	}
+
+.codeTitle
+{
+	width: fit-content;
+
+	border: 1px solid #c0c0c0;
+	border-top-left-radius: 8px;
+	border-bottom: none;
+	background-color: #fffcfa;
+	overflow: auto;
+
+	margin-bottom: 0px;
+	font-size: 14px;
+	padding: 5px 11px;
+}
+
+.codeTitle + pre.javaCode
+{
+	margin-top: 0px;
+	border-style: solid;
+	border-color: #c0c0c0;
+}

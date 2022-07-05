@@ -1,0 +1,27 @@
+
+; #style: ol.alphaList { list-style-type: lower-alpha; }
+
+#style:#openCapture
+
+ol.alphaList
+{
+	counter-reset: orderedList;
+}
+
+ol.alphaList > li
+{
+	list-style: none;
+	position: relative;
+}
+
+ol.alphaList > li:before
+{
+	content: counter(orderedList, lower-alpha) ") ";
+	counter-increment: orderedList;
+
+	position: absolute;
+	display: inline-block;
+	left: -22px;
+}
+
+#closeCapture

@@ -1,0 +1,10 @@
+
+;#graynotice:Na našich stránkach sú dočasne zverejnené informácie z dvoch akreditačných spisov. Prostredníctvom nasledujúcich tlačidiel si môžete zvoliť, ktoré informácie potrebujete vidieť:
+
+||makro(buttonShowHide,Btn$1,$3)
+   
+makro(buttonShowHide,Btn$2,$4)
+
+#blok:code(buttonContent$1)|makro(buttonContentID,Btn$1)||display:none
+
+#blok:code(buttonContent$2)|makro(buttonContentID,Btn$2)||display:none

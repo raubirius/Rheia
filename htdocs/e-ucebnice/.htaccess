@@ -1,0 +1,5 @@
+<FilesMatch "\.(pdf|exe|swf|mp3|mp4|xml)$">
+	Allow from all
+</FilesMatch>
+
+ErrorDocument 404 /e-ucebnice/error.php?404

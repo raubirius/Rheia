@@ -1,0 +1,2 @@
+ErrorDocument 403 /katedry/kmi/error.php?403
+ErrorDocument 404 /katedry/kmi/error.php?404

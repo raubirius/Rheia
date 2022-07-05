@@ -1,0 +1,46 @@
+
+pre.CSSCode
+{
+	width: 655px;
+
+	border: 1px dotted #a0a0a0;
+	background-color: #fffaf8;
+	overflow: auto;
+}
+
+span.CSSBlock span.color        { color: #33CCFF; }
+span.CSSBlock span.number       { color: #990000; }
+span.CSSBlock span.word         { color: #0099FF; }
+span.CSSBlock span.otherValue   { color: #808080; }
+span.CSSBlock span.unknownValue { color: #FF0000; }
+span.CSSBlock span.clause       { color: #3366CC; }
+span.CSSBlock span.urlClause    { color: #3366CC; }
+span.CSSBlock span.otherClause  { color: #3366CC; }
+span.CSSBlock span.url          { color: #FF00FF; }
+span.CSSBlock span.comment      { color: #FF9900; }
+span.CSSBlock span.attribute    { color: #009999; }
+span.CSSBlock span.selector0    { color: #3366CC; }
+span.CSSBlock span.selector1    { color: #669900; }
+span.CSSBlock span.selector2    { color: #6699FF; }
+
+.codeTitle
+{
+	width: fit-content;
+
+	border: 1px solid #c0c0c0;
+	border-top-left-radius: 8px;
+	border-bottom: none;
+	background-color: #fffcfa;
+	overflow: auto;
+
+	margin-bottom: 0px;
+	font-size: 14px;
+	padding: 5px 11px;
+}
+
+.codeTitle + pre.CSSCode
+{
+	margin-top: 0px;
+	border-style: solid;
+	border-color: #c0c0c0;
+}

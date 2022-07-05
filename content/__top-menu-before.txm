@@ -1,0 +1,30 @@
+
+@top-menu-before
+	$kaj: Katedra anglického jazyka a literatúry
+		#link: /katedry/kaj
+		#nosearch
+	$kb: Katedra biológie
+		#link: /katedry/kb
+		#nosearch
+	$kch: Katedra chémie
+		#link: /katedry/kch
+		#nosearch: true
+	$kmi: Katedra matematiky a informatiky
+		#link: /katedry/kmi
+		#nosearch: true
+	$knj: Katedra nemeckého jazyka a literatúry
+		#link: /katedry/knj
+		#nosearch: true
+	$kps: Katedra pedagogických štúdií
+		#link: /katedry/kps
+		#nosearch: true
+	$kpvu: Katedra pedagogiky výtvarného umenia
+		#link: /katedry/kpvu
+		#nosearch: true
+	$ksj: Katedra slovenského jazyka a literatúry
+		#link: /katedry/ksj
+		#nosearch: true
+	$ksp: Katedra školskej pedagogiky
+		#link: /katedry/ksp
+		#nosearch: true
+@end

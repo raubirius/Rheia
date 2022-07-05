@@ -1,0 +1,42 @@
+
+pre.HTMLCode
+{
+	width: 655px;
+
+	border: 1px dotted #a0a0a0;
+	background-color: #fffaf8;
+	overflow: auto;
+}
+
+span.HTMLBlock span.definition     { color: #00A000; }
+span.HTMLBlock span.entity         { color: #008000; }
+span.HTMLBlock span.string         { color: #D000D0; }
+span.HTMLBlock span.number         { color: #008080; }
+span.HTMLBlock span.symbol         { color: #600060; }
+span.HTMLBlock span.tagName        { color: #004080; }
+span.HTMLBlock span.attributeName  { color: #0000E0; }
+span.HTMLBlock span.attributeValue { color: #E00080; }
+span.HTMLBlock span.comment        { color: #A0A0A0; }
+span.HTMLBlock span.error          { color: #FF0000; }
+
+.codeTitle
+{
+	width: fit-content;
+
+	border: 1px solid #c0c0c0;
+	border-top-left-radius: 8px;
+	border-bottom: none;
+	background-color: #fffcfa;
+	overflow: auto;
+
+	margin-bottom: 0px;
+	font-size: 14px;
+	padding: 5px 11px;
+}
+
+.codeTitle + pre.HTMLCode
+{
+	margin-top: 0px;
+	border-style: solid;
+	border-color: #c0c0c0;
+}

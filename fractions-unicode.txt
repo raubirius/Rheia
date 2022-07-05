@@ -1,0 +1,22 @@
+Fractions
+
+These codes allow fractions to be represented with typographically smaller numerators and denominators, but they can be replaced by other ways of typing a fraction (e.g. "1/2").
+
+CSS Styling can also be used to achieve the same effect as described on Got Unicode and Lars Bruzelius.
+
+	Character Name	Character	Entity	Num Entity	Hex Entity
+	Vulgar Fraction 1/2	½	&frac12;	&#189;	&#xBD;
+	Vulgar Fraction 1/3	⅓	--	&#8531;	&#x2153;
+	Vulgar Fraction 2/3	⅔	--	&#8532;	&#x2154;
+	Vulgar Fraction 1/4	¼	&frac14;	&#188;	&#xBC;
+	Vulgar Fraction 3/4	¾	&frac34;	&#190;	&#xBE;
+	Vulgar Fraction 1/5	⅕	--	&#8533;	&#x2155;
+	Vulgar Fraction 2/5	⅖	--	&#8354;	&#x2156;
+	Vulgar Fraction 3/5	⅗	--	&#8535;	&#x2157;
+	Vulgar Fraction 4/5	⅘	--	&#8536;	&#x2158;
+	Vulgar Fraction 1/6	⅙	--	&#8537;	&#x2159;
+	Vulgar Fraction 5/6	⅚	--	&#8538;	&#x215A;
+	Vulgar Fraction 1/8	⅛	--	&#8539;	&#x215B;
+	Vulgar Fraction 3/8	⅜	--	&#8540;	&#x215C;
+	Vulgar Fraction 5/8	⅝	--	&#8541;	&#x215D;
+	Vulgar Fraction 7/8	⅞	--	&#8542;	&#x215E;

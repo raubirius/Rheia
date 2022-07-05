@@ -1,0 +1,14 @@
+
+#javaScript:#openCapture
+
+var imgRectArea = function (id, x, y, width, height, href, target = '_blank')
+{
+	var area = document.createElement('area');
+	area.shape = 'rect';
+	area.coords = x + ',' + y + ',' + (x + width) + ',' + (y + height);
+	area.href = href;
+	if ('' != target) area.target = '_blank';
+	myGlobals[id + 'Map'].appendChild(area);
+}
+
+#closeCapture

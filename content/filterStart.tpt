@@ -1,0 +1,252 @@
+
+#code:<div style="text-align: $4"><input type="text" name="filter$1Input" value="" id="filter$1Input"/><input type="button" name="filter$1Button" value="$5" id="filter$1Button" onclick="filter$1Do()"/><input type="button" name="filter$1ClearButton" value="$6" id="filter$1ClearButton" onclick="filter$1ClearDo()"/></div>
+
+#javaScript:#openCapture
+
+filter$1Do = function ()
+{
+	// console.log('filter$1Do');
+
+	if (typeof myGlobals['filter$1ID-Count'] === 'undefined')
+	{
+		// Initialize filter counter. (Use binary search – unreliable
+		// in some cases. In fact, the counter should be set by Rheia PHP.)
+
+		let low = 0;
+		let high = 1;
+		let count = 0;
+		let change;
+
+		// console.log('filter$1Count');
+
+		while (high < 1000000000 && document.
+			getElementById('filter$1ID-' + high)) high *= 10;
+
+		while (low < high)
+		{
+			// console.log('change: ' + change +
+			// 	'; low: ' + low + '; high: ' + high);
+
+			if (document.getElementById('filter$1ID-' + (high - 1)))
+			{
+				count = high;
+				break;
+			}
+
+			change = low + Math.trunc((high - low) / 2);
+
+			if (document.getElementById('filter$1ID-' + change))
+				low = change;
+			else
+				high = change;
+		}
+
+		// console.log('———\nfinal low: ' + low + '; high: ' + high +
+		// 	'; count: ' + count);
+
+		myGlobals['filter$1ID-Count'] = count;
+
+		// console.log('filter$1ID-Count: ' + myGlobals['filter$1ID-Count']);
+	}
+
+	let text = document.getElementById('filter$1Input').value;
+	let splitText = text.toLowerCase().split(' ');
+
+	// console.log('splitText: ' + splitText);
+
+	// Perform filter:
+	{
+		let count = myGlobals['filter$1ID-Count'];
+		let i;
+
+		for (i = $3; i < count; ++i)
+		{
+			// console.log('ID: filter$1ID-' + i);
+
+			let element = document.getElementById('filter$1ID-' + i);
+			if (null != element) try
+			{
+				element.style.display =
+					// element.textContent.includes(text)
+					// ? '' : 'none';
+					splitText.every(item => element.textContent.
+						toLowerCase().includes(item)) ? '' : 'none';
+
+				// console.log('element\n   textContent: ' +
+				// 	element.textContent + '\n   style.display: ' +
+				// 	('' == element.style.display ? '«empty»' :
+				// 		element.style.display));
+
+				let duplicates = document.querySelectorAll(
+					'[id="filter$1ID-' + i + '"]');
+
+				if (duplicates.length > 1)
+				{
+					let j;
+					for (j = 1; j < duplicates.length; ++j)
+					{
+						element = duplicates[j];
+
+						// console.log(element);
+
+						element.style.display =
+							// element.textContent.includes(text)
+							// ? '' : 'none';
+							splitText.every(item => element.textContent.
+								toLowerCase().includes(item)) ? '' : 'none';
+
+						// console.log('duplicate element\n   textContent: ' +
+						// 	element.textContent + '\n   style.display: ' +
+						// 	('' == element.style.display ? '«empty»' :
+						// 		element.style.display));
+					}
+				}
+			}
+			catch (err)
+			{
+				console.error(err + '\nfilter$1ID-' + i + '\n' + element);
+			}
+		}
+	}
+
+	// Push new state:
+	{
+		let hash = document.location.toString();
+		let index = hash.indexOf('#');
+		let pushURL; let doPush = true;
+		let encodedText = encodeURIComponent(text).replaceAll(';', '%3B');
+
+		// console.log('Pushing state: ' + hash);
+
+		if (-1 != index)
+		{
+			hash = hash.substr(1 + index);
+
+			// console.log('Has hash: ' + hash);
+
+			if (-1 != hash.indexOf(';'))
+			{
+				let hashArr = hash.split(';');
+				let count = hashArr.length;
+
+				let i; let doSet = ('' != encodedText);
+				for (i = 1; i < count; ++i)
+				{
+					if (hashArr[i].startsWith('$1='))
+					{
+						// console.log('Found filter $1.');
+
+						if ('' == encodedText)
+							hashArr.splice(i, 1);
+						else
+						{
+							let newVal = '$1=' + encodedText;
+							if (newVal == hashArr[i])
+							{
+								doPush = false;
+							}
+							else
+								hashArr[i] = newVal;
+						}
+						doSet = false;
+						break;
+					}
+				}
+				if (doSet) hashArr.push('$1=' + encodedText);
+
+				pushURL = '#' + hashArr.join(';');
+			}
+			else
+			{
+				// console.log('First filter value $1.');
+
+				if ('' == encodedText) doPush = false;
+				else pushURL = '#' + hash + ';$1=' + encodedText;
+			}
+		}
+		else
+		{
+			// console.log('No hash. Filter: $1.');
+
+			if ('' == encodedText) doPush = false;
+			else pushURL = '#;$1=' + encodedText;
+		}
+
+		if (doPush)
+		{
+			// console.log('Push URL: ' + pushURL);
+
+			history.pushState(null, document.title, pushURL);
+		}
+		// else console.log('Skip push.');
+	}
+}
+
+filter$1ClearDo = function ()
+{
+	// console.log('clearFilter $1');
+
+	document.getElementById('filter$1Input').value = '';
+	document.getElementById('filter$1Button').click();
+}
+
+{
+	let input = document.getElementById('filter$1Input');
+
+	input.addEventListener('keyup', function (event)
+	{
+		if (event.keyCode === 13)
+		{
+			event.preventDefault();
+			document.getElementById('filter$1Button').click();
+		}
+	});
+
+	let pushState = function (event)
+	{
+		let hash = document.location.toString();
+		let index = hash.indexOf('#');
+		let doClear = true;
+
+		if (-1 != index)
+		{
+			hash = hash.substr(1 + index);
+
+			if (-1 != hash.indexOf('$1'))
+			{
+				let hashArr = hash.split(';');
+				doClear = false;
+
+				// console.log('hashArray: ' + hashArr);
+
+				let count = hashArr.length;
+
+				let i;
+				for (i = 1; i < count; ++i)
+				{
+					if (hashArr[i].startsWith('$1='))
+					{
+						let text = decodeURI(hashArr[i].substr(
+							1 + '$1'.length));
+
+						// console.log('hashText: ' + text);
+
+						document.getElementById('filter$1Input').value = text;
+						document.getElementById('filter$1Button').click();
+						break;
+					}
+				}
+			}
+		}
+
+		if (doClear) filter$1ClearDo();
+	}
+
+	allPopStateHandlers.push(pushState);
+	pushState();
+}
+
+#closeCapture
+
+
+#$2AutoID:filter$1ID-

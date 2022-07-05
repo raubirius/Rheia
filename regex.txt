@@ -1,0 +1,1213 @@
+
+•◦▪
+☐☑☒
+?❓⍰？⁉❔﹖¿󠀿🙋︖⸮⁇꘏⁈🯄؟≟፧
+
+--------------------------------------------------------------------------------
+
+Technická konverzia HTML → Rheia
+================================
+
+<([^\n>]+)\n
+<$1 
+
+(href|src)="([^"]+)"
+>$2<
+
+<br */?>
+
+<hr */?>
+
+</?(b|i|em|strong)\b ?[^>]*>
+#$1#
+
+<(li\b|h[0-9]) ?[^>]*>
+#$1#
+
+</(li\b|h[0-9])>$
+
+</(li\b|h[0-9])>
+
+&nbsp;
+  
+ 
+
+<([^ >]+) ([^>]+)>
+<$1>
+
+</?p>
+
+^[ \t]+
+
+</?(td|th)>
+	 
+
+</?(div|span|ul|li|table|thead|tbody|tr|td|th|html|head|body|meta|form|input|font)>
+
+
+<img *>
+#img#
+
+<a *>
+{
+
+</a>
+}
+
+\{([^\}]+)[\r\n]+([^\}]+)\}
+{$1 $2}
+
+< *(class|style|target)[^>]+>
+|
+
+<>
+|
+
+<!DOCTYPE>
+;________;
+
+</?title>
+
+
+Ručne: </?(script|link)
+</?style>
+
+<(link|meta|script|input|br|hr)([^>/]+)>
+iné je: <img, lebo to bude mať asi src="…/…"
+
+Ak z Wordu, vymaž: </?[a-z]:[^>]+>
+</?xml>
+
+
+<([^>]+)>
+ 
+
+\{([^|}]+)\|([^}]+)\}
+{$2|$1}
+
+#em#
+#i#
+
+#strong#
+#b#
+
+
+Pre JOP (Journal of Pedagogy):
+
+\n{4,}
+
+#b#EDITORIAL#b#\\?
+code(editorial)\n
+
+#b#(ŠTÚDIE|ARTICLES)#b#\\?
+code(articles)\n
+
+#b#( ?#b# ?)?(Autori?|Auth?ors?)( ?#b# ?)?:( ?#b# ?)(.+?)\\?$\n+
+code(authorStart)$5code(authorEnd)\n
+
+#b#( ?#b# ?)?(Názov|Title)( ?#b# ?)?:( ?#b# ?)(.+?)\\?$\n+
+code(titleStart)$5code(titleEnd)\n
+
+code\(titleStart\)\{#i#([^#]+)#i#\|
+code(titleStart){$1|
+
+#b#( ?#b# ?)?(Abstra[kc]t)( ?#b# ?)?:( ?#b# ?)
+code(abstract)
+
+
+Ručne:
+
+#(b|i)##\1#
+#$1#
+
+#(b|i)##(b|i)#
+#(b|i)# #(b|i)#
+
+
+\{http[^|}]+\|
+
+(?<=[^/])/(?=[^/])
+//
+(?<=[^\-])-(?=[^\-])
+--
+(?<=[^\|])\|(?=[^\|])
+||
+(?<=[^.])\.\.(?=[^.])
+
+(https?://[^\}]+)//
+$1/
+(https?://[^\}]+)--
+$1-
+
+Nakoniec hromadne:
+
+#i# » /
+#b# » *
+
+
+Nadpisy (málo používané):
+
+#h1#(.*)$
+$1\n===\n
+
+#h2#(.*)$
+$1\n---\n
+
+#h3#(.*)$
+$1\n___\n
+
+#h4#(.*)$
+$1\n...\n
+
+Čiary (len vyhľadávanie konvertovaných):
+
+\n\n(\.\.\.+|---+|___+|===+)
+
+Spájanie riadkov (ručne):
+
+^(.+?)\n(.+?)$
+$1 $2
+
+--------------------------------------------------------------------------------
+
+Spisovnosť, štylistika a typografia
+===================================
+
+Predpisy majú byť s malým písmenom. Hľadaj:
+\b(Zákon|Vyhláš|Smern[ií]c|Nariad|Kritér|Uznes|Zásad|Harmonog|Opatren|Rozhod|Odpor|Pokyn|Príkaz)
+
+Paragraf má byť s pevnou medzerou. Hľadaj:
+§(?! )
+
+\b(odbor|program|kurz|tém)
+
+doporuč
+nasledovn
+predoš
+nutn
+taktiež
+ako aj
+týka
+\b[Tt]ýk
+\b[Nn][aá]pov
+(napovedať je síce legálne, ale lepšie naznačiť, signalizovať, poradiť, našepkať; prípadne ukázať, určiť, informovať, stanoviť… nápoveda je úplne ilegálne)
+
+[Oo]btiaž\b = ťažkosť, ťarcha
+obtiažny = ťažký, náročný, namáhavý
+obtiaž = obťaž
+ale ja mám radšej:
+obťaž = nároč
+
+Zbehlý, behať, bežať:
+[Bb]e[hž]
+(erudovaný, skúsený, fungovať… podľa kontextu)
+
+[Nn]ápomoc… (legálne, ale zdá sa mi byť menej vhodné)
+užitočný, pomáhajúci, ústretový…
+
+Pepsi[  ]+-[  ]+Cola|Coca[  ]+-[  ]+Cola
+Správne: Pepsi Cola (alebo len Pepsi), Coca-Cola
+
+pop[ií]
+\bjedn[aá]
+\b(?<!po)užíva
+
+ware?
+vér
+malware, software, hardware – malvér, softvér hardvér
+hacker – haker
+upres – spres
+koncentr (-ácia žiakov) – sústredenie
+
+\b[Pp]re[  ]to\b
+na to alebo preto podľa kontextu
+
+\b[Pp]re\b
+\b[Kk]u?\b
+\b[Uu]\b
+\b[Tt]ak\b
+(ako? tak[ýáé])
+\b[Kk]edy\b
+(keď, keby…)
+
+(?:ne)?závisl\pL+ na
+od
+
+[Pp]oužíva[  ]+sa[  ]+k\b
+— (‼)Zle je napr.: <[Kk]>[  ]+tomu, aby sme… ale nie: [Vv]iesť k[  ]+tomu
+— nie „k niečomu“ (účelu), ale „na niečo“
+\b[Kk][  ]\pL+u\b
+
+Došlo k/dôjde k
+\bd[oô][šj]\pL+[\s ]+k\b
+
+\b[Zz]a\b
+\b[Zz]a[  ][úp][čro]
+— za účelom‼ „za predpokladu“ môže byť aj „pod podmienkou“
+— za pomoci – s pomocou
+
+dotaz
+otázka, dopyt
+
+([Vv]ýu)k
+$1čb
+
+\b[Vv]ad[ií]
+i[ií]\b
+
+\b[MmNnSsTtVv]v?[ao][jš][ií]m\b
+alebo: [jš][ií]m\b
+
+ne – (lepšie nich, ich)
+učenie vs. učenie sa
+\b[Uu]čí\b|\b[Uu]č[eií][šmnťta](?!eľ)
+
+(?<!dô|te|vý|čo|ob|na|g|m|od|ne)\Br[aá]z\b
+
+(?<![0-9]-)\bkrát\b
+\Bkrát\b
+(mnohokrát, častokrát, veľakrát…)
+
+\Br[aá]z\b
+správne je prakticky len: tentoraz
+
+
+daný —⟩ konkrétny, tento, zvolený, vymedzený, stanovený, určený, určitý, istý, prítomný, súčasný, terajší, ohraničený, jestvujúci, dotknutý, súvisiaci…
+\b[Dd]an[áeéíýoú]
+\b[Dd]an[áeéíýoú][umchj]?[houi]?\b
+
+daná dané danej daných daným danú danou danými daného danému danom daný daní
+
+\b[s]na[hž]
+úsilie, usiluje, námaha, namáha
+
+\b[Pp]rev[ie][sd]
+urobiť, vykonať, uskutočniť, realizovať
+
+načo vs. na čo (regex)
+\b[Nn]a[  ]*čo\b
+
+nieje… (povolené, ale mnou neobľúbené)
+
+[Aa]pod\.
+[AaOo]i\.
+[Tt]\.?[jz]n?\.
+
+(\b\pL{1,2}\b\.) ?(\b\pL{1,2}\b\.)
+$1 $2
+
+okrem i.e., e.g.:
+\b([ei]\.)[  ]([ge]\.)
+$1$2
+
+chybné ie/eg:
+\b([ei])([ge]\b)\.?
+$1.$2.
+
+Zb\.
+Z.
+
+
+\pNx\b
+\pN[  ]x\b
+\bx\b
+
+
+Zaradiť a skontrolovať, či nejde o duplicity:
+
+\b[Oo]stan
+(ostane – zostane)
+\b[Jj]av
+[Šš]ikan
+[Cc]hod
+\b[Ii]st\pL
+
+\b[Dd]ets\pL* dom
+
+chabá… (ý/á/é…)
+
+Nie Čestné prehlásenie:
+prehlás
+vyhlás
+
+
+Dvojbodka na konci riadka by nemala byť pred zoznamom uvádzaným predložkou:
+
+:[  ]*$
+
+
+([taoZP])\.(?: |)([jszO])\.
+$1\. $2\.
+
+s\.(?: |)r\.(?: |)o\.|s\. r\.(?: |)o\.|s\.(?: |)r\. o\.
+s. r. o.
+
+spol\.(?:[  ]|)(?:s\.[  ]|s )(?:r\.(?:[  ]|)o\.)
+spol. s r. o.
+
+;Test: a.s.|P.O.|spol.s. r.o.
+
+Všeobecnejšie:
+(\b\pL\.) ?(\b\pL\.)
+$1 $2
+
+vyd\.([0-9])
+vyd. $1
+
+([0-9])([mk]?)g
+$1 $2g
+
+([0-9])([mk]?)J
+$1 $2J
+
+([0-9]) ?([0-9]{3})([^0-9])
+$1 $2$3
+
+(?:>[^<]+?)([0-9]%|[^ ]%)|>[0-9]%
+
+[0-9][^ ]–[0-9]|[0-9]–[^ ][0-9]|[0-9]–[0-9]
+
+[0-9] ?[a-zA-Z]
+
+[0-9][  ]?:[  ]?[0-9]| : |× | ×
+
+Mínus
+(?:>[^<]+?)[-–][0-9]
+−
+
+[  ],
+,[^  ]
+[  ]\.
+\.[^  \n]
+\.\.
+[0-9]x
+ -
+- 
+ \)
+\( 
+\)[^ <";\.,\?!:]
+(?:>[^<]+?)[^ ]\(
+
+Dokopy:
+[  ],|,[^  ]|[  ]\.|\.[^  ]|\.\.|[0-9]x| -|- | \)|\( |\)[^ <";\.,\?!:]|(?:>[^<]+?)[^ ]\(
+
+
+&quot; » „“
+&copy; » ©
+['´`‚‘’]
+ʻ <— ???
+["„“”]
+\.\.\. » …
+
+‘(.+?)’
+“$1”
+
+(>[^<]+?)"([^"]+?)"
+$1“$2”
+$1„$2“
+>[^<]+?"
+
+
+Rôzne súvisiace s publikáciami
+==============================
+
+Znak ¬ väčšinou znamená chybu.
+
+(?<=\p{Lu})\p{Lu}{2,}\b(?<!IS[BS]N)
+In: 
+[^,.;] (ISBN|ISSN)
+[^ ](ISBN|ISSN)
+(ISBN|ISSN): 
+(ISBN|ISSN)[^ ]
+(ISBN|ISSN) [-0-9]+[ \n]
+IS[SB]N [-0-9]+(?![-0-9]|\.$)
+
+[?!]\.
+
+(\?!|!\?|\?\.|\.\?|!\.|\.!)
+
+\b(In): +/
+$1 /
+
+\b(In):? (\{.*?\})\.?
+$1 /$2./
+
+\b(In):? \{/(.*?)/(\|.*?\})\.?
+$1 /{$2$3./
+
+\b(In):? (/\{.*?[?!.])(\|.*?\})\.
+$1 $2$3
+
+\b(In):? (/\{.*?)((?<![?!.])\|.*?\})\.?
+$1 $2.$3
+
+\b(In):? (/\{.*?)(\|.*?\})\.
+$1 $2$3
+
+\b(In): (.*?),
+$1 /$2/,
+
+\b(In): (.*?[?!.])
+$1 /$2/
+
+\bIn\b(?! +/) +(.*?),
+In /$1/,
+
+(?<=[  ])([0-9]+)[  ]\(([0-9]+)\)
+$1($2)
+
+\[([0-9]+),([0-9]+) AH\]
+[$1#comma#$2 AH]
+
+, ([0-9])+ *\(([0-9])+\): *([0-9])+(?:-+|–)([0-9])+.
+. $1($2):$3–$4.
+
+\bIn\b(?! +/) +(.*?[?!.])
+In /$1/
+
+\b(In):
+
+/(.*?[?!.])/ In /
+$1 In /
+
+/(.*?[?!.])/ In\b
+$1 In
+
+/(.*?)/, In 
+/(.*?),/ In 
+$1. In 
+
+(?<!In )/(.+?)/
+$1
+
+\bet\.
+et
+
+\beds?\.
+Jeden editor: Priezvisko, Meno, ed.
+Viacerí editori: Priezviská a mená, eds.
+
+(?!Ph\.D\.|dr\.|Ed\.|i\.e\.|e\.g\.)(\b\pL{1,2}\.) ?(\b\pL{1,2}\.)
+$1 $2
+
+Číselné označenie periodík:
+(\b[0-9]{1,3}) +(\([0-9]{1,3}\))
+$1$2
+
+
+Vydeľovacia funkcia dvojbodky:
+([^ ]):
+$1 :
+
+
+Písmeno s bodkou za číslom:
+(\pL\.) (\pN+)(?!\.|\pN| )
+$1 $2
+
+(\b(?:Vol|No|Iss)\b\.) (\pN)
+$1 $2
+
+(\b(?:Vol|Suppl|S[eé]r)\b\.) (\pL)
+$1 $2
+
+(\b(?:ods|č)\b\.) (\pN)
+$1 $2
+
+(\bN\b)\.?[  ](\pN)
+$1o. $2
+
+Volume|Number|Issue
+
+(, \pN+)--(\pN+)
+$1–$2
+
+(?<!IS[SB]N[  ]|\pN|--|APVV[  ]|//|KEGA[  ])(\pN+)--(\pN+)
+$1–$2
+
+
+oddeľovač slov: ­|&shy;
+
+medzera s nulovou šírkou: code(zwsp) => &#8203;
+
+
+BeanShell snippet (bez ignore case):
+\b(IS[SB]N|AH|IF)\b
+"#" + _0.toLowerCase() + "#"
+
+\b([IVXLCDM]{2,})\b
+"#" + _0.toLowerCase() + "#"
+
+Zmeň veľkosť písmen priezvisk (napísaných veľkými písmenami) na malé:
+\b(\p{Lu})(\p{Lu}+)\b
+_1 + _2.toLowerCase()
+
+Označ jadrá priezvisk napísaných veľkými písmenami – pre prípad potreby:
+(?=\p{Lu})\B(\p{Lu}+)\b
+
+Vymeniť skratku mena s priezviskom:
+(\b\p{Lu}\.) (\p{Lu}\pL+,)
+$2 $1
+$2 $1 –
+
+Vymeniť meno s priezviskom:
+(\b\p{Lu}\pL+) (\p{Lu}\pL+,)
+$2 $1
+$2 $1 –
+
+Nájdi chýbajúce čiarky za priezviskami:
+(\p{Lu}\pL+) (\p{Lu})\.([,:  ])
+$1, $2.$3
+
+\b([ZM]Š\b|[Uu]niver|[Gg]ymn)([Zz]ákl|[Čč]as|[Mm]atemati|[Mm]ono|[Ii]n\b|[Jj]aroslav|[Gg]alér|[Mm]úze|[Ss]éri|[Vv]ydav|[Kk]oncepc|[Jj]ame|[Ee]lse|[Kk]erst|[Jj]ohn|[Pp]rof|[Dd]oc|[Dd]ivad|[Pp]aul|[Ss][eé]ri|[Ss]vit|[Ee]dw|[Ee]lis|[Tt]eil|[Gg]ary|[Jj]eff)(\pL*),
+$1$2
+
+BeanShell snippet:
+#(is[sb]n|ah|if)#
+_1.toUpperCase()
+
+#([ivxlcdm]{2,})#
+_1.toUpperCase()
+
+hľadaj skratky krstných mien bez bodky:
+\b\p{Lu}\b(?!\.)
+$0\.
+
+hľadaj hlavičky tabuliek:
+^\*.*(?=\t).*\*$
+
+hľadaj nadpisy začínajúce sa číslom:
+^[0-9]+[^\n]+\n(===+|---+|___+|\.\.\.+)$
+
+hľadaj spojovacie znaky », ktoré nie sú medzi dvomi odkazmi
+((?<!\})[  ]»[  ])|([  ]»[  ](?!\{))
+
+oprava anglických číselných rozsahov
+pp?\.[^\d]*([\d]+) *(?:--|–|-) *([\d]+)
+pp. $1–$2
+
+
+Oprava anglických radových čísloviek:
+([0-9])\^(th|nd|rd|st)\^?
+$1$2
+
+ˢᵗ|ⁿᵈ|ʳᵈ|ᵗʰ
+
+
+; Ďalšie číselné rozsahy…
+; s. 124--458
+; s. 124–458
+
+\b([Ss]|[Pp]p?)\.[  ]?([0-9]+) ?--? ?([0-9]+)
+$1. $2–$3
+
+\b([Ss]|[Pp]p?)\. ([0-9])
+$1. $2
+
+\b([Ss]|[Pp]p?)\. ([0-9]+) [-–]-? ([0-9]+)
+$1. $2–$3
+
+([0-9]) \b([Ss]|[Pp]p?)\.
+$1 $2.
+
+,[  ]?([0-9]+) ?[-–]-? ?([0-9]+)
+, s. $1–$2
+
+\b([Ss]|[Pp]p?)\.[  ]?([0-9]+)[  ]?[-–]-?[  ]?([0-9]+),[  ]?\b([Ss]|[Pp]p?)\.[  ]?([0-9]+)[  ]?[-–]-?[  ]?([0-9]+)
+$1. $2–$3, $5–$6
+
+Hľadanie chýb:
+\b([Ss]|[Pp]p?)\.[  ]?([0-9]+)[^-–  0-9][  ]?[-–]-?
+
+Na opravu malých/veľkých písmen (ručne; nesmie byť zvolené „nezáleží na veľkosti písmen“):
+
+(,[  ]?[SP]|\.[  ]?[sp])[Pp]?\b
+
+
+Kontrola:
+(\b[Ss]\.|\b[Pp]p?\.)[  ]?([0-9]+)[  ]–([0-9]+)|(\b[Ss]\.|\b[Pp]p?\.)[  ]?([0-9]+)–[  ]([0-9]+)|(\b[Ss]\.|\b[Pp]p?\.)[  ]([0-9]+)–([0-9]+)|(\b[Ss]\.|\b[Pp]p?\.)([0-9]+)–([0-9]+)
+
+
+úprava dátumov do typograficky správnej podoby
+(pozor, nájde správne, nesprávne aj „polosprávne“ dátumy – odporúčam
+regulárny výraz o dve nižšie):
+0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.[  ]*([0-9]{2,4})
+$1. $2. $3
+
+(?<=[0-9])\. (janu|febr|mar[ce]|apr[ií]|m[aá][jy]|j[uú]n|j[uú]l|augu|sept|o[ck]t[oó]|nove)
+. $1
+
+hľadaj a nahrádzaj len nesprávne dátumy:
+0?([0-9]{1,2})\. *0?([0-9]{1,2})\. *([0-9]{2,4})
+$1. $2. $3
+
+hľadaj a nahrádzaj „polosprávne“ dátumy (asi najlepšia voľba):
+0?([0-9]{1,2})\. *0?([0-9]{1,2})\.[  ]*([0-9]{2,4})|0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\. *([0-9]{2,4})
+$1$4. $2$5. $3$6
+
+DEBUGER: 1:$1\n2:$2\n3:$3\n4:$4\n5:$5\n6:$6
+18. 7.2015
+18.7.  2015
+
+úprava rozsahov dátumov do typograficky správnej podoby:
+0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.[  ]*[-–]-?[  ]*0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.[  ]*([0-9]{2,4})
+$1. $2. – $3. $4. $5
+
+(?<![0-9]{1,2}\.[  ]?)0?([0-9]{1,2})\.[  ]*[-–]-?[  ]*0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.[  ]*([0-9]{2,4})
+$1. – $2. $3. $4
+
+hľadaj nepresnosti v rozsahoch dátumov:
+0?([0-9]{1,2})\. *0?([0-9]{1,2})\.[  ]*[-–][  ]*0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.[  ]*([0-9]{2,4})|0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.( *[-–][  ]*|[  ]*[-–] *)0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.[  ]*([0-9]{2,4})
+
+starý tvar adries elektronickej pošty:
+(?<=[^.])\b[a-zA-Z]+\@truni\.sk
+
+doména adresy elektronickej pošty mimo truni.sk:
+@(?!(truni|tvu)\.sk)
+
+hľadaj textové URL v znakoch <> a nahraď pomocou BeanShell snippetu:
+<https?:[-A-Za-z0-9.*+_~/#!\?\[\]()%@$&',;:=]+>
+"{" + _0.substring(1, _0.length() - 2).replace("//", "/").replace("--", "-") + "}"
+
+hľadaj URL mimo reálneho odkazu (ak sa dá, nahraď pomocou BeanShell snippetu):
+(?<!\{|\|)https?:[-A-Za-z0-9.*+_~/#!\?\[\]()%@$&',;:=]+
+"{" + _0.replace("//", "/").replace("--", "-") + "}"
+
+hľadaj všetky URL a uzavri do ⟨⟩ (pozor, nevymaže poslednú bodku – ak je navyše, treba ju vymazať ručne; pomôcka: hľadaj nakoniec \.⟩):
+[<⟨]*(https?:[-A-Za-z0-9.*+_~/#!\?\[\]()%@$&',;:=]+)[>⟩]*\.?
+⟨$1⟩.
+
+snippet na doi-ká (DOI):
+DOI:\s*(10.\d{4,9}/[-._;()/:A-Z0-9]+)\.
+"⟨{https://doi.org/" + _1.replace("//", "/").replace("--", "-") + "}⟩."
+// (to isté potom treba spraviť aj bez bodky na konci…)
+
+hľadaj adresy mimo domén truni a tvu:
+@(?!truni|tvu|submenu|end|code|(?:top|bottom|left|right|central)-|[\t\r\n*])
+
+hľadaj všetky (ne)poznámky, oznamy o rekonštrukcii a pod.:
+^#(empty|not-available|null|reconstruct|work(-soon)?)#$
+^#(?!cell|endCode$|empty#$|error|graynotice|ical|not-available#$|null#$|reconstruct|(small)?note|startCode$|startJavaCode$|style|tables|(un)?orderedList|work(-soon)?#$|Alias|Karta|Modul|Odkaz +karty|Pod +kartami$|Podkarta|Predvolená +karta$|Presmerovanie +karty|Šablóna|Titulok|Vlož +text|Zlomová +karta$|Žiadna +podkarta$|akJeZoznamPrázdny|makro|správaPrázdnehoZoznamu|[  \t])
+
+projekt a publikácia, ktoré sa nekončia bodkou:
+#projekt\[\]:[^\n]*?[^\.\n]\n
+#publikácia\[\]:[^\n]*?[^\.\n]\n
+
+hľadaj v.tlači|in.press
+
+replace short tags:
+<\?=(.*?)(?>\?>)
+<?php echo $1; ?>
+
+recheck short tags after:
+<\?=(.*) ?\n\t+
+<?=$1 
+
+select title:
+(?<=\<title\>).*(?=\</title\>)
+
+filter for subtitle files:
+^[0-9:,\-> ]+$
+
+find unqoted html attributes:
+<[^>=]+=[^"]
+
+
+Prevod zoznamu odkazov na tabuľkový zoznam súborov na prevzatie:
+----------------------------------------------------------------
+
+Odstránenie čiarok:
+\{([^|}]*),([^|}]*)\|
+{$1&#44;$2|
+
+Odstránenie zátvoriek:
+\{([^|}]*)\(([^|}]*)\|
+{$1&#40;$2|
+
+\{([^|}]*)\)([^|}]*)\|
+{$1&#41;$2|
+
+Prevod:
+^-?\{([^|}]+)\|externdown:([^}]+)\}$
+makro(externýSúborVZozname,$2,$1)
+
+^-?\{([^|}]+)\|down:([^}]+)\}$
+makro(súborVZozname,$2,$1)
+
+^-?\{([^|}]+)\|([^}]+)\}$
+makro(odrážkaVZozname,$2,$1)
+
+^(?!makro\()-?(.+)$
+makro(sekciaSúborov,$1)
+
+
+Mestá
+=====
+
+Praha|Prague|Bratislava|Komárno|Krak[oó][vw]|[VW]ar[sš]z?a[vw]a?|Lond[oý]n|Ružomberok|Trnava|Žilina|Trenčín|Martin|Zvolen|Berl[ií]n|Piešťany|Poprad|Košice|Prešov|Zlín|Main|Nümbrecht|Liberec|Nitra|Sofia|Prešov|Cheltenham|Smolenice|Vienna|Viedeň|Wien|Cambridge|Kent|Brno|Olomouc|Ostrava|Graz|Pardubice|Plzeň|Eger|Budmerice|Ústí[  ]nad[  ]Labem|Hradec[  ]Králové|Banská[  ]Bystrica|Rožnov[  ]pod[  ]Radhoštěm|New[  ]York|Liptovský[  ]Mikuláš|M[uü]e?nchen|Blagoevgrad|Brücken|Regensburg|Levoča|Nové[  ]Zámky|Dunajská[  ]Streda|Rimavská[  ]Sobota|České[  ]Budějovice|K[öӧ]ln|Kolín|Cologne|Frankfurt[  ]am[  ]Main|Veľké[  ]Leváre|Leopoldov|Kiev|Kyj?iv|Moskva|Moscow|Užhorod|Uzhhorod|Opava|Bucure[şs]ti|Bucharest|Bukurešť|Budape[šs][ťt]|Karviná|Łódź|Szczecin|Tübingen|Opole|Senec|Dolný[  ]Kubín
+
+(?<!«zoznam miest»)( :)
+
+(«zoznam miest»)(?! ):
+$1 :
+
+
+Pomocné regulárne výrazy na označenie žurnálov (a zdrojov) kurzívou:
+====================================================================
+(ak sa končia čiarkou)
+
+([-*.,  \pL]+\([0-9]{4}\):.*?\. )([^/]+?),
+$1In /$2/,
+
+(\.|\?|!) /
+$1 In /
+
+
+Chybné tituly (nesmie byť zvolené „nezáleží na veľkosti písmen“)
+=============
+
+(?<!počty)(p[hH][dD]|[pP]H[dD]|[pP][hH]d)
+PhD(?!\.)
+
+(c[sS][cC]|[cC]s[cC]|[cC][sS]C)
+CSc(?!\.)
+
+(Prof|Doc)\b
+(?<!\.)\b(prof|doc)\b(?!\.)
+
+Hľadaj tituly pred menom:
+\b(m|dr|hab|UR|PhDr|PaedDr|RNDr|prof|doc|Mgr|Ing|inż)\b\.?[  ]?
+
+; Podľa Zákona č. 131/2002 Z. z. (Zákon o vysokých školách a o zmene a doplnení niektorých zákonov) je titul CSc. vedeckou hodnosťou, ale titul PhD. je už akademickým titulom.
+
+
+Konzultácie
+===========
+
+	; —old— Vyhľadať a deaktivovať aktívne konzultácie:
+	; —old— \t#(konzultácie|khŠtudijnéhoPoradcu)\[\]:
+	; —old— \t;#$1[]:
+
+Tituly:
+,?[  ]?\b(m|[Hh]|c|[Dd]r|hab|UR|[PT]h(?:\.[  ]?)?Dr?|Bc|PaedDr|[JMR][NU]Dr|[Pp]rof|[Dd]oc|Mg[rA]|Ing|inż|CSc|DrSc|akad|mal|[Aa]rtD?|phil|theol|ThLic|habil|PGdip|B?A)\b\.?[  ]?(?:et)?
+
+Dni v týždni (BeanShell snippet):
+[\n ]*(\\?)[\n ]*([Pp]ondelok|[Uu]torok|[Ss]treda|[Šš]tvrtok|[Pp]iatok|[Ss]obota|[Nn]edeľa):? *
+_1 + "\n" + _2.toLowerCase() + " "
+
+\\\n([Pp]ondelok|[Uu]torok|[Ss]treda|[Šš]tvrtok|[Pp]iatok|[Ss]obota|[Nn]edeľa)
+"\\" + _1
+
+Separovať priezvisko (BeanShell snippet):
+(?:\pL+ )+(\pL+)
+"£" + _1.toLowerCase().replaceAll("[áä]", "a").replaceAll("[éěëę]", "e").replaceAll("í", "i").replaceAll("[óôőöӧ]", "o").replaceAll("[úůűü]", "u").replaceAll("ý", "y").replaceAll("[čçć]", "c").replaceAll("[ďđ]", "d").replaceAll("[ĺľł]", "l").replaceAll("[ňñń]", "n").replaceAll("[ŕř]", "r").replaceAll("[šşś]", "s").replaceAll("[ťţ]", "t").replaceAll("[žź]", "z")
+
+Všeobecné (mimo konzultačných hodín): Zbaviť sa diakritiky (BeanShell snippet – môže sa časom rozširovať):
+.*
+_0.replaceAll("[áä]", "a").replaceAll("[éěëę]", "e").replaceAll("í", "i").replaceAll("[óôőöӧ]", "o").replaceAll("[úůűü]", "u").replaceAll("ý", "y").replaceAll("[čçć]", "c").replaceAll("[ďđ]", "d").replaceAll("[ĺľł]", "l").replaceAll("[ňñń]", "n").replaceAll("[ŕř]", "r").replaceAll("[šşś]", "s").replaceAll("[ťţ]", "t").replaceAll("[žź]", "z").replaceAll("[ÁÄ]", "A").replaceAll("[ÉĚËĘ]", "E").replaceAll("Í", "I").replaceAll("[ÓÔŐÖ]", "O").replaceAll("[ÚŮŰÜ]", "U").replaceAll("Ý", "Y").replaceAll("[ČÇĆ]", "C").replaceAll("[ĎĐ]", "D").replaceAll("[ĹĽŁ]", "L").replaceAll("[ŇÑŃ]", "N").replaceAll("[ŔŘ]", "R").replaceAll("[ŠŞŚ]", "S").replaceAll("[ŤŢ]", "T").replaceAll("[ŽŹ]", "Z")
+
+Nuly pred číslami časov (text – regex):
+(?<=(ok|da|–) )0
+
+Časy (text – regex):
+([0-9]+)(?: *[.,] *| +: *|: +)([0-9]+)
+$1:$2
+
+Zlúčenie do jedného záznamu (text – regex):
+^([^£\n].+$)\n([^£\n])
+$1\\$2
+
+Pomlčky:
+[  ]*[-–][  ]*
+ – 
+
+Finalizácia:
+^[^£\n]
+\t#konzultácie[]: $0
+
+\n\n+
+\n
+
+^[^£\t\n]
+\t#khŠtudijnéhoPoradcu[]: $0
+
+Vymazať poznámky „KH študijného poradcu“:
+ *\(?KH študijného poradcu\)?
+
+Neobľúbené slovo „mail“:
+(?<![Ee](--|[-‑]))\bmail(?!to)
+e‑mail
+
+Nahradiť všetko, čo sa začína e-- → e‑:
+(?<!link:/?|down:/?|veda-vyskum\?|science-research\?|download\?|applicant\?|truni\.sk/|\$)\be-+
+e‑
+
+Jednotná formulácia:
+\\\(?.*?konz.*?e‑mail.*?\)?(\\|$)
+\(Na konzultácie je potrebné sa vopred ohlásiť e‑mailom.)
+
+Skratka číslo dverí:
+č\.[  ]*dv?\.[  ]*
+č. dv. 
+
+Rozvinúť skratku poschodia:
+posch\.
+poschodí
+poschodie
+
+AdAlbertnínum sa píše Adalbertinum:
+AdAlber?ti|Ad[Aa]lber?tí
+Adalberti
+
+^\t#konzultácie\[\]:.*$
+$0\n\t#konzultácieVProfile[]: Konzultácie prebiehajú v letnom semestri akademického roka 2020//2021 *on--line formou!* Konzultácie si dohodnite vopred (e‑mailom).
+$0\n\t#konzultácieVProfile[]: Konzultácie prebiehajú v zimnom semestri akademického roka 2020//2021 *on--line formou!* Konzultácie si dohodnite vopred (e‑mailom).
+
+
+--------------------------------------------------------------------------------
+
+Vytvorenie identifikátora článku
+================================
+
+BeanShell snippet:
+.*
+_0.toLowerCase().replaceAll("[áä]", "a").replaceAll("[éěëę]", "e").replaceAll("í", "i").replaceAll("[óôőöӧ]", "o").replaceAll("[úůűü]", "u").replaceAll("ý", "y").replaceAll("[čç]", "c").replaceAll("[ďđ]", "d").replaceAll("[ĺľł]", "l").replaceAll("ň", "n").replaceAll("[ŕř]", "r").replaceAll("š", "s").replaceAll("ť", "t").replaceAll("ž", "z").replaceAll(" ", "-")
+
+
+Veľké písmená na začiatkoch slov:
+=================================
+
+\b\p{Lu}(?=\p{Ll})
+
+
+Viacnásobné medzery, tabulátory alebo medzery na konci riadkov…
+===============================================================
+
+[  ]{2,}
+[  \t]+$
+
+
+„Prevrátené“ tlačidlá
+=====================
+
+‖(downbutton|button)\|\{([^|]+)\|([^}]+)\}‖
+{‖$1|$2‖|$3}
+
+
+Vymeniť miestnosť a klapku
+==========================
+
+\t#klapka\[\]: ([0-9]{3})\n\t#miestnosť\[\]: ([0-9]{3})\n
+\t#miestnosť[]: $2\n\t#klapka[]: $1\n
+
+(hľadať nekonzistencie)
+
+\t#miestnosť\[\]: ([0-9]{3})(?!\n\t#klapka\[\]:)
+
+\t#klapka\[\]: ([0-9]{3})(?!\n\t#email\[\]:)
+
+
+Likvidácia komentárov (archivovaných údajov – ručne)
+====================================================
+
+^[ \t]*;.*\n
+^[ \t]*;.*$(?!\n)
+
+
+Pevné medzery
+=============
+
+Pevné medzery navyše na konci slov (viacpísmenových):
+(\pL{2}) 
+$1 
+
+Pevné medzery za jednopísmenovými slovami (jednoduchá verzia):
+(?<!’)\b([a-zA-Z]) 
+$1 
+
+Verzia ignorujúca jednopísmenové HTML značky:
+(?<![<’])\b([a-zA-Z]) 
+$1 
+
+
+Safe:
+—Check first to consider the applying:
+&nbsp;
+<[^>]+&nbsp;
+—Replace:
+(?<!<)\b([a-zA-Z]) 
+$1&nbsp;
+—Recheck (multiple times!):
+(<[^>]+)&nbsp;
+$1 
+
+
+Výnimka (AJ):
+(’[a-zA-Z]) 
+$1 
+
+Výnimka (CSS):
+(\b[a-zA-Z]) \{
+$1 {
+
+
+Hľadanie a označovanie rokov (na triedenie) v publikáciách
+==========================================================
+
+^(\t+#publikácia\[\]: *.*)((?:19|20)[0-9]{2})(.*)$
+$1#sortd#$2#$3
+
+
+Hľadanie kódovania, ktoré nie je UTF-8
+======================================
+
+charset=(?!UTF-8)[-a-z0-9]+
+charset=UTF-8
+
+
+Makro na zmenu kódovania (Change_to_UTF-8.bsh):
+-----------------------------------------------
+
+try
+{
+	buffer.writeLock();
+	buffer.setStringProperty(JEditBuffer.ENCODING, "UTF-8");
+	buffer.setDirty(true);
+	buffer.propertiesChanged();
+}
+finally
+{
+	buffer.writeUnlock();
+}
+
+
+Makro na vyhľadanie buffera, ktorý nemá toto kódovanie (Find_non-UTF-8_buffer.bsh):
+-----------------------------------------------------------------------------------
+
+Buffer[] allBuffers = jEdit.getBuffers();
+boolean notFound = true;
+
+for (int i = 0; i < allBuffers.length; ++i)
+{
+	if (!allBuffers[i].getProperty(JEditBuffer.ENCODING).equals("UTF-8"))
+	{
+		// Macros.message(view,
+		// 	"'" + allBuffers[i].getProperty(JEditBuffer.ENCODING) + "'" +
+		// 	(!allBuffers[i].getProperty(JEditBuffer.ENCODING).equals("UTF-8")));
+		view.setBuffer(allBuffers[i]);
+		notFound = false;
+		break;
+	}
+}
+
+if (notFound)
+	Macros.message(view, "Not found!");
+
+
+
+Hľadanie neštandardných znakov
+==============================
+
+[^ -~ ​‑­—–−→≈●•∙·°™®©€£§‼†¦∥‖‗…„“”‚‘’‹›«»⦅⦆⟨⟩×∗√∑½№\n\t\pL]
+
+Slon: 🐘
+
+
+Kontrola znaku and (&)
+======================
+
+&[  ]
+&amp; 
+
+(?<!Oddeľovač:|absolventa|erasmus|jpeg|konanie|kvality|management|materialy|miesta|poziadavky|prijatia|program|prokop|publikacie|rozne|rozvrhy|seminare|senat|studia|studium|vedenie|vzdelavanie|&)&(?!amp;|gt;|lt;|shy;|quot;|.id|char|doc|page|search|user|ver|[a-z_]{1,12}=|[0-9]{1,4}\b|#|&)
+
+
+Vyhľadávanie rôznych nezrovnalostí formátovania
+===============================================
+
+[*_/-][.,;:]
+
+[°`•≈~|ˇ^*‗_/-][.,;:][°`•≈~|ˇ^*‗_/-]
+
+???
+[°`•≈~|ˇ^*‗_/-][.,;:]
+
+
+Harmonogram štúdia akademického roka
+====================================
+
+
+Odhaliť všetky skryté stĺpce a riadky. Odstrániť a skryť všetko nepotrebné. Ukotviť priečky.
+
+Upraviť hlavičky tak, aby sa začínali s veľkým písmenom.
+
+Oddeliť „Podrobný kalendár niektorých udalostí“ (LS + ZS), pridať mu hlavičku so stĺpcom Deň (LS), vymazať stĺpec Deň z hlavičky hlavného kalendára (ZS). Oddeliť rozvrh miestností na štátne skúšky (pridať stĺpce Deň a Dátum). Pridať hlavičkovým riadkom a riadkom s nedeľami znaky „*“. Vytvoriť riadky (LS):
+
+*#	#	#	#	#	||štátne skúšky (~rozpis miestností ŠS pre jednotlivé študijné (pol)programy je uvedený nižšie~)*
+*#	#	#	#	#	|| \letné prázdniny\ *
+
+Ostatné bunky by sa mali v podstate začínať s malým písmenom. (Použi: \t\p{Lu})
+
+
+Nahrádzanie spojovníkov pomlčkami:
+ - |- | -
+ – 
+
+Ručná kontrola zostávajúcich spojovníkov. Nahradenie znakov „/“ vo význame zátvoriek zátvorkami (ZS).
+
+Pridanie chýbajúcich typografických medzier za niektoré znaky:
+([\+])([^ ])
+$1 $2
+([\.,;\)])([^ \.,;\)])
+$1 $2
+
+Odstránenie nadbytočných medzier pred niektorými znakmi:
+ +([\)\.,/])
+$1
+
+Pridanie chýbajúcich typografických medzier pred niektoré znaky:
+([^ \(\+])([\(])
+$1 $2
+
+Odstránenie nadbytočných medzier za niektorými znakmi:
+([\(/]) +
+$1
+
+Odstránenie nadbytočných medzier:
+  +
+ 
+ 	|	 
+	
+ +$
+«vymazať»
+
+Úprava dátumov do typograficky správnej podoby:
+0?([0-9]{1,2})\.[  ]*0?([0-9]{1,2})\.[  ]*([0-9]{2,4})
+$1. $2. $3
+0?([0-9]{1,2})\.[ ]*0?([0-9]{1,2})\.
+$1. $2.
+
+Náhrada špeciálnych znakov:
+
+(?<=[^/])/(?=[^/])
+//
+
+\b([a-zA-Z]) 
+$1 
+
+
+
+Opravy:
+
+,	
+	
+
+opr\.
+opravný
+
+[Pp]rímačky
+prijímacie skúšky
+
+prijímacie skúšky talentové
+talentové prijímacie skúšky
+
+\bvyberu\b
+výberu
+
+II\. kolo
+2. kolo
+
+I\. kolo
+1. kolo
+
+štátn[eau] skúšk[yau]|štátnice
+ŠS
+
+ŠS Riadny
+ŠS riadny
+
+[Ee]xtern[áé] (?:štúdium|forma)
+‖efsColor|EFŠ‖
+
+[Dd]enn[áé] (?:štúdium|forma)
+‖dfsColor|DFŠ‖
+
+[Dd]enn[áé] a 
+‖dfsColor|DFŠ‖ a 
+
+Fyziky
+fyziky
+
+Štúd
+štúd
+
+štúdium Bc\., Mgr\. 
+Bc., Mgr. štúdium 
+
+(?:[Bb]akal\.|bakalárskej?|Bc.) práce
+BP
+
+(?:[Dd]ipl\.|diplomov(?:ej|é)) práce
+DP
+
+(?:[Dd]iz\.|dizertačn(?:ej|ých|á)) prác[ea]?
+DzP
+
+teoretické základy výchovy a vzdelávania
+TZVaV
+
+v MAISe?
+v systéme MAIS
+
+zápis hodnotení v systéme MAIS
+‖red|zápis hodnotení v systéme MAIS‖
+
+2x
+2×
+
+([0-9]) ?ks
+$1 ks
+
+F lab
+F – labor.
+
+labor\. – ponechaj
+
+akademický rok[ua]?|akademickom rok[ua]?|akademického rok[ua]?|akad. rok[ua]?
+AR
+
+štud. progr.
+študijné programy
+
+povinných, povinne voliteľných a[  ]výberových
+P, PV a V
+
+VV
+Vv
+
+hľadaj: bc|mgr a zväčši prvé písmeno
+
+Posledná kontrola vo Worde.
+
+
+Formáty buniek podľa typu povinností
+
+\#\c\e\l\l\#\r\e\d\#@
+\#\c\e\l\l\#\g\r\e\e\n\#@
+\#\c\e\l\l\#\b\l\u\e\#@
+\#\c\e\l\l\#\u\n\i\#@
+
+
+Formát rozpisu miestností ŠS pomocou formátu čísla bunky v Exceli:
+
+||@ – vystredenie hlavičkových buniek označujúcich miestnosti
+
+Formáty buniek podľa stupňa a formy štúdia:
+\#c\ell\#\Bc\D\e\#@
+(BcDe)
+\#c\ell\#\Bc\Ex\#@
+(BcEx)
+\#c\ell\#\M\g\r\D\e\#@
+(MgrDe)
+\#c\ell\#\M\g\r\Ex\#@
+(MgrEx)
+

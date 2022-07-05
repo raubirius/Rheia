@@ -1,0 +1,704 @@
+
+c:\_TODO_\_Misc_\Word-Search-for-Special-Characters.docx
+
+Em dash (—)	^+
+En dash (–)	^=
+Nonbreaking hyphen	^~
+Optional hyphen	^-
+Nonbreaking space	^s
+Section mark (§)	^%
+Paragraph mark (¶)	^v
+Right to left mark	^r
+Left to right mark	^h
+No-width optional break (zero width non-joiner)	^o
+No-width non-break (zero width joiner)	^y
+
+
+Test – hľadanie „neštandardných“ znakov:
+
+[! -~A-Ža-ž –^13^t—]
+[! -~A-Ža-ž –^13^t—‚‘’„“”]
+
+
+：– divná dvojbodka (asi po exporte z nejakého bibliografického systému)
+
+Figure dash ‒
+	The punctuation mark ‘‒’ is used when a dash must be used in numbers (like phone number); but(!) if a dash is used to express a range (such as “the numbers from 1 to 10”) an en dash ‘–’ is used instead of a figure dash (“the numbers 1–10”).
+	(Porovnaj: pomlčka –; mínus −; dlhá pomlčka —.)
+
+Horizontal bar ―
+	… also known as a quotation dash, is used to introduce quoted text…
+
+Z makra HandleNBSP:
+(<[a-ž,A-Ž]>)( )
+\1^s
+
+Výnimky:
+(’[a-žA-Ž]) 
+\1 
+
+([A-Ža-ž]{2;})^s([!:–])
+\1 \2
+
+
+Iné predložky (ak by bolo treba):
+
+(<[dknopsvz][ouad]>) 
+\1 
+
+(<[pn][oar][di]>) 
+\1 
+
+
+Neodmedzerované bodky:
+.([! ^s:^13,^t)“])
+. \1
+
+Neodmedzerované pomlčky:
+[! ]–
+–[! ]
+
+Neodmedzerované čiarky, bodkočiarky a dvojbodky:
+([,;:])([! ^13])
+\1 \2
+
+Odmedzerované čiarky, bodkočiarky a dvojbodky:
+[ ]([.,;:])
+\1
+
+Jednostranne odmedzerované lomky:
+[  ]/[! ]
+[!  ]/ 
+
+Neodmedzerované zátvorky:
+([)\]}⟩])([!  .:,;])
+([!  ])([(\[{⟨])
+\1 \2
+
+Odmedzerované zátvorky:
+[  ]([)\]}⟩])
+([(\[{⟨])[  ]
+\1
+
+
+,,
+''
+
+([  ^13])[”"]
+\1„
+
+([  ^13])[„”"]
+\1“
+
+[”"„]([  ^13])
+\1“
+
+["„“”]
+
+Nájdi neúplné (slovenské) úvodzovky:
+
+„[!“]@[„^13]
+[“^13][!„^13]@“
+
+(Poznámka: Hneď v prvom dokumente to robilo takú chybu, že od určitého miesta v dokumente ma pokus o vyhľadanie ďalšieho výskytu „hodil“ na začiatok – opakovane sa nebolo možné dostať cez určitú neznámu oblasť… Pomohlo vyhľadávanie od konca dokumentu.)
+
+Niekedy treba hľadať aj úvodzovky, ktoré tam nepatria (napr. názvy projektov, alebo termíny, ktoré nie sú myslené „v úvodzovkách“…); môže poslúžiť:
+
+„([!„“^13]@)“
+\1
+
+«»
+
+
+Naopak, zatváranie do úvodzoviek:
+
+([!„])([a-žA-Ž]@)([!“])
+\1„\2“\3
+
+Prípadne opravovať jednostranné uzavretia:
+
+(„[a-žA-Ž]@)([!“a-žA-Ž])
+\1“\2
+
+([!„a-žA-Ž])([a-žA-Ž]@“)
+\1„\2
+
+
+[!sn]’
+’[!st ]
+
+[‚‘´'`]
+’
+
+[“‘]([.,;\!\?])
+\2\1
+
+[ 	]{2;}
+^t
+
+& 
+& 
+
+&[! ]
+
+
+Obvykle je vhodné premeniť číslice na slová:
+<[0-9]>
+[a-Ž,][  ]<[0-9]>
+
+Prípadne:
+<[0-9]{1;2}>
+
+
+
+\)[  ]\(
+; 
+
+\]\[
+\][  ]\[
+\],[  ]\[
+, 
+
+[)\]}⟩][(\[{⟨]
+[)\]}⟩][  ][(\[{⟨]
+
+
+Zjednotiť uvádzanie [online]. | [on^~line].
+[!n]line>
+
+
+V referenciách:
+([! ]):
+\1 :
+
+
+Priezviská (alebo rôzne iné slová) veľkými písmenami:
+[A-Ž]@,
+<[A-Ž][A-Ž]@>
+
+Hľadaj priezviská písané klasickým spôsobom (prvé veľké… pozor, nenájde celé McDonalds a pod.):
+[A-Ž][a-ž]@,
+
+Vymeniť skratku mena s priezviskom:
+(<[A-Ž].) ([A-Ž][a-ž]@,)
+\2 \1
+\2 \1 –
+
+Vymeniť meno s priezviskom:
+(<[A-Ž][a-ž]@) ([A-Ž][a-ž]@,)
+\2 \1
+\2 \1 –
+
+Ďalšie pokusy o vyhľadanie (napr. zabudnutá čiarka za priezviskom):
+[A-Ž][a-ž]@[  ][A-Ž]
+
+
+Prenos formátovania:
+
+(Poznámky pod čiarou treba dočasne vysunúť pod odsek, v ktorom sa nachádzajú a vhodne ich označiť, aby sa to nestratilo.)
+
+Hľadaj výskyt špeciálnych znakov:
+[^^ˇ#$\*•≈≠£◊]
+&caret;
+&caron;
+&hash;
+&dollar;
+&asterisk;
+&bullet;
+&approx;
+&nequal;
+
+Označiť formátovanie v prázdnom poli Hľadať a do nahradiť čím dať napríklad:
+^^^&^^
+ˇ^&ˇ
+#^&#
+$^&$
+*^&*
+•^&•
+≈^&≈
+≠^&≠
+£^&£
+◊^&◊
+
+Obvykle (ale môže sa prispôsobiť potrebám):
+^ – horný index
+ˇ – dolný index
+# – číslovania a rôzne značky
+$ – kurzíva
+* – tučné písmo
+• – tučná kurzíva/odrážky
+≈ – rôzne (podľa potreby; napr. tučná kurzíva/farba písma…)
+≠ – rôzne (podľa potreby; napr. rôzne poznámky)
+£ – rôzne (podľa potreby; napr. zvýraznenie zvýrazňovačom)
+◊ – rôzne (podľa potreby; napr. skryté písmo)
+
+‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼
+‼  Najprv treba nahrádzať znakové (prípadne osekové) štýly a až potom  ‼
+‼  lokálne formáty ako skryté písmo (prípadne farebné zvýrazňovanie)!  ‼
+‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼‼
+
+Potom hľadať s použitím zástupných znakov:
+^^(*)^^
+ˇ(*)ˇ
+#(*)#
+$(*)$
+\*(*)\*
+•(*)•
+≈(*)≈
+≠(*)≠
+£(*)£
+◊(*)◊
+a naformátovať nahradenie (s prislúchajúcim štýlom):
+\1
+
+Mimo Wordu:
+\^([^^]*)\^
+ˇ([^ˇ]*)ˇ
+#([^#]*)#
+\$([^$]*)\$
+\*([^*]*)\*
+•([^•]*)•
+≈([^≈]*)≈
+≠([^≠]*)≠
+£([^£]*)£
+◊([^◊]*)◊
+
+/$1/
+*$1*
+^$1^
+
+
+«maska na nahradenie nejakého odseku»
+^p≈H1≈^&≈^p
+^p≈H2≈^&≈^p
+…
+^l≈H1≈\1≈^l
+^l≈H2≈\1≈^l
+…
+
+^l
+^p
+
+^p≈^p
+≈^p^p
+
+
+≈H1≈[!≈^13]@≈
+≈H2≈[!≈^13]@≈
+…
+
+≈F1≈ – prvý riadok číslovaného zoznamu
+≈O1≈ – ďalší riadok číslovaného zoznamu
+≈L1≈ – nečíslovaný zoznam
+≈I1≈ – odsek odsadený na úroveň (nečíslovaného) zoznamu
+
+
+Ak $ bude kurzíva, treba hľadať neoznačené citáty („nekurzívové“):
+[!$]„
+“[!$]
+
+Chýbajúca bodka za skratkou krstného mena:
+(,[  ][A-Ž]>)([!.])
+\1.\2
+
+Pevná medzera medzi skratky viacerých prvých mien:
+
+(<[A-Ž].)(<[A-Ž].)
+\1 \2
+
+(<[A-Ž].) (<[A-Ž].)
+\1 \2
+
+
+Chybičky v časoch a dátumoch:
+([0-9].)([0-9])
+\1 \2
+
+([0-9])[,.]([0-9])
+\1:\2
+
+
+Nesprávne desatinné čísla alebo viacúrovňové číslovanie:
+([0-9])([,.]) ([0-9])
+\1\2\3
+
+
+Zjednotenie formátu (správne predformátovaných) dátumov:
+([0-9]{1;2}.)[  ]([0-9]{1;2}.)[  ]([0-9]{4})
+\1 \2 \3
+
+
+Tipy:
+
+.,
+zvykne znamenať pomlčku medzi menami v publikáciách:
+. –
+
+
+Strany (opatrne, miesta, kde sa nenahrádzajú medzery sú sporné):
+
+([0-9]) ([sp].)
+\1 \2
+
+([0-9])([sp].)
+\1 \2
+
+([spčlo].) ([0-9])
+\1 \2
+
+([spčlo].)([0-9])
+\1 \2
+
+([spčlo].)([! ])
+\1 \2
+
+<([Pp]).[  ]([0-9]@–)
+\1p. \2
+
+Chybná veľkosť (to prvé je malá šanca; väčšinou ide o krstné mená alebo P. O. Box)
+(,[  ])P([p.])
+\1p\2
+
+(.[  ])p([p.])
+\1P\2
+
+
+Dve slová s veľkými písmenami za sebou:
+
+<[A-Ž][a-ž]@>[  ]<[A-Ž]
+
+
+Niektoré vydavateľstvá
+
+
+IURA EDITION – Iura Edition
+IUVENTA – Iuventa
+IRIS – Iris
+EQUILIBRIA – Equilibria
+ELPIS – Elpis
+BELIANUM – Belianum
+EPOS – Epos
+
+(FOCUS – Focus)
+
+
+([0-9])-([0-9])
+\1 – \2
+(okrem vecí ako ISBN/ISSN; v citáciách)
+
+([0-9])–([0-9])
+\1 – \2
+(okrem rozsahov v citáciách)
+
+([0-9])%
+\1 %
+
+([0-9]) %
+\1 %
+
+([! ]):
+\1 :
+
+
+<[Ee][Dd].
+<[Ee][Dd][Ss].
+Jeden editor: Priezvisko, Meno, ed.
+Viacerí editori: Priezviská a mená, eds.
+
+
+<[Oo]dbor
+<[Pp]rogram
+<[Pp]redmet
+<[Kk]urz
+<[Tt][eé]m
+
+[Dd]oporuč
+[Nn]asledovn
+[Pp]redoš
+<[Nn]utn
+
+([Tt])aktiež aj
+([Tt])aktiež
+\1iež
+
+, ([Aa])ko[  ]@aj 
+ \1 
+
+([Aa])ko[  ]@aj 
+\1 
+
+([Aa])ko[  ]@aj
+\1j
+(tiež?)
+
+čo sa týka 
+v súvislosti s 
+‼treba preformulovať zvyšok vety‼
+
+sa týka 
+súvisí s 
+‼treba preformulovať zvyšok vety‼
+
+[Tt]ýka
+<[Tt]ýk
+dotýka/súvisí s…
+‼niekedy treba preformulovať zvyšok vety‼
+
+<[Nn][aá]pov
+(napovedať je síce legálne, ale lepšie naznačiť, signalizovať, poradiť, našepkať; prípadne ukázať, určiť, dosvedčiť, usvedčiť, informovať, stanoviť… nápoveda je úplne ilegálne)
+
+[Oo]btiaž> = ťažkosť, ťarcha
+obtiažny = ťažký, náročný, namáhavý
+obtiaž = obťaž
+ale ja mám radšej:
+obťaž = nároč
+
+Zbehlý, behať, bežať:
+[Bb]e[hž]
+(erudovaný, skúsený, fungovať… podľa kontextu; byť v činnosti, byť nainštalovaný)
+
+[Nn]ápomoc… (legálne, ale zdá sa mi byť menej vhodné)
+užitočný, pomáhajúci, ústretový…
+
+Pepsi[  ]-[  ]Cola
+Pepsi[  ]-Cola
+Pepsi-[  ]Cola
+Coca[  ]-[  ]Cola
+Coca-[  ]Cola
+Coca[  ]-Cola
+Coca-Cola
+Správne: Pepsi Cola (alebo len Pepsi), Coca-Cola
+
+[Pp]op[ií]
+<[Jj]edn[aá]
+<[Nn]ejedn[aá]
+<[Uu]žíva
+
+war
+vér
+malware, software, hardware – malvér, softvér hardvér
+hacker – haker
+upres – spres
+koncentr (-ácia žiakov) – sústredenie
+
+<([Ee])-
+\1^~
+
+<[Pp]re[  ]to>
+na to alebo preto podľa kontextu
+
+<[Pp]re>
+<[Kk]>
+<[Kk]u>
+<[Uu]>
+<[Tt]ak>
+(ako? tak[ýáé])
+<[Kk]edy>
+(keď, keby…)
+
+závis:
+(ne)závislý na
+od
+
+[Pp]oužíva[  ]sa[  ]k>
+— (‼)Zle je napr.: <[Kk]>[  ]tomu, aby sme… ale nie: [Vv]iesť k[  ]tomu
+— nie „k niečomu“ (účelu), ale „na niečo“
+pokusy o urýchlenie:
+<[Kk][  ][a-ž]@u>
+
+Došlo k/dôjde k
+<d[oô][šj][a-ž]@[  ]@k>
+
+<[Zz]a>
+<[Zz]a[  ][úp][čro]
+— za účelom‼ „za predpokladu“ môže byť aj „pod podmienkou“
+— za pomoci – s pomocou
+
+dotaz
+otázka, dopyt
+
+([Vv]ýu)k
+\1čb
+
+<[Vv]ad[ií]
+i[ií]>
+
+<[TtSs]voj[ií]m>
+<[Mm]oj[ií]m>
+<[NnVv]aš[ií]m>
+alebo: [jš][ií]m>
+
+<[Uu]čí>
+<[Uu]č[eií][šmnťta]>
+<[Uu]č[eií][šmnťta][!e]
+
+<[Nn]e>
+(lepšie nich, ich)
+
+[!-]<krát>
+[!0-9]-krát>
+
+[a-žA-Ž]krát>
+(mnohokrát, častokrát, veľakrát…)
+
+[a-žA-Ž]r[aá]z>
+správne je prakticky len: tentoraz
+
+<[Dd]an[áeéíýoú]
+daný —⟩ konkrétny, tento, zvolený, vymedzený, stanovený, určený, určitý, istý, prítomný, súčasný, terajší, ohraničený, jestvujúci, dotknutý, súvisiaci…
+
+<[Ss]na[hž]
+úsilie, usiluje, námaha, namáha
+
+<[Pp]rev[ie][sd]
+urobiť, vykonať, uskutočniť, realizovať
+
+načo vs. na čo
+<[Nn]ačo>
+<[Nn]a>[  ]<čo>
+
+[Nn]ieje
+nieje
+… (povolené, ale mnou neobľúbené)
+
+apod.
+<[AaOo]i.
+[Tt][jz].
+[Tt].[jz].
+[Tt]zn.
+[Tt].zn.
+
+(<[a-žA-Ž]{1;2}>.) (<[a-žA-Ž]{1;2}>.)
+(<[a-žA-Ž]{1;2}>.)(<[a-žA-Ž]{1;2}>.)
+\1 \2
+
+okrem i.e., e.g.:
+<([ei].)[  ]([ge].)
+\1\2
+
+chybné ie/eg:
+<([ei])([ge].)
+<([ei])([ge]>)
+\1.\2.
+
+<[Zz]b.
+<[Zz].
+
+
+[0-9]x>
+[0-9][  ]x>
+<[Xx]>
+
+
+Zaradiť a skontrolovať, či nejde o duplicity:
+
+<[Oo]stan
+(ostane – zostane)
+<[Jj]av
+[Šš]ikan
+[Cc]hod
+<[Ii]st[a-ž]
+
+<[Dd]ets[a-ž]@ dom
+
+chabá… (ý/á/é…)
+
+Nie Čestné prehlásenie:
+prehlás
+vyhlás
+
+
+Dvojbodka na konci riadka by nemala byť pred zoznamom uvádzaným predložkou:
+
+<[a-ž]{1;4}:^13
+:^p
+
+
+Adresy, ktoré nie sú v ⟨⟩:
+[!⟨][Hh][Tt][Tt]
+⟨[Hh][Tt][Tt][!⟩]@[  ^13]
+
+
+Pevné medzery v popisoch grafických prvkov a referenciách na nich
+-----------------------------------------------------------------
+
+<([Oo]bráz[a-ž]@>) 
+<([Ff]ig[a-ž]@>) 
+<([Gg]raf>) 
+<([Gg]ra[pf][a-ž]@>) 
+<([Tt]ab[a-ž]@>) 
+<([Ss]ch[eé]m[a-ž]@>) 
+\1 
+
+‼<[Ii]mag
+<([Oo]bráz[a-ž]@>) ([!0-9])
+<([Ff]ig[a-ž]@>) ([!0-9])
+<([Gg]raf>) ([!0-9])
+<([Gg]ra[pf][a-ž]@>) ([!0-9])
+<([Tt]ab[a-ž]@>) ([!0-9])
+<([Ss]ch[eé]m[a-ž]@>) ([!0-9])
+\1 \2
+
+
+Skontrolovať, či sú citácie uvedené v rámci viet („pred bodkami“)
+Evidentné chyby (s výnimkou kombinácií ?“ a podobných):
+[.\!\?][“”  ][\(\[]
+
+
+Na záver:
+---------
+
+-
+^-^~
+
+Príliš krátke slová (alebo spojovníkové čísla) upraviť na pevné spojovníky:
+(<[0-9a-žA-Ž]{1;4})^-^~([0-9a-žA-Ž]{1;4}>)
+(<[0-9]@)^-^~([a-žA-Ž]@>)
+\1^~\2
+
+([! ])([/_])([!/⟩ ^o])
+\1\2^o\3
+
+(⟨[!⟩]@)([.\?=])([!/⟩ ^o])
+\1\2^o\3
+
+A spracovať hypertextové odkazy pridaním voliteľného zalomenia (^o).
+
+Môže pomôcť:
+
+([.:/_\?&#=\+])
+\1^o
+
+
+Niektoré postrehy (bez zástupných znakov):
+-----------------
+
+jednotky:
+hod min sek
+^#^$
+^# ^$
+
+pokiaľ
+
+, alebo
+ alebo
+
+[!,]([  ]alebo)
+,\1
+
+/
+<[Xx]>
+;
+^~
+^-
+
+
+Špeciálne znaky (vyhľadávanie)
+---------------
+
+C:\_Sync\Pracovné\Články\.Šablóny\ms-word-wildcards.htm
+
+
+Cudzojazyčné jednopísmenové slová (len niektoré a len malými písmenami):
+
+<[всиуозк]>

@@ -1,0 +1,16 @@
+
+⋅⋅⋅---···∙∙∙•••===•••∙∙∙···---⋅⋅⋅
+
+Dot operator:      ⋅ (U+22C5)
+Hyphenation point: ‧ (U+2027)
+Middle dot:        · (U+00B7)
+Bullet operator:   ∙ (U+2219)
+Bullet:            • (U+2022)
+№
+                   ⋆ (U+22C6)
+
+http://aboq.org/klavesnica.htm
+
+(%20%C2%AB%C2%BB%E2%80%B9%E2%80%BA%E2%80%9A%E2%80%98%E2%80%99%E2%80%9E%E2%80%9C%E2%80%9D%E2%80%A6%60%E2%80%93%E2%80%94%5E%20%20%20%C2%AC%E2%80%A2%E2%89%A0%C2%A3%C2%B6)
+
+⋅⋅⋅---···∙∙∙•••===•••∙∙∙···---⋅⋅⋅

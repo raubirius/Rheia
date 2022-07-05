@@ -1,0 +1,51 @@
+
+pre.pasquilCode
+{
+	width: 655px;
+
+	/* Color identifier = rgb(30, 30, 30); */
+
+	border: 1px dotted #a0a0a0;
+	background-color: #fffaf8;
+	overflow: auto;
+}
+
+span.pasBlock span.number    { color: rgb(90, 165, 190); }
+span.pasBlock span.string    { color: rgb(144, 64, 64); }
+span.pasBlock span.character { color: rgb(144, 64, 64); }
+span.pasBlock span.error     { color: rgb(192, 48, 48); }
+span.pasBlock span.symbol    { color: rgb(130, 40, 180); font-weight: bold; }
+span.pasBlock span.keyword1  { color: rgb(30, 70, 150); font-weight: bold; }
+span.pasBlock span.keyword2  { color: rgb(130, 40, 180); }
+span.pasBlock span.keyword3  { color: rgb(90, 165, 190); font-weight: bold; }
+span.pasBlock span.type      { color: rgb(30, 30, 30); font-weight: bold; }
+span.pasBlock span.comment1  { color: rgb(48, 112, 48); }
+span.pasBlock span.comment2  { color: rgb(192, 48, 192); }
+span.pasBlock span.comment3  { color: #E000E0; }
+
+/*
+Color reserved = rgb(30, 70, 150, 64);
+Color ignore = rgb(30, 70, 150, 32);
+*/
+
+.codeTitle
+{
+	width: fit-content;
+
+	border: 1px solid #c0c0c0;
+	border-top-left-radius: 8px;
+	border-bottom: none;
+	background-color: #fffcfa;
+	overflow: auto;
+
+	margin-bottom: 0px;
+	font-size: 14px;
+	padding: 5px 11px;
+}
+
+.codeTitle + pre.pasquilCode
+{
+	margin-top: 0px;
+	border-style: solid;
+	border-color: #c0c0c0;
+}

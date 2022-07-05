@@ -1,0 +1,22 @@
+
+#Šablóna: pracovnik-vseobecne
+;#Karta: Predmety
+;#Alias karty: predmety
+;#Žiadna podkarta
+;#graynotice:Prosím, zvoľte predmet.
+;
+;
+;#Podkarta: IKTvV1
+;#Alias karty: iktvv1
+;{IKT vo vzdelávaní 1|pracovnici?newname#iktvv1}
+;___
+;
+;#javaScript: myGlobals.runIKTvV1 = function () { if (prompt('Zadajte kód') == 'xxx') window.open('https://docs.google.com/spreadsheet/viewform?formkey=xxx', '_blank', 'location=0,menubar=0,titlebar=0,scrollbars=1'); };
+;
+;-{Spustiť dotazník|script:myGlobals.runIKTvV1();}
+;
+;
+;#Karta: Ostatné
+;#Alias karty: ostatne
+;
+;-{Dotazník|https://docs.google.com/forms/d/xxx/viewform}

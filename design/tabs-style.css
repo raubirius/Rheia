@@ -1,0 +1,129 @@
+
+div.tabs-menu
+{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+div.tabs-menu ul.items
+{
+	margin: 5px auto 10px 5px;
+	padding: 0px;
+	list-style: none;
+	border-top: 1px solid #999;
+}
+
+div.tabs-menu ul.items li
+{
+	float: left;
+	font-size: 14px;
+	margin: 0px;
+}
+
+div.tabs-menu ul.items li a
+{
+	display: block;
+	margin: 1px 1px;
+	padding: 6px 20px;
+
+	background-color: #f4f4f4;
+	color: #666;
+
+	border: 1px solid #999;
+	text-decoration: none;
+
+	-moz-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-khtml-border-bottom-left-radius: 10px;
+
+	-moz-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-khtml-border-bottom-right-radius: 10px;
+
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+div.tabs-menu ul.items li a:hover,
+div.tabs-menu ul.items li a:focus,
+div.tabs-menu ul.items li a:active,
+div.tabs-menu ul.items li.selected a
+{
+	background-color: #fcfcfc;
+}
+
+div.tabs-menu ul.items li.selected a
+{
+	/*margin-top: 0px;
+	border-top-width: 2px;*/
+	border-top-color: #f4f4f4;
+}
+
+
+/*
+div.tabs-menu
+{
+	width: 100%;
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+div.tabs-menu ul.items
+{
+	float: left;
+	width: 100%;
+	margin: 5px auto 10px 5px;
+	padding: 0px;
+	list-style: none;
+
+	border-bottom: 1px solid #999;
+	height: 86%;
+}
+
+div.tabs-menu ul.break
+{
+	margin-top: -5px;
+	margin-bottom: 20px;
+}
+
+div.tabs-menu ul.items li
+{
+	float: left;
+	margin: 0px;
+	line-height: 100%;
+	font-size: 14px;
+	color: black;
+}
+
+div.tabs-menu ul.items li a
+{
+	display: block;
+	margin: 0px 1px;
+	padding: 6px 20px;
+	background-color: #fafafa;
+	text-decoration: none;
+
+	border: 1px solid #999;
+
+	-moz-border-top-left-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-khtml-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+
+	-moz-border-top-right-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+
+div.tabs-menu ul.items li a:hover,
+div.tabs-menu ul.items li a:focus,
+div.tabs-menu ul.items li a:active,
+div.tabs-menu ul.items li.selected a
+{ color: #999; }
+
+div.tabs-menu ul.items li.selected a
+{ border-bottom: none; }
+
+*/

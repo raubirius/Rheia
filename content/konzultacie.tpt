@@ -1,0 +1,6 @@
+Pracovníci katedry
+===
+#style: div.page-content p { font-size: 12px; margin-bottom: 16px; }
+{Odborné zastúpenie|pracovnici} || {Organizačná štruktúra|katedra?oddelenia} || Konzultačné hodiny
+#Šablóna: konzultacie-platnost-skoncila, platí: $pracovisko#platnosťKonzultácií
+#Šablóna: konzultacie-tabulka, neplatí: $pracovisko#platnosťKonzultácií

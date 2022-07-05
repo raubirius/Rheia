@@ -1,0 +1,16 @@
+
+#code:<map name="$1Map" id="$1Map"></map>
+
+
+#javaScript:#openCapture
+
+myGlobals['$1Map'] = getElement('$1Map');
+myGlobals['$1Img'] = getElement('$1Img');
+
+#closeCapture
+
+
+#alt:obrázok" id="$1Img" usemap="#$1Map
+||{img:$2}
+
+#alt:obrázok

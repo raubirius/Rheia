@@ -1,0 +1,51 @@
+
+@right-menu-before
+
+$uis: NÁVODY K UIS
+	#https: www.truni.sk/univerzitne-informacne-systemy
+$idm: Správa identít (IDM)
+	#https: idmportal.truni.sk/
+$mais: MAIS
+	#https: www.truni.sk/mais
+$elektronicka-prihlaska: Elektronická prihláška
+	#link: uchadzac?elektronicka-prihlaska
+$evidencia-zaverecnych-prac: Evidencia záverečných prác
+	#link: student?evidencia-zaverecnych-prac
+$evidencia-publikacnej-cinnosti: Evidencia publikačnej činnosti
+	#https: www.truni.sk/evidencia-publikacnej-cinnosti
+;$webmail-zam: Webmail zamestnanec
+;	#https: webmail.truni.sk/
+;$webmail-stud: Webmail študent
+;	#https: webmail.tvu.sk/
+$webmail: Webmail Office 365
+	#https: outlook.office.com/
+$katalog-kniznice: Katalóg knižnice
+	#http: ezp.truni.sk/opac
+$issm: Informačný systém pre správu a manažment (ISSM)
+	#https: brisk.truni.sk/cdsso/controller?dst-url=https://brisk.truni.sk:443/start/
+$univerzitna-kniznica: Univerzitná knižnica
+	#https: www.truni.sk/kniznica
+$trnava-university-summon: Trnava University Summon
+	#http: truni.summon.serialssolutions.com
+$strava: Stravovací systém
+	#https: strava.truni.sk/
+;$elearning: Vzdelávací portál
+;	#http: elearning.truni.sk/
+
+---
+
+$telefonny-zoznam: Telefónny zoznam
+$interne-dokumenty: Interné dokumenty
+; $sfeu: Projekty EÚ
+; 	#http: sfeu.truni.sk/
+$aktuality: Aktuality
+$aktuality-univerzita
+	#highlight: aktuality
+
+* 
+---
+
+$zasadne-dokumenty: Zásadné dokumenty
+	#class: emphasized-framed
+
+@end

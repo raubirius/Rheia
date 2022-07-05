@@ -1,0 +1,21 @@
+
+Katedry
+===
+
+#style: table.shaded { width: 100%; }
+
+*Katedra	Vedúci katedry*
+;{Katedra anglického jazyka a literatúry|katedry/kaj/pracovnici}	{prof. PaedDr. Silvia Pokrivčáková, PhD.|katedry/kaj/pracovnici?pokrivcakova}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/kaj/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/kaj/student} {{title:"Verejnosť"|img:icon-public.svgz}|katedry/kaj/verejnost} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/kaj/kontakt}
+{Katedra anglického jazyka a literatúry|katedry/kaj/pracovnici}	{prof. PhDr. Anton Pokrivčák, PhD.|katedry/kaj/pracovnici?pokrivcak}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/kaj/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/kaj/student} {{title:"Verejnosť"|img:icon-public.svgz}|katedry/kaj/verejnost} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/kaj/kontakt}
+{Katedra biológie|katedry/kb/pracovnici}	{prof. RNDr. Alfréd Trnka, PhD.|katedry/kb/pracovnici?trnka}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/kb/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/kb/student} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/kb/kontakt}
+;{{title:"Vlastná stránka katedry"|img:icon-custom-web.svgz}|blank:katedry/~kb/}
+{Katedra chémie|katedry/kch/pracovnici}	{doc. Ing. Andrej Kolarovič, PhD.|katedry/kch/pracovnici?kolarovic}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/kch/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/kch/student} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/kch/kontakt} {{title:"Vlastná stránka katedry"|img:icon-custom-web.svgz}|blank:katedry/~kch/}
+;{prof. PhDr. Ľubomír Held, CSc.|katedry/kch/pracovnici?held}
+{Katedra matematiky a informatiky|katedry/kmi/pracovnici}	{doc. PaedDr. Milan Pokorný, PhD.|katedry/kmi/pracovnici?pokorny}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/kmi/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/kmi/student} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/kmi/kontakt}
+;{Katedra nemeckého jazyka a literatúry|katedry/knj/pracovnici}	{PaedDr. Viera Lagerová, PhD.|katedry/knj/pracovnici?lagerova}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/knj/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/knj/student} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/knj/kontakt}
+{Katedra nemeckého jazyka a literatúry|katedry/knj/pracovnici}	{prof. PhDr. Lívia Adamcová, PhD.|katedry/knj/pracovnici?adamcova}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/knj/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/knj/student} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/knj/kontakt}
+{Katedra pedagogických štúdií|katedry/kps/pracovnici}	{prof. PhDr. Ing. Blanka Kudláčová, PhD.|katedry/kps/pracovnici?kudlacova}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/kps/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/kps/student} {{title:"Absolvent"|img:icon-graduate.svgz}|katedry/kps/absolvent} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/kps/kontakt}
+{Katedra pedagogiky výtvarného umenia|katedry/kpvu/pracovnici}	{doc. akad. mal. Blažej Baláž|katedry/kpvu/pracovnici?balaz}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/kpvu/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/kpvu/student} {{title:"Absolvent"|img:icon-graduate.svgz}|katedry/kpvu/absolvent} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/kpvu/kontakt}
+{Katedra slovenského jazyka a literatúry|katedry/ksj/pracovnici}	{doc. PhDr. Juraj Hladký, PhD.|katedry/ksj/pracovnici?hladky}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/ksj/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/ksj/student} {{title:"Absolvent"|img:icon-graduate.svgz}|katedry/ksj/absolvent} {{title:"Verejnosť"|img:icon-public.svgz}|katedry/ksj/verejnost} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/ksj/kontakt}
+{Katedra školskej pedagogiky|katedry/ksp/pracovnici}	{prof. PaedDr. Ondrej Kaščák, PhD.|katedry/ksp/pracovnici?kascak}	{{title:"Uchádzač"|img:icon-applicant.svgz}|katedry/ksp/uchadzac} {{title:"Študent"|img:icon-student.svgz}|katedry/ksp/student} {{title:"Kontakt"|img:icon-contact.svgz}|katedry/ksp/kontakt} {{title:"Vlastná stránka katedry"|img:icon-custom-web.svgz}|blank:katedry/~ksp/}
+

@@ -1,0 +1,166 @@
+
+#javaScript:#openCapture
+
+window.allBlocks = [];
+
+hideAllBlocks = function ()
+{
+	for(var key in window.allBlocks)
+		hideBlock(key);
+}
+
+blockDisplayed = function (blockToCheck)
+{
+	return itemDisplayed('showHideBlock' + blockToCheck + 'Content');
+}
+
+hideBlock = function (blockToHide)
+{
+	window.allBlocks[blockToHide] = false;
+	setClass('showHideBlock' + blockToHide + 'Button', 'button');
+	hideItem('showHideBlock' + blockToHide + 'Content');
+}
+
+showBlock = function (blockToShow)
+{
+	window.allBlocks[blockToShow] = true;
+	setClass('showHideBlock' + blockToShow + 'Button', 'downbutton');
+	showItem('showHideBlock' + blockToShow + 'Content');
+}
+
+showHideBlock = function (ID)
+{
+	if (blockDisplayed(ID))
+	{
+		hideBlock(ID);
+		pushButtonValue('');
+	}
+	else
+	{
+		hideAllBlocks();
+		showBlock(ID);
+		pushButtonValue(ID);
+	}
+};
+
+
+// 2021; new stuff:
+
+pushButtonValue = function (valueToPush)
+{
+	let hash = document.location.toString();
+	let index = hash.indexOf('#');
+	let pushURL; let doPush = true;
+	let encodedText = encodeURIComponent(valueToPush).
+		replaceAll(';', '%3B');
+
+	// console.log('Pushing state: ' + hash);
+
+	if (-1 != index)
+	{
+		hash = hash.substr(1 + index);
+
+		// console.log('Has hash: ' + hash);
+
+		if (-1 != hash.indexOf(';'))
+		{
+			let hashArr = hash.split(';');
+			let count = hashArr.length;
+
+			let i; let doSet = ('' != encodedText);
+			for (i = 1; i < count; ++i)
+			{
+				if (hashArr[i].startsWith('button='))
+				{
+					// console.log('Found button.');
+					if ('' == encodedText)
+						hashArr.splice(i, 1);
+					else
+					{
+						let newVal = 'button=' + encodedText;
+						if (newVal == hashArr[i])
+						{
+							doPush = false;
+						}
+						else
+							hashArr[i] = newVal;
+					}
+					doSet = false;
+					break;
+				}
+			}
+			if (doSet) hashArr.push('button=' + encodedText);
+
+			pushURL = '#' + hashArr.join(';');
+		}
+		else
+		{
+			// console.log('First button value.');
+			if ('' == encodedText) doPush = false;
+			else pushURL = '#' + hash + ';button=' + encodedText;
+		}
+	}
+	else
+	{
+		if ('' == encodedText) doPush = false;
+		else pushURL = '#;button=' + encodedText;
+	}
+
+	if (doPush)
+	{
+		// console.log('Push URL: ' + pushURL);
+		history.pushState(null, document.title, pushURL);
+	}
+	// else console.log('Skip push.');
+}
+
+{
+	let pushState = function (event)
+	{
+		let hash = document.location.toString();
+		let index = hash.indexOf('#');
+
+		if (-1 != index)
+		{
+			hash = hash.substr(1 + index);
+
+			if (-1 != hash.indexOf('button='))
+			{
+				let hashArr = hash.split(';');
+				let count = hashArr.length;
+
+				let i;
+				for (i = 1; i < count; ++i)
+				{
+					if (hashArr[i].startsWith('button='))
+					{
+						let blockToShow = decodeURI(hashArr[i].
+							substr(1 + 'button'.length));
+						hideAllBlocks();
+						showBlock(blockToShow);
+						break;
+					}
+				}
+			}
+			else
+			{
+				hideAllBlocks();
+			}
+		}
+	}
+
+	allPopStateHandlers.push(pushState);
+	pushState();
+}
+
+#closeCapture
+
+#makro:buttonContentID,showHideBlock$1Content
+
+#buttonSHA:<a href="JavaScript:showHideBlock('
+#buttonSHB:')"><span id="showHideBlock
+#buttonSHC:Button" class="button">
+#buttonSHD:</span></a>
+
+#makro:buttonShowHide,code(buttonSHA)$1code(buttonSHB)$1code(buttonSHC)$2code(buttonSHD)
+

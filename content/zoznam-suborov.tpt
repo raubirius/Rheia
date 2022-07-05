@@ -1,0 +1,121 @@
+
+#style:#openCapture
+div.page-content table.shaded tr td.level2File { padding-left: 26px; }
+div.page-content table.shaded tr td.level3File { padding-left: 38px; }
+div.page-content table.shaded tr td.level4File { padding-left: 50px; }
+div.page-content table.shaded tr td.level5File { padding-left: 62px; }
+div.page-content table.shaded tr td.level6File { padding-left: 74px; }
+
+#closeCapture
+
+
+#makro:zoznamSúborov,*$1	Veľkosť	Dátum*
+#makro:zoznamDokumentov,*Dokument	Veľkosť	Dátum*
+#makro:sekciaSúborov,#	#	code()*$1*
+#makro:súboryPre,#	#	code()*(pre $1)*
+
+#makro:odkazVZozname,#	#	{$2|$1}
+#makro:odkaz2VZozname,#	#	#cell#level2File#{$2|$1}
+#makro:odkaz3VZozname,#	#	#cell#level3File#{$2|$1}
+#makro:odkaz4VZozname,#	#	#cell#level4File#{$2|$1}
+#makro:odkaz5VZozname,#	#	#cell#level5File#{$2|$1}
+#makro:odkaz6VZozname,#	#	#cell#level6File#{$2|$1}
+
+#makro:odrážkaVZozname,#	#	-{$2|$1}
+#makro:odrážka2VZozname,#	#	#cell#level2File#-{$2|$1}
+#makro:odrážka3VZozname,#	#	#cell#level3File#-{$2|$1}
+#makro:odrážka4VZozname,#	#	#cell#level4File#-{$2|$1}
+#makro:odrážka5VZozname,#	#	#cell#level5File#-{$2|$1}
+#makro:odrážka6VZozname,#	#	#cell#level6File#-{$2|$1}
+
+#makro:poznámkaVZozname,#	#	-$1
+#makro:poznámka2VZozname,#	#	#cell#level2File#-$1
+#makro:poznámka3VZozname,#	#	#cell#level3File#-$1
+#makro:poznámka4VZozname,#	#	#cell#level4File#-$1
+#makro:poznámka5VZozname,#	#	#cell#level5File#-$1
+#makro:poznámka6VZozname,#	#	#cell#level6File#-$1
+
+#makro:obsahVZozname,#	#	code($1)
+#makro:obsah2VZozname,#	#	#cell#level2File#code($1)
+#makro:obsah3VZozname,#	#	#cell#level3File#code($1)
+#makro:obsah4VZozname,#	#	#cell#level4File#code($1)
+#makro:obsah5VZozname,#	#	#cell#level5File#code($1)
+#makro:obsah6VZozname,#	#	#cell#level6File#code($1)
+
+#makro:článokVZozname,#	{article:$1}	|{article:date|$1}|
+
+#style:#openCapture
+span.folder:before
+{
+	content: "";
+	display: block;
+	background: url("design/icon-folder.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin: 0 8px 0 0;
+}
+
+span.folder
+{
+	color: #3e68c9;
+}
+
+span.folderGray:before
+{
+	content: "";
+	display: block;
+	background: url("design/icon-folder-gray.png") no-repeat;
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin: 0 8px 0 0;
+}
+
+span.folderGray
+{
+	color: #7a7a7a;
+}
+
+#closeCapture
+
+#makro:priečinokVZozname,{article:$1}	|«priečinok»|	|{article:date|$1}|
+#makro:fiktívnyPriečinokVZozname,∥folder¦$1∥	#	|||«priečinok»|
+#makro:fiktívnyŠedýPriečinokVZozname,∥folderGray¦$1∥	#	|||«priečinok»|
+
+#makro:súborVZozname,-{$2|plaindown:$1}	|{size:$last}|	|{date:$last}|
+#makro:súbor2VZozname,#cell#level2File#-{$2|plaindown:$1}	|{size:$last}|	|{date:$last}|
+#makro:súbor3VZozname,#cell#level3File#-{$2|plaindown:$1}	|{size:$last}|	|{date:$last}|
+#makro:súbor4VZozname,#cell#level4File#-{$2|plaindown:$1}	|{size:$last}|	|{date:$last}|
+#makro:súbor5VZozname,#cell#level5File#-{$2|plaindown:$1}	|{size:$last}|	|{date:$last}|
+#makro:súbor6VZozname,#cell#level6File#-{$2|plaindown:$1}	|{size:$last}|	|{date:$last}|
+
+#makro:externýSúborVZozname,-{$2|plainexterndown:$1}	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúbor2VZozname,#cell#level2File#-{$2|plainexterndown:$1}	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúbor3VZozname,#cell#level3File#-{$2|plainexterndown:$1}	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúbor4VZozname,#cell#level4File#-{$2|plainexterndown:$1}	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúbor5VZozname,#cell#level5File#-{$2|plainexterndown:$1}	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúbor6VZozname,#cell#level6File#-{$2|plainexterndown:$1}	|{externsize:$externLast}|	|{externdate:$externLast}|
+
+#makro:súborSPoznámkouVZozname,-{$2|plaindown:$1}$3	|{size:$last}|	|{date:$last}|
+#makro:súborSPoznámkou2VZozname,#cell#level2File#-{$2|plaindown:$1}$3	|{size:$last}|	|{date:$last}|
+#makro:súborSPoznámkou3VZozname,#cell#level3File#-{$2|plaindown:$1}$3	|{size:$last}|	|{date:$last}|
+#makro:súborSPoznámkou4VZozname,#cell#level4File#-{$2|plaindown:$1}$3	|{size:$last}|	|{date:$last}|
+#makro:súborSPoznámkou5VZozname,#cell#level5File#-{$2|plaindown:$1}$3	|{size:$last}|	|{date:$last}|
+#makro:súborSPoznámkou6VZozname,#cell#level6File#-{$2|plaindown:$1}$3	|{size:$last}|	|{date:$last}|
+
+#makro:externýSúborSPoznámkouVZozname,-{$2|plainexterndown:$1}$3	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúborSPoznámkou2VZozname,#cell#level2File#-{$2|plainexterndown:$1}$3	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúborSPoznámkou3VZozname,#cell#level3File#-{$2|plainexterndown:$1}$3	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúborSPoznámkou4VZozname,#cell#level4File#-{$2|plainexterndown:$1}$3	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúborSPoznámkou5VZozname,#cell#level5File#-{$2|plainexterndown:$1}$3	|{externsize:$externLast}|	|{externdate:$externLast}|
+#makro:externýSúborSPoznámkou6VZozname,#cell#level6File#-{$2|plainexterndown:$1}$3	|{externsize:$externLast}|	|{externdate:$externLast}|
+
+#makro:súborOdkazNa,#	#	Odkaz na {$2|$1}
+#makro:súbor2OdkazNa,#	#	#cell#level2File#Odkaz na {$2|$1}
+#makro:súbor3OdkazNa,#	#	#cell#level3File#Odkaz na {$2|$1}
+#makro:súbor4OdkazNa,#	#	#cell#level4File#Odkaz na {$2|$1}
+#makro:súbor5OdkazNa,#	#	#cell#level5File#Odkaz na {$2|$1}
+#makro:súbor6OdkazNa,#	#	#cell#level6File#Odkaz na {$2|$1}
+
+#tables:shaded documentList
