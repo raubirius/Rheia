@@ -2997,7 +2997,7 @@ class RheiaMainClass
 		 *        obsahuje jednoduchú číselnú hodnotu, inak obsahuje pole
 		 *        číselných hodnôt.)
 		 *
-		 * Výnimku tvorí prvok prázdneho id: '', ktorý je rezerovovaný na
+		 * Výnimku tvorí prvok prázdneho id: '', ktorý je rezervovovaný na
 		 * konfiguračné účely…
 		 */
 
@@ -6198,17 +6198,20 @@ class RheiaMainClass
 				elseif ($noCaseMatch == 'javascript')
 				{
 					foreach ($capturedContent as $value)
-						$this->rheiaDefs['javaScript'] .= TAB.$value.EOL;
+						$this->rheiaDefs['javaScript'] .= TAB.
+							RheiaMainClass::replaceObjects($value).EOL;
 				}
 				elseif ($noCaseMatch == 'onshow')
 				{
 					foreach ($capturedContent as $value)
-						$this->rheiaDefs['onShow'] .= TAB.$value.EOL;
+						$this->rheiaDefs['onShow'] .= TAB.
+							RheiaMainClass::replaceObjects($value).EOL;
 				}
 				elseif ($noCaseMatch == 'onExit')
 				{
 					foreach ($capturedContent as $value)
-						$this->rheiaDefs['onExit'] .= TAB.$value.EOL;
+						$this->rheiaDefs['onExit'] .= TAB.
+							RheiaMainClass::replaceObjects($value).EOL;
 				}
 				else
 				{
@@ -7380,13 +7383,16 @@ class RheiaMainClass
 					}
 					elseif ($noCaseMatch == 'javascript')
 						$this->rheiaDefs['javaScript'] .=
-							TAB.ltrim($capturedContent).EOL;
+							TAB.ltrim(RheiaMainClass::replaceObjects(
+								$capturedContent)).EOL;
 					elseif ($noCaseMatch == 'onshow')
 						$this->rheiaDefs['onShow'] .=
-							TAB.ltrim($capturedContent).EOL;
+							TAB.ltrim(RheiaMainClass::replaceObjects(
+								$capturedContent)).EOL;
 					elseif ($noCaseMatch == 'onexit')
 						$this->rheiaDefs['onExit'] .=
-							TAB.ltrim($capturedContent).EOL;
+							TAB.ltrim(RheiaMainClass::replaceObjects(
+								$capturedContent)).EOL;
 					else
 					{
 						// Najprv hľadám medzi preddefinovanými triedami
