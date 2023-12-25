@@ -190,7 +190,7 @@ if (!empty($_SERVER['QUERY_STRING']) &&
 			htmlspecialchars(rawurldecode($_SERVER['QUERY_STRING'])));
 	}
 
-	if (preg_match('/\.(png|gif|jpg|jpeg|svg|svgz)$/i', $originalName))
+	if (preg_match('/\.(png|gif|jpg|jpeg|svg|svgz|webp)$/i', $originalName))
 	{
 		if (isSet($downloadModifyOriginalName) &&
 			is_array($downloadModifyOriginalName))
@@ -271,7 +271,7 @@ if (!empty($_SERVER['QUERY_STRING']) &&
 			if (is_numeric($desiredWidth) && is_numeric($desiredHeight))
 			{
 				$resizedPathName = preg_replace(
-					'/(?=\.(?:png|gif|jpg|jpeg|svg|svgz)$)/i',
+					'/(?=\.(?:png|gif|jpg|jpeg|svg|svgz|webp)$)/i',
 					'_'.$desiredWidth.'x'.$desiredHeight, $filePathName);
 
 				// echo '<pre>';

@@ -3817,6 +3817,9 @@ class RheiaMainClass
 			case 'txt': case 'ini': $type = 'text'; break;
 			case 'mov': case 'ogg': case 'webm':
 			case 'mp4': $type = 'movie'; break;
+			case 'aiff': case 'au': case 'm3u': case 'm4a': case 'mid':
+			case 'snd': case 'wav': case 'mp3': $type = 'audio'; break;
+				// aif aifc midi ra ram rm rmi rmp
 			case 'notebook': $type = 'notebook'; break;
 			default: $type = 'common';
 			}

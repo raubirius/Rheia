@@ -8,7 +8,7 @@ function errorMessage(message)
 
 function getElement(elementID)
 {
-	var elementObj = document.getElementById(elementID);
+	let elementObj = document.getElementById(elementID);
 	if (null == elementObj)
 	{
 		elementObj = eval('document.' + elementID);
@@ -20,12 +20,10 @@ function getElement(elementID)
 
 function initInOnLoad()
 {
-	var links = document.links;
-	let i;
-
-	for (i in links)
+	let links = document.links;
+	for (let i in links)
 	{
-		var link = links[i];
+		let link = links[i];
 		if (link.host != link.hostname)
 			console.log(link.host + ' does not match ' + link.hostname);
 		else if (link.host == 'doi.org')
@@ -53,19 +51,19 @@ function showItem(itemToShow)
 { getElement(itemToShow).style.display = ''; }
 
 function showItems()
-{ let i; for (i = 0; i < arguments.length; ++i) showItem(arguments[i]); }
+{ for (let i = 0; i < arguments.length; ++i) showItem(arguments[i]); }
 
 function hideItem(itemToHide)
 { getElement(itemToHide).style.display = 'none'; }
 
 function hideItems()
-{ let i; for (i = 0; i < arguments.length; ++i) hideItem(arguments[i]); }
+{ for (let i = 0; i < arguments.length; ++i) hideItem(arguments[i]); }
 
 function toggleItem(itemID)
 { if (itemDisplayed(itemID)) hideItem(itemID); else showItem(itemID); }
 
 function toggleItems()
-{ let i; for (i = 0; i < arguments.length; ++i) toggleItem(arguments[i]); }
+{ for (let i = 0; i < arguments.length; ++i) toggleItem(arguments[i]); }
 
 
 function isItemVisible(itemID)
@@ -75,7 +73,7 @@ function setItemVisible(itemID, visibile)
 { getElement(itemID).style.visibility = visibile ? 'visible' : 'hidden'; }
 
 function setItemsVisible(visible)
-{ let i; for (i = 1; i < arguments.length; ++i) setItemVisible(arguments[i], visible); }
+{ for (let i = 1; i < arguments.length; ++i) setItemVisible(arguments[i], visible); }
 
 
 function setClass(itemID, className)
@@ -83,8 +81,8 @@ function setClass(itemID, className)
 
 function addClass(itemID, className)
 {
-	var element = getElement(itemID);
-	var arr = element.className.split(' ');
+	let element = getElement(itemID);
+	let arr = element.className.split(' ');
 
 	if (arr.indexOf(className) == -1)
 	{
@@ -97,8 +95,8 @@ function addClass(itemID, className)
 
 function removeClass(itemID, className)
 {
-	var element = getElement(itemID);
-	var regex = new RegExp('\\b' + className + '\\b', 'g');
+	let element = getElement(itemID);
+	let regex = new RegExp('\\b' + className + '\\b', 'g');
 	element.className = element.className.replace(regex, '');
 }
 
@@ -119,7 +117,7 @@ function toggleClass(itemID, className)
 
 function isInViewport(element)
 {
-	var rect = element.getBoundingClientRect();
+	let rect = element.getBoundingClientRect();
 
 	return rect.bottom >= 0 && rect.right >= 0 &&
 		rect.top <= (window.innerHeight ||
@@ -171,10 +169,9 @@ function searchNameDay(names, formID)
 
 function mdcs(address, checksum)
 {
-	var decode = ''; sum = 0;
-	let i;
+	let decode = '', sum = 0;
 
-	for (i in address)
+	for (let i in address)
 	{
 		decode += String.fromCharCode
 			(address[i] ^ 0x5A);
@@ -192,7 +189,7 @@ var onloadCallback = null;
 window.onresize = function (event)
 {
 	/*
-	var height = 1030;
+	let height = 1030;
 	if (window.innerHeight)
 	{
 		// Non-IE
@@ -274,7 +271,7 @@ function saveSessionTime(name)
 window.onscroll = function (event)
 {
 	/*
-	var scrollTop = document.documentElement.scrollTop ||
+	let scrollTop = document.documentElement.scrollTop ||
 		document.body.scrollTop;
 
 	if (null == main_menu) main_menu = getElement('main_menu');
@@ -389,7 +386,7 @@ function pushState(category, selectedItem, argument)
 
 function loadScript(scriptURL, scriptID, scriptAsync, scriptCallback)
 {
-	var scriptExists = document.getElementById(scriptID);
+	let scriptExists = document.getElementById(scriptID);
 
 	if (scriptExists)
 	{
@@ -401,7 +398,7 @@ function loadScript(scriptURL, scriptID, scriptAsync, scriptCallback)
 	{
 		// console.log('Loading script “' + scriptURL + '” (ID: ' +
 		// 	scriptID + ').');
-		var scriptEl = document.createElement('script');
+		let scriptEl = document.createElement('script');
 		scriptEl.setAttribute('type', 'text/javascript');
 		scriptEl.setAttribute('src', scriptURL);
 		scriptEl.setAttribute('id', scriptID);
@@ -422,8 +419,7 @@ function initLazyImages()
 
 function loadLazyImages()
 {
-	let i;
-	for (i = 0; i < lazyImages.length; ++i)
+	for (let i = 0; i < lazyImages.length; ++i)
 	{
 		if (isInViewport(lazyImages[i]))
 		{
@@ -449,8 +445,7 @@ var allPopStateHandlers = new Array();
 
 window.onpopstate = function (event)
 {
-	let i;
-	for (i in allPopStateHandlers)
+	for (let i in allPopStateHandlers)
 	{
 		// console.log('pop ' + i + ': ' + allPopStateHandlers[i]);
 		allPopStateHandlers[i](event);
