@@ -41,6 +41,10 @@ if (isSet($siteStructure))
 						$mainMenu .= (!empty($menu['link']) &&
 							'/' === $menu['link'][0] ? '' :
 							'/'.$siteSectionPath).$menu['link'];
+					else if (isSet($menu['http']))
+						$mainMenu .= 'http://'.$menu['http'];
+					else if (isSet($menu['https']))
+						$mainMenu .= 'https://'.$menu['https'];
 					else
 						$mainMenu .= $siteSectionPath.('index' === $file ?
 							'': $file);
@@ -248,8 +252,8 @@ $features['end'] .= TAB3.'<input id="search" type="text" name="q" '.
 
 if (isSet($siteContentConfig['rss']))
 	$features['end'] .= TAB3.'<a href="'.$siteContentConfig['rss'].
-		'" class="feature-icon" target="_blank"><img src="'.$designURI.
-		'null.gif" class="rss" title="RSS" alt="RSS" /></a>'.EOL;
+		'" class="feature-icon" target="_blank" rel="noopener"><img src="'.
+		$designURI.'null.gif" class="rss" title="RSS" alt="RSS" /></a>'.EOL;
 else
 	$features['end'] .= TAB3.'<span class="feature-icon"><img src="'.
 		$designURI.'null.gif" class="rss" alt="RSS" /></span>'.EOL;
@@ -309,7 +313,7 @@ div.page-content-hidden
 				if (isSet($universityBannerPath)) echo $universityBannerPath; ?>" class="banner-truni<?php
 			if (!empty($designTexts['design-language-code']))
 				echo ' '.$designTexts['design-language-code']; ?>"
-				target="_blank"></a><a href="/<?php
+				target="_blank" rel="noopener"></a><a href="/<?php
 				if (isSet($facultyBannerPath)) echo $facultyBannerPath; ?>"
 				class="banner-pdf<?php
 			if (!empty($designTexts['design-language-code']))
@@ -344,7 +348,7 @@ div.page-content-hidden
 
 echo '<p>© 2005 – '.date('Y').' '.$designTexts['design-faculty'].
 	$designTexts['design-faculty-university-separator'].
-	'<a href="https://www.truni.sk/" target="_blank">'.
+	'<a href="https://www.truni.sk/" target="_blank" rel="noopener">'.
 	$designTexts['design-of-university'].'</a>, '.
 	$designTexts['design-rights-reserved'].'. '.
 	$designTexts['design-todays-date'].' '.date('j. n. Y');
@@ -356,9 +360,9 @@ echo '.</p>';
 
 /**if (empty($siteSectionPath))
 	echo '<p><a href="https://www.facebook.com/PedagogickaFakulta.'.
-		'TrnavskaUniverzita.Trnava" target="_blank"><img src="'.$designURI.
-		'facebook-logo.png" alt="Facebook" title="Pedagogická fakulta '.
-		'TU na Facebooku" /></a></p>';/**/
+		'TrnavskaUniverzita.Trnava" target="_blank" rel="noopener"><img src="'.
+		$designURI.'facebook-logo.png" alt="Facebook" title="Pedagogická '.
+		'fakulta TU na Facebooku" /></a></p>';/**/
 
 if (!empty($bottomIcons)) echo EOL2.$bottomIcons.EOL.'<div class="clear"></div>';
 

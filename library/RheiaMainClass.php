@@ -415,7 +415,7 @@ class RheiaMainClass
 	public static function makeExternalLink($label, $link = null)
 	{
 		if (empty($link)) $link = $label;
-		return '<a href="'.$link.'" target="_blank" '.
+		return '<a href="'.$link.'" target="_blank" rel="noopener" '.
 			'class="external-link"><span>'.$label.
 			'</span> <img src="'.RheiaMainClass::$externalLinkIcon.
 			'" alt="'.RheiaMainClass::$text['external-link'].
@@ -4639,7 +4639,7 @@ class RheiaMainClass
 		$this->referenceOptions['style'] = null;
 
 		$this->referencePattern = '<a href="https://$2" target="_blank" '.
-			'class="external-link"><span>$1</span> <img src="'.
+			'rel="noopener" class="external-link"><span>$1</span> <img src="'.
 			RheiaMainClass::$externalLinkIcon.'" alt="'.
 			RheiaMainClass::$text['external-link'].'" title="'.
 			RheiaMainClass::$text['external-link'].'" '.
@@ -4649,10 +4649,10 @@ class RheiaMainClass
 			$text);
 
 		$this->referencePattern = '<a href="http://$2" target="_blank" '.
-			'class="external-link"><span>$1</span> <img src="'.RheiaMainClass::
-			$externalLinkIcon.'" alt="'.RheiaMainClass::$text['external-link'].
-			'" title="'.RheiaMainClass::$text['external-link'].'" '.
-			'class="external-icon" /></a>';
+			'rel="noopener" class="external-link"><span>$1</span> <img src="'.
+			RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::
+			$text['external-link'].'" title="'.RheiaMainClass::
+			$text['external-link'].'" '.'class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{([^|}]+)\|http:[/]{0,2}'.
 			'([^}]+)\}#', array(&$this, 'referenceTagsReplaceCallback'),
 			$text);
@@ -4660,19 +4660,19 @@ class RheiaMainClass
 		$this->referenceOptions['type'] = 'prefix';
 
 		$this->referencePattern = '<a href="https://$2" target="_blank" '.
-			'class="external-link"><span>$1</span> <img src="'.RheiaMainClass::
-			$externalLinkIcon.'" alt="'.RheiaMainClass::$text['external-link'].
-			'" title="'.RheiaMainClass::$text['external-link'].'" '.
-			'class="external-icon" /></a>';
+			'rel="noopener" class="external-link"><span>$1</span> <img src="'.
+			RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::
+			$text['external-link'].'" title="'.RheiaMainClass::
+			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{([^|}]+)\|link:s:[/]{0,2}'.
 			'([^}]+)\}#', array(&$this, 'referenceTagsReplaceCallback'),
 			$text);
 
 		$this->referencePattern = '<a href="http://$2" target="_blank" '.
-			'class="external-link"><span>$1</span> <img src="'.RheiaMainClass::
-			$externalLinkIcon.'" alt="'.RheiaMainClass::$text['external-link'].
-			'" title="'.RheiaMainClass::$text['external-link'].'" '.
-			'class="external-icon" /></a>';
+			'rel="noopener" class="external-link"><span>$1</span> <img src="'.
+			RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::
+			$text['external-link'].'" title="'.RheiaMainClass::
+			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{([^|}]+)\|link:[/]{0,2}'.
 			'([^}]+)\}#', array(&$this, 'referenceTagsReplaceCallback'),
 			$text);
@@ -4708,12 +4708,12 @@ class RheiaMainClass
 		$this->referenceOptions['type'] = 'externdown';
 
 		$this->referencePattern = '<a href="$3" target="_blank" '.
-			'class="external-download"><img src="design/null.gif" '.
-			'data-src="$icon" alt="'.RheiaMainClass::$text['icon-alt'].
-			'" /><noscript><img src="$icon" alt="'.RheiaMainClass::
-			$text['icon-alt'].'" /></noscript><span>$1</span> <img src="'.
-			RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::
-			$text['external-link'].'" title="'.RheiaMainClass::
+			'rel="noopener" class="external-download"><img src="design/'.
+			'null.gif" data-src="$icon" alt="'.RheiaMainClass::
+			$text['icon-alt'].'" /><noscript><img src="$icon" alt="'.
+			RheiaMainClass::$text['icon-alt'].'" /></noscript><span>$1'.
+			'</span> <img src="'.RheiaMainClass::$externalLinkIcon.'" alt="'.
+			RheiaMainClass::$text['external-link'].'" title="'.RheiaMainClass::
 			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{([^|}]+)\|externdown:'.
 			'(https?:)?[/]{0,2}([^}]+)\}#', array(&$this,
@@ -4763,12 +4763,13 @@ class RheiaMainClass
 
 		$this->referenceOptions['type'] = 'local';
 
-		$this->referencePattern = '<a href="/$2" target="_blank">$1</a>';
+		$this->referencePattern = '<a href="/$2" target="_blank" '.
+			'rel="noopener">$1</a>';
 		$text = preg_replace_callback('/\{([^|}]+)\|blank:\/([^}]+)\}/',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
 		$this->referencePattern = '<a href="/'.RheiaMainClass::$siteSectionPath.
-			'$2" target="_blank">$1</a>';
+			'$2" target="_blank" rel="noopener">$1</a>';
 		$text = preg_replace_callback('/\{([^|}]+)\|blank:([^}]+)\}/',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
@@ -4786,44 +4787,44 @@ class RheiaMainClass
 		$this->referenceOptions['type'] = 'web';
 
 		$this->referencePattern = '<a href="https://$1" target="_blank" '.
-			'class="external-link"><span>https://$desc</span> <img src="'.
-			RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::$text
-			['external-link'].'" title="'.RheiaMainClass::$text
-			['external-link'].'" class="external-icon" /></a>';
+			'rel="noopener" class="external-link"><span>https://$desc'.
+			'</span> <img src="'.RheiaMainClass::$externalLinkIcon.'" alt="'.
+			RheiaMainClass::$text['external-link'].'" title="'.RheiaMainClass::
+			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{https:[/]{0,2}([^}]+)\}#',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
 		$this->referencePattern = '<a href="http://$1" target="_blank" '.
-			'class="external-link"><span>http://$desc</span> <img src='.
-			'"'.RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::
-			$text['external-link'].'" title="'.RheiaMainClass::
+			'rel="noopener" class="external-link"><span>http://$desc</span>'.
+			' <img src="'.RheiaMainClass::$externalLinkIcon.'" alt="'.
+			RheiaMainClass::$text['external-link'].'" title="'.RheiaMainClass::
 			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{http://([^}]+)\}#',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
 		$this->referencePattern = '<a href="http://$1" target="_blank" '.
-			'class="external-link"><span>$desc</span> <img src="'.RheiaMainClass::
-			$externalLinkIcon.'" alt="'.RheiaMainClass::$text['external-link'].
-			'" title="'.RheiaMainClass::$text['external-link'].'" '.
-			'class="external-icon" /></a>';
+			'rel="noopener" class="external-link"><span>$desc</span> <img '.
+			'src="'.RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::
+			$text['external-link'].'" title="'.RheiaMainClass::
+			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{http:[/]{0,2}([^}]+)\}#',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
 		$this->referenceOptions['type'] = 'prefix';
 
 		$this->referencePattern = '<a href="https://$1" target="_blank" '.
-			'class="external-link"><span>$desc</span> <img src="'.RheiaMainClass::
-			$externalLinkIcon.'" alt="'.RheiaMainClass::$text['external-link'].
-			'" title="'.RheiaMainClass::$text['external-link'].'" '.
-			'class="external-icon" /></a>';
+			'rel="noopener" class="external-link"><span>$desc</span> <img '.
+			'src="'.RheiaMainClass::$externalLinkIcon.'" alt="'.
+			RheiaMainClass::$text['external-link'].'" title="'.RheiaMainClass::
+			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{link:s:[/]{0,2}([^}]+)\}#',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
 		$this->referencePattern = '<a href="http://$1" target="_blank" '.
-			'class="external-link"><span>$desc</span> <img src="'.RheiaMainClass::
-			$externalLinkIcon.'" alt="'.RheiaMainClass::$text['external-link'].
-			'" title="'.RheiaMainClass::$text['external-link'].'" '.
-			'class="external-icon" /></a>';
+			'rel="noopener" class="external-link"><span>$desc</span> <img '.
+			'src="'.RheiaMainClass::$externalLinkIcon.'" alt="'.
+			RheiaMainClass::$text['external-link'].'" title="'.RheiaMainClass::
+			$text['external-link'].'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{link:[/]{0,2}([^}]+)\}#',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
@@ -4851,13 +4852,14 @@ class RheiaMainClass
 		$this->referenceOptions['type'] = 'externdown';
 
 		$this->referencePattern = '<a href="$2" target="_blank" '.
-			'class="external-download"><img src="design/null.gif" '.
-			'data-src="$icon" alt="'.RheiaMainClass::$text['icon-alt'].
-			'" /><noscript><img src="$icon" alt="'.RheiaMainClass::
-			$text['icon-alt'].'" /></noscript><span>$1</span> <img src="'.
-			RheiaMainClass::$externalLinkIcon.'" alt="'.RheiaMainClass::
-			$text['external-link'].'" title="'.RheiaMainClass::
-			$text['external-link'].'" class="external-icon" /></a>';
+			'rel="noopener" class="external-download"><img src="design/'.
+			'null.gif" data-src="$icon" alt="'.RheiaMainClass::
+			$text['icon-alt'].'" /><noscript><img src="$icon" alt="'.
+			RheiaMainClass::$text['icon-alt'].'" /></noscript>'.
+			'<span>$1</span> <img src="'.RheiaMainClass::$externalLinkIcon.
+			'" alt="'.RheiaMainClass::$text['external-link'].'" title="'.
+			RheiaMainClass::$text['external-link'].
+			'" class="external-icon" /></a>';
 		$text = preg_replace_callback('#\{externdown:'.
 			'(https?:)?[/]{0,2}([^}]+)\}#', array(&$this,
 				'referenceTagsReplaceCallback'), $text);
@@ -4960,12 +4962,13 @@ class RheiaMainClass
 
 		$this->referenceOptions['type'] = 'local';
 
-		$this->referencePattern = '<a href="/$1" target="_blank">$desc</a>';
+		$this->referencePattern = '<a href="/$1" target="_blank" '.
+			'rel="noopener">$desc</a>';
 		$text = preg_replace_callback('/\{blank:\/([^}]+)\}/',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
 		$this->referencePattern = '<a href="/'.RheiaMainClass::$siteSectionPath.
-			'$1" target="_blank">$desc</a>';
+			'$1" target="_blank" rel="noopener">$desc</a>';
 		$text = preg_replace_callback('/\{blank:([^}]+)\}/',
 			array(&$this, 'referenceTagsReplaceCallback'), $text);
 
@@ -9862,7 +9865,8 @@ class RheiaMainClass
 					$article['link'] :
 					$articleLinkFormat.$link).'"'.
 				(isSet($article['targetBlank']) ?
-					' target="_blank"' : '').' class="download">').
+					' target="_blank" rel="noopener"' : '').
+				' class="download">').
 
 				'<img src="'.RheiaMainClass::getDirectoryIconName().
 				'" alt="'.RheiaMainClass::$text['icon-alt'].'" />'.
@@ -9925,7 +9929,7 @@ class RheiaMainClass
 					$article['link'] :
 					$articleLinkFormat.$link).'"'.
 				(isSet($article['targetBlank']) ?
-					' target="_blank"' : '').'>').
+					' target="_blank" rel="noopener"' : '').'>').
 
 				$caption.'</a>';
 
@@ -10016,7 +10020,7 @@ class RheiaMainClass
 								$article['link'] :
 								$articleLinkFormat.$link).'"'.
 							(isSet($article['targetBlank']) ?
-								' target="_blank"' : '').'>').
+								' target="_blank" rel="noopener"' : '').'>').
 							// RheiaMainClass::handleNBSP(
 								RheiaMainClass::replaceObjects(
 									$article['options']
@@ -10041,7 +10045,7 @@ class RheiaMainClass
 								$article['link'] :
 								$articleLinkFormat.$link).'"'.
 							(isSet($article['targetBlank']) ?
-								' target="_blank"' : '').'>').
+								' target="_blank" rel="noopener"' : '').'>').
 							// RheiaMainClass::handleNBSP(
 								RheiaMainClass::replaceObjects(
 									$article['options']
@@ -10070,7 +10074,7 @@ class RheiaMainClass
 							$article['link'] :
 							$articleLinkFormat.$link).
 						'"'.(isSet($article['targetBlank']) ?
-							' target="_blank"' : '').
+							' target="_blank" rel="noopener"' : '').
 						' class="read-more">');
 					if (isSet($article['linkText']))
 						$returnValue .= $article['linkText'];
@@ -10926,7 +10930,7 @@ class RheiaMainClass
 			{
 				// O: Title, Preview, Link, Rate, 4: Date
 				echo '<li>'.RheiaMainClass::solveInternalRedirects('<a href="'.
-					$item[2].'" target="_blank">').$item[0].
+					$item[2].'" target="_blank" rel="noopener">').$item[0].
 					' <em title="'.RheiaMainClass::$text['search-rate-title'].
 					'"> <small>('.$item[3].'b.)</small> </em><em title="'.
 					RheiaMainClass::$text['search-target-title'].'">»</em></a>';

@@ -148,11 +148,11 @@ function makeExternalLink($label, $link = null)
 {
 	global /*$externalLinkIcon, */$designTexts, $designURI;
 	if (empty($link)) $link = $label;
-	return '<a href="'.$link.'" target="_blank" class="external-link"><span>'.
-		$label.'</span> <img src="'.$designURI.'null.gif'.//$externalLinkIcon.
-		'" alt="'.$designTexts
-		['external-link'].'" title="'.$designTexts['external-link'].
-		'" class="external-icon" /></a>';
+	return '<a href="'.$link.'" target="_blank" rel="noopener" class="'.
+		'external-link"><span>'.$label.'</span> <img src="'.$designURI.
+		'null.gif'.//$externalLinkIcon.
+		'" alt="'.$designTexts['external-link'].'" title="'.$designTexts[
+			'external-link'].'" class="external-icon" /></a>';
 }
 
 function makeNonEmptyAttr($attr, $value)
@@ -228,12 +228,12 @@ function makeMenu($structure, $defautClass = '',
 				if (isSet($item['http']))
 				{
 					$link = 'http://'.$item['http'];
-					$target = ' target="_blank"';
+					$target = ' target="_blank" rel="noopener"';
 				}
 				elseif (isSet($item['https']))
 				{
 					$link = 'https://'.$item['https'];
-					$target = ' target="_blank"';
+					$target = ' target="_blank" rel="noopener"';
 				}
 				else
 				{
@@ -408,12 +408,12 @@ function makeMenuFromTemplates($structure, $defautClass = '', $itemTemplate = ''
 				if (isSet($item['http']))
 				{
 					$link = 'http://'.$item['http'];
-					$target = ' target="_blank"';
+					$target = ' target="_blank" rel="noopener"';
 				}
 				elseif (isSet($item['https']))
 				{
 					$link = 'https://'.$item['https'];
-					$target = ' target="_blank"';
+					$target = ' target="_blank" rel="noopener"';
 				}
 				else
 				{

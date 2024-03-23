@@ -27,7 +27,7 @@ foreach ($rssParsedItems as $rssParsedItem)
 	{
 		echo '<div class="title'.$previewTopDots.
 			'"><h2><a href="'.$rssLinkFormat.$rssParsedItem['link'].
-			'" target="_blank">'.$rssParsedItem['title'].
+			'" target="_blank" rel="noopener">'.$rssParsedItem['title'].
 			'</a></h2></div>';
 		$previewTopDots = '';
 	}
@@ -36,7 +36,7 @@ foreach ($rssParsedItems as $rssParsedItem)
 		echo '<div class="preview'.$previewTopDots.
 			'"><p>'.$rssParsedItem['preview'].'<a href="'.
 			$rssLinkFormat.$rssParsedItem['link'].
-			'" class="read-more" target="_blank">'.
+			'" class="read-more" target="_blank" rel="noopener">'.
 			RheiaMainClass::getText('article-list-read-more').
 			' »</a></p></div>';
 

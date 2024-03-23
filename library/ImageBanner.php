@@ -19,7 +19,7 @@ class ImageBanner
 		$href  = null;
 		$src   = null;
 		$alt   = 'image';
-		$tgt   = '_blank';
+		$tgt   = '_blank" rel="noopener';
 		$pstyle = null;
 		$pclass = null;
 		$astyle = null;

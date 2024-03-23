@@ -52,7 +52,7 @@ foreach ($listAll as $person)
 
 	if (empty($person['link']))
 		echo $personName; else
-		echo '<a href="'.$person['link'].'" target="_blank">'.
+		echo '<a href="'.$person['link'].'" target="_blank" rel="noopener">'.
 			$personName.' <em title="'.$searchTexts['search-target-title'].
 			'">»</em></a>';
 

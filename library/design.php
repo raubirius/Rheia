@@ -235,8 +235,8 @@ $features['core'] .= TAB3.'<section id="block-menu-menu-top-header-menu" class="
 
 $features['core'] .= TAB3.'<li class="leaf"><a href="https://www.truni.sk/'.
 	(isSet($universityBannerPath) ? $universityBannerPath : '').'" '.
-	'title="'.$designTexts['design-university'].'" target="_blank">'.
-	$designTexts['design-university'].'</a></li>'.EOL;
+	'title="'.$designTexts['design-university'].'" target="_blank" '.
+	'rel="noopener">'.$designTexts['design-university'].'</a></li>'.EOL;
 
 $features['core'] .= TAB3.'</ul></section>'.EOL2;
 
@@ -362,8 +362,8 @@ $features['end'] .= TAB3.'<div class="form-search content-search"><div '.
 
 if (isSet($siteContentConfig['rss']))
 	$features['end'] .= TAB3.'<a href="'.$siteContentConfig['rss'].
-		'" class="feature-icon" target="_blank"><img src="'.$designURI.
-		'null.gif" class="rss" title="RSS" alt="RSS" /></a>'.EOL;
+		'" class="feature-icon" target="_blank" rel="noopener"><img src="'.
+		$designURI.'null.gif" class="rss" title="RSS" alt="RSS" /></a>'.EOL;
 else
 	$features['end'] .= TAB3.'<span class="feature-icon"><img src="'.
 		$designURI.'null.gif" class="rss" alt="RSS" /></span>'.EOL;*/
@@ -632,7 +632,7 @@ Alternatívne položky:
 
 	echo '<p>© 2005 – '.date('Y').' '.$designTexts['design-faculty'].
 		$designTexts['design-faculty-university-separator'].
-		'<a href="https://www.truni.sk/" target="_blank">'.
+		'<a href="https://www.truni.sk/" target="_blank" rel="noopener">'.
 		$designTexts['design-of-university'].'</a>, '.
 		$designTexts['design-rights-reserved'].'. '.
 		$designTexts['design-todays-date'].' '.date('j. n. Y');
@@ -652,37 +652,37 @@ Alternatívne položky:
 <?php /*
 	<!--section id="block-menu-menu-footer-menu" class="block block-menu clearfix">
 	<ul class="menu nav">
-	<li class="first leaf"><a href="https://www.truni.sk/univerzitne-informacne-systemy" title="" target="_blank">Univ. informačné systémy</a></li>
-	<li class="leaf"><a href="https://idmportal.truni.sk/" title="Identity management portal" target="_blank">Správa identít používateľov</a></li>
-	<li class="leaf"><a href="https://www.truni.sk/zistenie-tuid" title="" target="_blank">Identifikácia TUID</a></li>
-	<li class="leaf"><a href="https://mais.truni.sk/" title="Modulárny akademický informačný systém" target="_blank">MAIS</a></li>
-	<li class="leaf"><a href="https://webmail.tvu.sk/" target="_blank" title="">WebMail študent</a></li>
-	<li class="leaf"><a href="https://webmail.truni.sk/" target="_blank" title="">WebMail zamestnanec</a></li>
-	<li class="last leaf"><a href="http://ezp.truni.sk/ezp" title="" target="_blank">Evidencia záver. prác</a></li>
+	<li class="first leaf"><a href="https://www.truni.sk/univerzitne-informacne-systemy" title="" target="_blank" rel="noopener">Univ. informačné systémy</a></li>
+	<li class="leaf"><a href="https://idmportal.truni.sk/" title="Identity management portal" target="_blank" rel="noopener">Správa identít používateľov</a></li>
+	<li class="leaf"><a href="https://www.truni.sk/zistenie-tuid" title="" target="_blank" rel="noopener">Identifikácia TUID</a></li>
+	<li class="leaf"><a href="https://mais.truni.sk/" title="Modulárny akademický informačný systém" target="_blank" rel="noopener">MAIS</a></li>
+	<li class="leaf"><a href="https://webmail.tvu.sk/" target="_blank" rel="noopener" title="">WebMail študent</a></li>
+	<li class="leaf"><a href="https://webmail.truni.sk/" target="_blank" rel="noopener" title="">WebMail zamestnanec</a></li>
+	<li class="last leaf"><a href="http://ezp.truni.sk/ezp" title="" target="_blank" rel="noopener">Evidencia záver. prác</a></li>
 	</ul>
 	</section>
 
 	<section id="block-menu-menu-footer-menu-2" class="block block-menu clearfix">
 	<ul class="menu nav">
-	<li class="first leaf"><a href="http://ezp.truni.sk/opac?fn=main" title="Online katalóg Univerzitnej knižnice" target="_blank">Online katalóg UK</a></li>
-	<li class="leaf"><a href="http://elearning.truni.sk/" title="Vzdelávací portál univerzity" target="_blank">Vzdelávací portál</a></li>
-	<li class="leaf"><a href="https://strava.truni.sk/" title="Stravovací systém univerzity" target="_blank">Stravovací systém</a></li>
-	<li class="leaf"><a href="https://www.truni.sk/informacie-o-zhotoveni-preukazu-studenta" title="" target="_blank">Preukaz študenta</a></li>
-	<li class="leaf"><a href="https://www.truni.sk/preukaz-ucitela-zamestnanca" title="" target="_blank">Preukaz zamestnanca</a></li>
-	<li class="leaf"><a href="https://www.truni.sk/telefonny-zoznam" title="Telefónny zoznam " target="_blank">Telefónny zoznam univerzity</a></li>
-	<li class="last leaf"><a href="https://www.truni.sk/universitas-tyrnaviensis-casopis-trnavskej-univerzity-v-trnave" title="" target="_blank">Univerzitný časopis</a></li>
+	<li class="first leaf"><a href="http://ezp.truni.sk/opac?fn=main" title="Online katalóg Univerzitnej knižnice" target="_blank" rel="noopener">Online katalóg UK</a></li>
+	<li class="leaf"><a href="http://elearning.truni.sk/" title="Vzdelávací portál univerzity" target="_blank" rel="noopener">Vzdelávací portál</a></li>
+	<li class="leaf"><a href="https://strava.truni.sk/" title="Stravovací systém univerzity" target="_blank" rel="noopener">Stravovací systém</a></li>
+	<li class="leaf"><a href="https://www.truni.sk/informacie-o-zhotoveni-preukazu-studenta" title="" target="_blank" rel="noopener">Preukaz študenta</a></li>
+	<li class="leaf"><a href="https://www.truni.sk/preukaz-ucitela-zamestnanca" title="" target="_blank" rel="noopener">Preukaz zamestnanca</a></li>
+	<li class="leaf"><a href="https://www.truni.sk/telefonny-zoznam" title="Telefónny zoznam " target="_blank" rel="noopener">Telefónny zoznam univerzity</a></li>
+	<li class="last leaf"><a href="https://www.truni.sk/universitas-tyrnaviensis-casopis-trnavskej-univerzity-v-trnave" title="" target="_blank" rel="noopener">Univerzitný časopis</a></li>
 	</ul>
 	</section>
 
 	<section id="block-menu-menu-footer-menu-3" class="block block-menu clearfix">
 	<ul class="menu nav">
-	<li class="first leaf"><a href="https://www.truni.sk/sme-vitazom-narodnej-ceny-sr-za-kvalitu-2016-v-kategorii-organizacie-verejneho-sektora" title="" target="_blank">Národná cena SR za kvalitu</a></li>
-	<li class="leaf"><a href="https://www.truni.sk/zasadne-dokumenty" title="" target="_blank">Zásadné dokumenty</a></li>
-	<li class="leaf"><a href="https://truni.isportsystem.sk/" target="_blank" title="">Pro TRUNI Activity</a></li>
-	<li class="leaf"><a href="http://sfeu.truni.sk/" title="Realizované európske projekty" target="_blank">Projekty EÚ</a></li>
-	<li class="leaf"><a href="https://www.truni.sk/centrum-jazykov" title="" target="_blank">Centrum jazykov</a></li>
-	<li class="leaf"><a href="https://www.truni.sk/centrum-podpory-studentov" title="" target="_blank">Centrum podpory študentov</a></li>
-	<li class="last leaf"><a href="https://www.truni.sk/univerzita-tretieho-veku" title="Univerzita tretieho veku" target="_blank">Univerzita tretieho veku</a></li>
+	<li class="first leaf"><a href="https://www.truni.sk/sme-vitazom-narodnej-ceny-sr-za-kvalitu-2016-v-kategorii-organizacie-verejneho-sektora" title="" target="_blank" rel="noopener">Národná cena SR za kvalitu</a></li>
+	<li class="leaf"><a href="https://www.truni.sk/zasadne-dokumenty" title="" target="_blank" rel="noopener">Zásadné dokumenty</a></li>
+	<li class="leaf"><a href="https://truni.isportsystem.sk/" target="_blank" rel="noopener" title="">Pro TRUNI Activity</a></li>
+	<li class="leaf"><a href="http://sfeu.truni.sk/" title="Realizované európske projekty" target="_blank" rel="noopener">Projekty EÚ</a></li>
+	<li class="leaf"><a href="https://www.truni.sk/centrum-jazykov" title="" target="_blank" rel="noopener">Centrum jazykov</a></li>
+	<li class="leaf"><a href="https://www.truni.sk/centrum-podpory-studentov" title="" target="_blank" rel="noopener">Centrum podpory študentov</a></li>
+	<li class="last leaf"><a href="https://www.truni.sk/univerzita-tretieho-veku" title="Univerzita tretieho veku" target="_blank" rel="noopener">Univerzita tretieho veku</a></li>
 	</ul>
 	</section-->
 

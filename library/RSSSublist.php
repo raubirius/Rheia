@@ -38,8 +38,9 @@ class RSSSublist
 				++$count;
 				if (($count >= $listStart) && ($count <= $listEnd))
 					$return .= EOL.'<li><a href="'.$rssLinkFormat.
-						$rssParsedItem['link'].'" target="_blank">'.
-						$rssParsedItem['title'].'</a></li>'.EOL;
+						$rssParsedItem['link'].'" target="_blank" '.
+						'rel="noopener">'.$rssParsedItem['title'].
+						'</a></li>'.EOL;
 			}
 		}
 

@@ -194,7 +194,7 @@ if (isSet($searchResults))
 		echo TAB.'<tr><td style="text-align: left;">';
 
 		if (empty($result[2])) echo $result[0]; else
-			echo '<a href="'.$result[2].'" target="_blank">'.
+			echo '<a href="'.$result[2].'" target="_blank" rel="noopener">'.
 				$result[0].' <em title="'.$searchTexts
 				['search-target-title'].'">»</em></a>';
 
